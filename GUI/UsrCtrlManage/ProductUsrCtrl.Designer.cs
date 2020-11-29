@@ -85,7 +85,7 @@
             this.pnLeft.BackColor = System.Drawing.SystemColors.Control;
             this.pnLeft.Controls.Add(this.bunifuDataGridView1);
             this.pnLeft.Location = new System.Drawing.Point(8, 60);
-            this.pnLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnLeft.Margin = new System.Windows.Forms.Padding(4);
             this.pnLeft.Name = "pnLeft";
             this.pnLeft.Size = new System.Drawing.Size(953, 623);
             this.pnLeft.TabIndex = 0;
@@ -147,7 +147,7 @@
             this.bunifuDataGridView1.HeaderBgColor = System.Drawing.Color.Empty;
             this.bunifuDataGridView1.HeaderForeColor = System.Drawing.Color.White;
             this.bunifuDataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuDataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuDataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuDataGridView1.Name = "bunifuDataGridView1";
             this.bunifuDataGridView1.ReadOnly = true;
             this.bunifuDataGridView1.RowHeadersVisible = false;
@@ -210,7 +210,7 @@
             this.pnRight.Controls.Add(this.pnBtn);
             this.pnRight.Controls.Add(this.pnPic);
             this.pnRight.Location = new System.Drawing.Point(972, 10);
-            this.pnRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnRight.Margin = new System.Windows.Forms.Padding(4);
             this.pnRight.Name = "pnRight";
             this.pnRight.Size = new System.Drawing.Size(700, 673);
             this.pnRight.TabIndex = 2;
@@ -240,7 +240,7 @@
             this.pnInfo.Controls.Add(this.lbName);
             this.pnInfo.Controls.Add(this.lbID);
             this.pnInfo.Location = new System.Drawing.Point(263, 68);
-            this.pnInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnInfo.Margin = new System.Windows.Forms.Padding(4);
             this.pnInfo.Name = "pnInfo";
             this.pnInfo.Size = new System.Drawing.Size(421, 246);
             this.pnInfo.TabIndex = 3;
@@ -261,7 +261,7 @@
             this.txbPrice.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbPrice.LineThickness = 1;
             this.txbPrice.Location = new System.Drawing.Point(124, 170);
-            this.txbPrice.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txbPrice.Margin = new System.Windows.Forms.Padding(5);
             this.txbPrice.MaxLength = 32767;
             this.txbPrice.Name = "txbPrice";
             this.txbPrice.Size = new System.Drawing.Size(292, 36);
@@ -306,7 +306,7 @@
             this.txbName.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbName.LineThickness = 1;
             this.txbName.Location = new System.Drawing.Point(124, 55);
-            this.txbName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txbName.Margin = new System.Windows.Forms.Padding(5);
             this.txbName.MaxLength = 32767;
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(292, 36);
@@ -329,7 +329,7 @@
             this.txbID.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbID.LineThickness = 1;
             this.txbID.Location = new System.Drawing.Point(124, 6);
-            this.txbID.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txbID.Margin = new System.Windows.Forms.Padding(5);
             this.txbID.MaxLength = 32767;
             this.txbID.Name = "txbID";
             this.txbID.Size = new System.Drawing.Size(292, 37);
@@ -394,7 +394,7 @@
             this.pnBtn.Controls.Add(this.btnUpdate);
             this.pnBtn.Controls.Add(this.btnSave);
             this.pnBtn.Location = new System.Drawing.Point(263, 334);
-            this.pnBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnBtn.Margin = new System.Windows.Forms.Padding(4);
             this.pnBtn.Name = "pnBtn";
             this.pnBtn.Size = new System.Drawing.Size(421, 65);
             this.pnBtn.TabIndex = 2;
@@ -435,6 +435,7 @@
             this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDel.Textcolor = System.Drawing.Color.White;
             this.btnDel.TextFont = new System.Drawing.Font("Roboto Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnUpdate
             // 
@@ -472,6 +473,7 @@
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUpdate.Textcolor = System.Drawing.Color.White;
             this.btnUpdate.TextFont = new System.Drawing.Font("Roboto Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
@@ -509,13 +511,14 @@
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.Textcolor = System.Drawing.Color.White;
             this.btnSave.TextFont = new System.Drawing.Font("Roboto Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pnPic
             // 
             this.pnPic.Controls.Add(this.lbAdding);
             this.pnPic.Controls.Add(this.picFood);
             this.pnPic.Location = new System.Drawing.Point(25, 68);
-            this.pnPic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnPic.Margin = new System.Windows.Forms.Padding(4);
             this.pnPic.Name = "pnPic";
             this.pnPic.Size = new System.Drawing.Size(229, 246);
             this.pnPic.TabIndex = 0;
@@ -538,7 +541,7 @@
             this.picFood.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picFood.Image = ((System.Drawing.Image)(resources.GetObject("picFood.Image")));
             this.picFood.Location = new System.Drawing.Point(0, 0);
-            this.picFood.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picFood.Margin = new System.Windows.Forms.Padding(4);
             this.picFood.Name = "picFood";
             this.picFood.Size = new System.Drawing.Size(229, 206);
             this.picFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -556,7 +559,7 @@
             // 
             this.panel1.Controls.Add(this.txbSearch);
             this.panel1.Location = new System.Drawing.Point(0, 1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(961, 58);
             this.panel1.TabIndex = 3;
@@ -590,7 +593,7 @@
             this.txbSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txbSearch.Lines = new string[0];
             this.txbSearch.Location = new System.Drawing.Point(649, 9);
-            this.txbSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txbSearch.MaxLength = 32767;
             this.txbSearch.MinimumSize = new System.Drawing.Size(133, 43);
             this.txbSearch.Modified = false;
@@ -664,7 +667,7 @@
             this.Controls.Add(this.pnRight);
             this.Controls.Add(this.pnLeft);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(1683, 692);
             this.MinimumSize = new System.Drawing.Size(1683, 692);
             this.Name = "ProductUsrCtrl";

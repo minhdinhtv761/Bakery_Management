@@ -149,7 +149,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\DataProvider.cs" />
+    <Compile Include="DAL\EmployeeDAL.cs" />
     <Compile Include="DAL\FoodDAL.cs" />
+    <Compile Include="DTO\EmployeeDTO.cs" />
     <Compile Include="DTO\FoodDTO.cs" />
     <Compile Include="FormAccount.cs">
       <SubType>Form</SubType>

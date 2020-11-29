@@ -61,5 +61,45 @@ namespace GUI.UsrCtrlManage
             txbName.Text = bunifuDataGridView1.SelectedCells[1].Value.ToString();
             txbPrice.Text = bunifuDataGridView1.SelectedCells[3].Value.ToString();
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string maMA = txbID.Text;
+            string tenMA = txbName.Text;
+            int donGia = int.Parse(txbPrice.Text);
+            AddFood(maMA, tenMA,donGia);
+        }
+
+        void AddFood(string maMA, string tenMA, int donGia)
+        {
+            FoodDAL.Instance.AddFood(maMA, tenMA, donGia);
+            this.bunifuDataGridView1.Controls.Clear();
+            LoadDataGridView();
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            string id = txbID.Text;
+            DeleteFood(id);         
+        }
+
+        void DeleteFood(string id)
+        {
+            FoodDAL.Instance.DeleteFood(id);
+            this.bunifuDataGridView1.Controls.Clear();
+            LoadDataGridView();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        void AddFood(string maMa, string tenMa, int donGia, string DVT, string maLoai)
+        {
+            FoodDAL.Instance.EditFood(maMa, tenMa, donGia, DVT, maLoai);
+            this.bunifuDataGridView1.Controls.Clear();
+            LoadDataGridView();
+        }
     }
 }

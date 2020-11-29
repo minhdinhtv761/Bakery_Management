@@ -6,6 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using GUI.DAL;
+using GUI.DTO;
+using GUI.UsrCtrlManage;
 
 namespace GUI
 {
@@ -14,6 +17,11 @@ namespace GUI
         public FormAccount()
         {
             InitializeComponent();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

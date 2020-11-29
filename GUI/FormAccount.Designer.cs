@@ -41,12 +41,12 @@
             this.lbRePass = new System.Windows.Forms.Label();
             this.lbPass = new System.Windows.Forms.Label();
             this.pnBtn = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnCancel = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnSave = new Bunifu.Framework.UI.BunifuFlatButton();
             this.elipseBtnUpdate = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.elipseBtnDel = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.elipseBtnSave = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.lbInfo = new System.Windows.Forms.Label();
-            this.btnCancel = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnSave = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             this.pnBtn.SuspendLayout();
             this.SuspendLayout();
@@ -66,9 +66,10 @@
             this.panel1.Controls.Add(this.txbOldPass);
             this.panel1.Controls.Add(this.lbRePass);
             this.panel1.Controls.Add(this.lbPass);
-            this.panel1.Location = new System.Drawing.Point(35, 65);
+            this.panel1.Location = new System.Drawing.Point(47, 80);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(405, 175);
+            this.panel1.Size = new System.Drawing.Size(540, 215);
             this.panel1.TabIndex = 0;
             // 
             // dropDownPosition
@@ -85,12 +86,13 @@
         "--Selection--",
         "Staff",
         "Manager"};
-            this.dropDownPosition.Location = new System.Drawing.Point(162, 124);
+            this.dropDownPosition.Location = new System.Drawing.Point(216, 153);
+            this.dropDownPosition.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.dropDownPosition.Name = "dropDownPosition";
             this.dropDownPosition.NomalColor = System.Drawing.SystemColors.Control;
             this.dropDownPosition.onHoverColor = System.Drawing.Color.White;
             this.dropDownPosition.selectedIndex = 0;
-            this.dropDownPosition.Size = new System.Drawing.Size(220, 34);
+            this.dropDownPosition.Size = new System.Drawing.Size(293, 42);
             this.dropDownPosition.TabIndex = 46;
             // 
             // lbPosition
@@ -98,9 +100,10 @@
             this.lbPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbPosition.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbPosition.Location = new System.Drawing.Point(3, 124);
+            this.lbPosition.Location = new System.Drawing.Point(4, 153);
+            this.lbPosition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPosition.Name = "lbPosition";
-            this.lbPosition.Size = new System.Drawing.Size(152, 34);
+            this.lbPosition.Size = new System.Drawing.Size(203, 42);
             this.lbPosition.TabIndex = 45;
             this.lbPosition.Text = "Position";
             this.lbPosition.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -120,11 +123,11 @@
             this.txbID.LineIdleColor = System.Drawing.Color.Gray;
             this.txbID.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbID.LineThickness = 1;
-            this.txbID.Location = new System.Drawing.Point(162, 0);
-            this.txbID.Margin = new System.Windows.Forms.Padding(4);
+            this.txbID.Location = new System.Drawing.Point(216, 0);
+            this.txbID.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txbID.MaxLength = 32767;
             this.txbID.Name = "txbID";
-            this.txbID.Size = new System.Drawing.Size(219, 34);
+            this.txbID.Size = new System.Drawing.Size(292, 42);
             this.txbID.TabIndex = 41;
             this.txbID.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -133,9 +136,10 @@
             this.lbUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbUser.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbUser.Location = new System.Drawing.Point(3, 0);
+            this.lbUser.Location = new System.Drawing.Point(4, 0);
+            this.lbUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(152, 34);
+            this.lbUser.Size = new System.Drawing.Size(203, 42);
             this.lbUser.TabIndex = 37;
             this.lbUser.Text = "User name";
             this.lbUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -155,11 +159,11 @@
             this.txbRePass.LineIdleColor = System.Drawing.Color.Gray;
             this.txbRePass.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbRePass.LineThickness = 1;
-            this.txbRePass.Location = new System.Drawing.Point(162, 83);
-            this.txbRePass.Margin = new System.Windows.Forms.Padding(4);
+            this.txbRePass.Location = new System.Drawing.Point(216, 102);
+            this.txbRePass.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txbRePass.MaxLength = 32767;
             this.txbRePass.Name = "txbRePass";
-            this.txbRePass.Size = new System.Drawing.Size(219, 34);
+            this.txbRePass.Size = new System.Drawing.Size(292, 42);
             this.txbRePass.TabIndex = 44;
             this.txbRePass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -178,11 +182,11 @@
             this.txbOldPass.LineIdleColor = System.Drawing.Color.Gray;
             this.txbOldPass.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbOldPass.LineThickness = 1;
-            this.txbOldPass.Location = new System.Drawing.Point(162, 41);
-            this.txbOldPass.Margin = new System.Windows.Forms.Padding(4);
+            this.txbOldPass.Location = new System.Drawing.Point(216, 50);
+            this.txbOldPass.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txbOldPass.MaxLength = 32767;
             this.txbOldPass.Name = "txbOldPass";
-            this.txbOldPass.Size = new System.Drawing.Size(219, 34);
+            this.txbOldPass.Size = new System.Drawing.Size(292, 42);
             this.txbOldPass.TabIndex = 42;
             this.txbOldPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -191,9 +195,10 @@
             this.lbRePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbRePass.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRePass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbRePass.Location = new System.Drawing.Point(3, 83);
+            this.lbRePass.Location = new System.Drawing.Point(4, 102);
+            this.lbRePass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbRePass.Name = "lbRePass";
-            this.lbRePass.Size = new System.Drawing.Size(152, 34);
+            this.lbRePass.Size = new System.Drawing.Size(203, 42);
             this.lbRePass.TabIndex = 40;
             this.lbRePass.Text = "Re-enter password";
             this.lbRePass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -203,9 +208,10 @@
             this.lbPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbPass.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbPass.Location = new System.Drawing.Point(3, 42);
+            this.lbPass.Location = new System.Drawing.Point(4, 52);
+            this.lbPass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPass.Name = "lbPass";
-            this.lbPass.Size = new System.Drawing.Size(152, 34);
+            this.lbPass.Size = new System.Drawing.Size(203, 42);
             this.lbPass.TabIndex = 38;
             this.lbPass.Text = "Password";
             this.lbPass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -214,37 +220,11 @@
             // 
             this.pnBtn.Controls.Add(this.btnCancel);
             this.pnBtn.Controls.Add(this.btnSave);
-            this.pnBtn.Location = new System.Drawing.Point(123, 262);
+            this.pnBtn.Location = new System.Drawing.Point(164, 322);
+            this.pnBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnBtn.Name = "pnBtn";
-            this.pnBtn.Size = new System.Drawing.Size(215, 53);
+            this.pnBtn.Size = new System.Drawing.Size(287, 65);
             this.pnBtn.TabIndex = 3;
-            // 
-            // elipseBtnUpdate
-            // 
-            this.elipseBtnUpdate.ElipseRadius = 20;
-            // 
-            // elipseBtnDel
-            // 
-            this.elipseBtnDel.ElipseRadius = 20;
-            this.elipseBtnDel.TargetControl = this.btnCancel;
-            // 
-            // elipseBtnSave
-            // 
-            this.elipseBtnSave.ElipseRadius = 20;
-            this.elipseBtnSave.TargetControl = this.btnSave;
-            // 
-            // lbInfo
-            // 
-            this.lbInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbInfo.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
-            this.lbInfo.Location = new System.Drawing.Point(12, 9);
-            this.lbInfo.Name = "lbInfo";
-            this.lbInfo.Size = new System.Drawing.Size(227, 34);
-            this.lbInfo.TabIndex = 12;
-            this.lbInfo.Text = "Create a new account";
-            this.lbInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnCancel
             // 
@@ -276,12 +256,13 @@
             this.btnCancel.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
             this.btnCancel.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCancel.selected = true;
-            this.btnCancel.Size = new System.Drawing.Size(102, 50);
+            this.btnCancel.Size = new System.Drawing.Size(136, 62);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancel.Textcolor = System.Drawing.Color.White;
             this.btnCancel.TextFont = new System.Drawing.Font("Roboto Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -306,30 +287,60 @@
             this.btnSave.IconVisible = true;
             this.btnSave.IconZoom = 30D;
             this.btnSave.IsTab = false;
-            this.btnSave.Location = new System.Drawing.Point(105, 1);
+            this.btnSave.Location = new System.Drawing.Point(139, 1);
             this.btnSave.Margin = new System.Windows.Forms.Padding(1);
             this.btnSave.Name = "btnSave";
             this.btnSave.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
             this.btnSave.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(72)))), ((int)(((byte)(107)))));
             this.btnSave.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSave.selected = true;
-            this.btnSave.Size = new System.Drawing.Size(105, 50);
+            this.btnSave.Size = new System.Drawing.Size(140, 62);
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = " Save";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.Textcolor = System.Drawing.Color.White;
             this.btnSave.TextFont = new System.Drawing.Font("Roboto Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // elipseBtnUpdate
+            // 
+            this.elipseBtnUpdate.ElipseRadius = 20;
+            this.elipseBtnUpdate.TargetControl = this;
+            // 
+            // elipseBtnDel
+            // 
+            this.elipseBtnDel.ElipseRadius = 20;
+            this.elipseBtnDel.TargetControl = this.btnCancel;
+            // 
+            // elipseBtnSave
+            // 
+            this.elipseBtnSave.ElipseRadius = 20;
+            this.elipseBtnSave.TargetControl = this.btnSave;
+            // 
+            // lbInfo
+            // 
+            this.lbInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbInfo.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
+            this.lbInfo.Location = new System.Drawing.Point(16, 11);
+            this.lbInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbInfo.Name = "lbInfo";
+            this.lbInfo.Size = new System.Drawing.Size(303, 42);
+            this.lbInfo.TabIndex = 12;
+            this.lbInfo.Text = "Create a new account";
+            this.lbInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // FormAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 327);
+            this.ClientSize = new System.Drawing.Size(645, 402);
             this.Controls.Add(this.lbInfo);
             this.Controls.Add(this.pnBtn);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(780, 450);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximumSize = new System.Drawing.Size(1040, 554);
             this.Name = "FormAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormAccount";

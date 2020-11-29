@@ -38,5 +38,24 @@ namespace GUI.DAL
             return foods;
         }
 
+        public void DeleteFood(string id)
+        {
+            string query = string.Format("DELETE FROM MONAN WHERE MAMA = '{0}'", id);
+
+            DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public void AddFood(string maMA, string tenMA,int donGia)
+        {
+            string query = string.Format("insert into MONAN values ('{0}','{1}','{2}')", maMA, tenMA, donGia);
+
+            DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public void EditFood(string maMa,string tenMa,int donGia,string DVT,string maLoai)
+        {
+            string query = string.Format("update MONAN set ('{0}','{1}','{2}','{3}','{4}')", maMa, tenMa, donGia, DVT, maLoai);
+            DataProvider.Instance.ExecuteQuery(query);
+        }
     }
 }
