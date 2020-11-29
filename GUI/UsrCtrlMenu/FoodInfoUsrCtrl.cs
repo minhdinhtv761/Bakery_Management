@@ -11,9 +11,17 @@ namespace GUI.UsrCtrlMenu
 {
     public partial class FoodInfoUsrCtrl : UserControl
     {
-        public FoodInfoUsrCtrl()
+        private string maMA;
+        private int donGia;
+
+        public string MaMA { get => maMA; set => maMA = value; }
+        public int DonGia { get => donGia; set => donGia = value; }
+
+        public FoodInfoUsrCtrl(string maMA, int donGia)
         {
             InitializeComponent();
+            this.lbName.Text = maMA;
+            this.lbPrice.Text = donGia.ToString();
         }
         public Image PicFood
         {

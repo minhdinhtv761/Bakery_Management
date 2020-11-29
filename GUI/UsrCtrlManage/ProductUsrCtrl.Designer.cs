@@ -57,36 +57,37 @@
             this.lbName = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
             this.pnBtn = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnDel = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnUpdate = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnSave = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnPic = new System.Windows.Forms.Panel();
             this.lbAdding = new System.Windows.Forms.Label();
+            this.picFood = new System.Windows.Forms.PictureBox();
             this.elipsepnRight = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txbSearch = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.elipsePnLeft = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.elipseBtnSave = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.elipseBtnUpdate = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.elipseBtnDel = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.btnDel = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnUpdate = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnSave = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.picFood = new System.Windows.Forms.PictureBox();
-            this.txbSearch = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.pnLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).BeginInit();
             this.pnRight.SuspendLayout();
             this.pnInfo.SuspendLayout();
             this.pnBtn.SuspendLayout();
             this.pnPic.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFood)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnLeft
             // 
             this.pnLeft.BackColor = System.Drawing.SystemColors.Control;
             this.pnLeft.Controls.Add(this.bunifuDataGridView1);
-            this.pnLeft.Location = new System.Drawing.Point(6, 49);
+            this.pnLeft.Location = new System.Drawing.Point(8, 60);
+            this.pnLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnLeft.Name = "pnLeft";
-            this.pnLeft.Size = new System.Drawing.Size(715, 506);
+            this.pnLeft.Size = new System.Drawing.Size(953, 623);
             this.pnLeft.TabIndex = 0;
             // 
             // bunifuDataGridView1
@@ -143,16 +144,20 @@
             this.bunifuDataGridView1.EnableHeadersVisualStyles = false;
             this.bunifuDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.bunifuDataGridView1.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuDataGridView1.HeaderBgColor = System.Drawing.Color.Empty;
             this.bunifuDataGridView1.HeaderForeColor = System.Drawing.Color.White;
             this.bunifuDataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.bunifuDataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuDataGridView1.Name = "bunifuDataGridView1";
             this.bunifuDataGridView1.ReadOnly = true;
             this.bunifuDataGridView1.RowHeadersVisible = false;
+            this.bunifuDataGridView1.RowHeadersWidth = 51;
             this.bunifuDataGridView1.RowTemplate.Height = 40;
             this.bunifuDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bunifuDataGridView1.Size = new System.Drawing.Size(715, 506);
+            this.bunifuDataGridView1.Size = new System.Drawing.Size(953, 623);
             this.bunifuDataGridView1.TabIndex = 0;
             this.bunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.bunifuDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuDataGridView1_CellClick);
             // 
             // id
             // 
@@ -161,14 +166,17 @@
             this.id.DefaultCellStyle = dataGridViewCellStyle3;
             this.id.FillWeight = 137.6729F;
             this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
             this.id.Name = "id";
             this.id.ReadOnly = true;
+            this.id.Width = 125;
             // 
             // name
             // 
             this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.name.FillWeight = 65.65144F;
             this.name.HeaderText = "Iteam name";
+            this.name.MinimumWidth = 6;
             this.name.Name = "name";
             this.name.ReadOnly = true;
             this.name.Width = 180;
@@ -178,8 +186,10 @@
             this.category.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.category.FillWeight = 145.7886F;
             this.category.HeaderText = "Category";
+            this.category.MinimumWidth = 6;
             this.category.Name = "category";
             this.category.ReadOnly = true;
+            this.category.Width = 125;
             // 
             // price
             // 
@@ -188,6 +198,7 @@
             this.price.DefaultCellStyle = dataGridViewCellStyle4;
             this.price.FillWeight = 50.887F;
             this.price.HeaderText = "Price";
+            this.price.MinimumWidth = 6;
             this.price.Name = "price";
             this.price.ReadOnly = true;
             // 
@@ -198,9 +209,10 @@
             this.pnRight.Controls.Add(this.pnInfo);
             this.pnRight.Controls.Add(this.pnBtn);
             this.pnRight.Controls.Add(this.pnPic);
-            this.pnRight.Location = new System.Drawing.Point(729, 8);
+            this.pnRight.Location = new System.Drawing.Point(972, 10);
+            this.pnRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnRight.Name = "pnRight";
-            this.pnRight.Size = new System.Drawing.Size(525, 547);
+            this.pnRight.Size = new System.Drawing.Size(700, 673);
             this.pnRight.TabIndex = 2;
             // 
             // label1
@@ -209,9 +221,10 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
-            this.label1.Location = new System.Drawing.Point(15, 6);
+            this.label1.Location = new System.Drawing.Point(20, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 34);
+            this.label1.Size = new System.Drawing.Size(257, 42);
             this.label1.TabIndex = 11;
             this.label1.Text = "Infomation";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -226,9 +239,10 @@
             this.pnInfo.Controls.Add(this.lbCategory);
             this.pnInfo.Controls.Add(this.lbName);
             this.pnInfo.Controls.Add(this.lbID);
-            this.pnInfo.Location = new System.Drawing.Point(197, 55);
+            this.pnInfo.Location = new System.Drawing.Point(263, 68);
+            this.pnInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnInfo.Name = "pnInfo";
-            this.pnInfo.Size = new System.Drawing.Size(316, 200);
+            this.pnInfo.Size = new System.Drawing.Size(421, 246);
             this.pnInfo.TabIndex = 3;
             // 
             // txbPrice
@@ -246,11 +260,11 @@
             this.txbPrice.LineIdleColor = System.Drawing.Color.Gray;
             this.txbPrice.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbPrice.LineThickness = 1;
-            this.txbPrice.Location = new System.Drawing.Point(93, 138);
-            this.txbPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.txbPrice.Location = new System.Drawing.Point(124, 170);
+            this.txbPrice.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txbPrice.MaxLength = 32767;
             this.txbPrice.Name = "txbPrice";
-            this.txbPrice.Size = new System.Drawing.Size(219, 29);
+            this.txbPrice.Size = new System.Drawing.Size(292, 36);
             this.txbPrice.TabIndex = 17;
             this.txbPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txbPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPrice_KeyPress);
@@ -267,12 +281,13 @@
             this.bunifuDropdown1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
             this.bunifuDropdown1.items = new string[] {
         "--Selection--"};
-            this.bunifuDropdown1.Location = new System.Drawing.Point(92, 89);
+            this.bunifuDropdown1.Location = new System.Drawing.Point(123, 110);
+            this.bunifuDropdown1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.bunifuDropdown1.Name = "bunifuDropdown1";
             this.bunifuDropdown1.NomalColor = System.Drawing.SystemColors.Control;
             this.bunifuDropdown1.onHoverColor = System.Drawing.Color.White;
             this.bunifuDropdown1.selectedIndex = 0;
-            this.bunifuDropdown1.Size = new System.Drawing.Size(220, 34);
+            this.bunifuDropdown1.Size = new System.Drawing.Size(293, 42);
             this.bunifuDropdown1.TabIndex = 16;
             // 
             // txbName
@@ -290,11 +305,11 @@
             this.txbName.LineIdleColor = System.Drawing.Color.Gray;
             this.txbName.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbName.LineThickness = 1;
-            this.txbName.Location = new System.Drawing.Point(93, 45);
-            this.txbName.Margin = new System.Windows.Forms.Padding(4);
+            this.txbName.Location = new System.Drawing.Point(124, 55);
+            this.txbName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txbName.MaxLength = 32767;
             this.txbName.Name = "txbName";
-            this.txbName.Size = new System.Drawing.Size(219, 29);
+            this.txbName.Size = new System.Drawing.Size(292, 36);
             this.txbName.TabIndex = 15;
             this.txbName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -313,11 +328,11 @@
             this.txbID.LineIdleColor = System.Drawing.Color.Gray;
             this.txbID.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbID.LineThickness = 1;
-            this.txbID.Location = new System.Drawing.Point(93, 5);
-            this.txbID.Margin = new System.Windows.Forms.Padding(4);
+            this.txbID.Location = new System.Drawing.Point(124, 6);
+            this.txbID.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txbID.MaxLength = 32767;
             this.txbID.Name = "txbID";
-            this.txbID.Size = new System.Drawing.Size(219, 30);
+            this.txbID.Size = new System.Drawing.Size(292, 37);
             this.txbID.TabIndex = 14;
             this.txbID.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -326,9 +341,10 @@
             this.lbPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbPrice.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbPrice.Location = new System.Drawing.Point(3, 133);
+            this.lbPrice.Location = new System.Drawing.Point(4, 164);
+            this.lbPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPrice.Name = "lbPrice";
-            this.lbPrice.Size = new System.Drawing.Size(83, 34);
+            this.lbPrice.Size = new System.Drawing.Size(111, 42);
             this.lbPrice.TabIndex = 13;
             this.lbPrice.Text = "Price";
             this.lbPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -338,9 +354,10 @@
             this.lbCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbCategory.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbCategory.Location = new System.Drawing.Point(3, 89);
+            this.lbCategory.Location = new System.Drawing.Point(4, 110);
+            this.lbCategory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCategory.Name = "lbCategory";
-            this.lbCategory.Size = new System.Drawing.Size(83, 34);
+            this.lbCategory.Size = new System.Drawing.Size(111, 42);
             this.lbCategory.TabIndex = 12;
             this.lbCategory.Text = "Category";
             this.lbCategory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -350,9 +367,10 @@
             this.lbName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbName.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbName.Location = new System.Drawing.Point(3, 45);
+            this.lbName.Location = new System.Drawing.Point(4, 55);
+            this.lbName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(83, 34);
+            this.lbName.Size = new System.Drawing.Size(111, 42);
             this.lbName.TabIndex = 11;
             this.lbName.Text = "Item name";
             this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -362,9 +380,10 @@
             this.lbID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbID.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbID.Location = new System.Drawing.Point(3, 1);
+            this.lbID.Location = new System.Drawing.Point(4, 1);
+            this.lbID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(83, 34);
+            this.lbID.Size = new System.Drawing.Size(111, 42);
             this.lbID.TabIndex = 10;
             this.lbID.Text = "ID";
             this.lbID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -374,64 +393,11 @@
             this.pnBtn.Controls.Add(this.btnDel);
             this.pnBtn.Controls.Add(this.btnUpdate);
             this.pnBtn.Controls.Add(this.btnSave);
-            this.pnBtn.Location = new System.Drawing.Point(197, 271);
+            this.pnBtn.Location = new System.Drawing.Point(263, 334);
+            this.pnBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnBtn.Name = "pnBtn";
-            this.pnBtn.Size = new System.Drawing.Size(316, 53);
+            this.pnBtn.Size = new System.Drawing.Size(421, 65);
             this.pnBtn.TabIndex = 2;
-            // 
-            // pnPic
-            // 
-            this.pnPic.Controls.Add(this.lbAdding);
-            this.pnPic.Controls.Add(this.picFood);
-            this.pnPic.Location = new System.Drawing.Point(19, 55);
-            this.pnPic.Name = "pnPic";
-            this.pnPic.Size = new System.Drawing.Size(172, 200);
-            this.pnPic.TabIndex = 0;
-            // 
-            // lbAdding
-            // 
-            this.lbAdding.AutoSize = true;
-            this.lbAdding.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAdding.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lbAdding.Location = new System.Drawing.Point(35, 64);
-            this.lbAdding.Name = "lbAdding";
-            this.lbAdding.Size = new System.Drawing.Size(94, 15);
-            this.lbAdding.TabIndex = 1;
-            this.lbAdding.Text = "+ Adding image";
-            this.lbAdding.Visible = false;
-            // 
-            // elipsepnRight
-            // 
-            this.elipsepnRight.ElipseRadius = 30;
-            this.elipsepnRight.TargetControl = this.pnRight;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.txbSearch);
-            this.panel1.Location = new System.Drawing.Point(0, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(721, 47);
-            this.panel1.TabIndex = 3;
-            // 
-            // elipsePnLeft
-            // 
-            this.elipsePnLeft.ElipseRadius = 30;
-            this.elipsePnLeft.TargetControl = this.pnLeft;
-            // 
-            // elipseBtnSave
-            // 
-            this.elipseBtnSave.ElipseRadius = 20;
-            this.elipseBtnSave.TargetControl = this.btnSave;
-            // 
-            // elipseBtnUpdate
-            // 
-            this.elipseBtnUpdate.ElipseRadius = 20;
-            this.elipseBtnUpdate.TargetControl = this.btnUpdate;
-            // 
-            // elipseBtnDel
-            // 
-            this.elipseBtnDel.ElipseRadius = 20;
-            this.elipseBtnDel.TargetControl = this.btnDel;
             // 
             // btnDel
             // 
@@ -463,7 +429,7 @@
             this.btnDel.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
             this.btnDel.OnHoverTextColor = System.Drawing.Color.White;
             this.btnDel.selected = true;
-            this.btnDel.Size = new System.Drawing.Size(102, 50);
+            this.btnDel.Size = new System.Drawing.Size(136, 62);
             this.btnDel.TabIndex = 3;
             this.btnDel.Text = " Delete";
             this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -493,14 +459,14 @@
             this.btnUpdate.IconVisible = true;
             this.btnUpdate.IconZoom = 30D;
             this.btnUpdate.IsTab = false;
-            this.btnUpdate.Location = new System.Drawing.Point(105, 1);
+            this.btnUpdate.Location = new System.Drawing.Point(139, 1);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(1);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
             this.btnUpdate.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.btnUpdate.OnHoverTextColor = System.Drawing.Color.White;
             this.btnUpdate.selected = true;
-            this.btnUpdate.Size = new System.Drawing.Size(114, 50);
+            this.btnUpdate.Size = new System.Drawing.Size(152, 62);
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -530,32 +496,70 @@
             this.btnSave.IconVisible = true;
             this.btnSave.IconZoom = 30D;
             this.btnSave.IsTab = false;
-            this.btnSave.Location = new System.Drawing.Point(221, 1);
+            this.btnSave.Location = new System.Drawing.Point(293, 1);
             this.btnSave.Margin = new System.Windows.Forms.Padding(1);
             this.btnSave.Name = "btnSave";
             this.btnSave.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
             this.btnSave.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.btnSave.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSave.selected = true;
-            this.btnSave.Size = new System.Drawing.Size(93, 50);
+            this.btnSave.Size = new System.Drawing.Size(124, 62);
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = " Save";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.Textcolor = System.Drawing.Color.White;
             this.btnSave.TextFont = new System.Drawing.Font("Roboto Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // pnPic
+            // 
+            this.pnPic.Controls.Add(this.lbAdding);
+            this.pnPic.Controls.Add(this.picFood);
+            this.pnPic.Location = new System.Drawing.Point(25, 68);
+            this.pnPic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnPic.Name = "pnPic";
+            this.pnPic.Size = new System.Drawing.Size(229, 246);
+            this.pnPic.TabIndex = 0;
+            // 
+            // lbAdding
+            // 
+            this.lbAdding.AutoSize = true;
+            this.lbAdding.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAdding.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lbAdding.Location = new System.Drawing.Point(47, 79);
+            this.lbAdding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbAdding.Name = "lbAdding";
+            this.lbAdding.Size = new System.Drawing.Size(128, 20);
+            this.lbAdding.TabIndex = 1;
+            this.lbAdding.Text = "+ Adding image";
+            this.lbAdding.Visible = false;
+            // 
             // picFood
             // 
             this.picFood.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picFood.Image = ((System.Drawing.Image)(resources.GetObject("picFood.Image")));
             this.picFood.Location = new System.Drawing.Point(0, 0);
+            this.picFood.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picFood.Name = "picFood";
-            this.picFood.Size = new System.Drawing.Size(172, 167);
+            this.picFood.Size = new System.Drawing.Size(229, 206);
             this.picFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picFood.TabIndex = 0;
             this.picFood.TabStop = false;
             this.picFood.MouseLeave += new System.EventHandler(this.picFood_MouseLeave);
             this.picFood.MouseHover += new System.EventHandler(this.picFood_MouseHover);
+            // 
+            // elipsepnRight
+            // 
+            this.elipsepnRight.ElipseRadius = 30;
+            this.elipsepnRight.TargetControl = this.pnRight;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txbSearch);
+            this.panel1.Location = new System.Drawing.Point(0, 1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(961, 58);
+            this.panel1.TabIndex = 3;
             // 
             // txbSearch
             // 
@@ -585,9 +589,10 @@
             this.txbSearch.IconRight = null;
             this.txbSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txbSearch.Lines = new string[0];
-            this.txbSearch.Location = new System.Drawing.Point(487, 7);
+            this.txbSearch.Location = new System.Drawing.Point(649, 9);
+            this.txbSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbSearch.MaxLength = 32767;
-            this.txbSearch.MinimumSize = new System.Drawing.Size(100, 35);
+            this.txbSearch.MinimumSize = new System.Drawing.Size(133, 43);
             this.txbSearch.Modified = false;
             this.txbSearch.Multiline = false;
             this.txbSearch.Name = "txbSearch";
@@ -620,7 +625,7 @@
             this.txbSearch.SelectionLength = 0;
             this.txbSearch.SelectionStart = 0;
             this.txbSearch.ShortcutsEnabled = true;
-            this.txbSearch.Size = new System.Drawing.Size(234, 35);
+            this.txbSearch.Size = new System.Drawing.Size(312, 43);
             this.txbSearch.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.txbSearch.TabIndex = 21;
             this.txbSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -631,18 +636,39 @@
             this.txbSearch.UseSystemPasswordChar = false;
             this.txbSearch.WordWrap = true;
             // 
+            // elipsePnLeft
+            // 
+            this.elipsePnLeft.ElipseRadius = 30;
+            this.elipsePnLeft.TargetControl = this.pnLeft;
+            // 
+            // elipseBtnSave
+            // 
+            this.elipseBtnSave.ElipseRadius = 20;
+            this.elipseBtnSave.TargetControl = this.btnSave;
+            // 
+            // elipseBtnUpdate
+            // 
+            this.elipseBtnUpdate.ElipseRadius = 20;
+            this.elipseBtnUpdate.TargetControl = this.btnUpdate;
+            // 
+            // elipseBtnDel
+            // 
+            this.elipseBtnDel.ElipseRadius = 20;
+            this.elipseBtnDel.TargetControl = this.btnDel;
+            // 
             // ProductUsrCtrl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.pnRight);
             this.Controls.Add(this.pnLeft);
             this.Controls.Add(this.panel1);
-            this.MaximumSize = new System.Drawing.Size(1262, 562);
-            this.MinimumSize = new System.Drawing.Size(1262, 562);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximumSize = new System.Drawing.Size(1683, 692);
+            this.MinimumSize = new System.Drawing.Size(1683, 692);
             this.Name = "ProductUsrCtrl";
-            this.Size = new System.Drawing.Size(1262, 562);
+            this.Size = new System.Drawing.Size(1683, 692);
             this.pnLeft.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).EndInit();
             this.pnRight.ResumeLayout(false);
@@ -650,8 +676,8 @@
             this.pnBtn.ResumeLayout(false);
             this.pnPic.ResumeLayout(false);
             this.pnPic.PerformLayout();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picFood)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

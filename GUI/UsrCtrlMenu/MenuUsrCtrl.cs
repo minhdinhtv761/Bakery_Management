@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using Bunifu.UI.WinForms.BunifuButton;
 using System.Windows.Forms;
+using GUI.DTO;
+using GUI.DAL;
 
 namespace GUI.UsrCtrlMenu
 {
@@ -49,20 +51,64 @@ namespace GUI.UsrCtrlMenu
         private void btnAll_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
+            this.layoutPanel.Controls.Clear();
+            LoadFood();
         }
 
         private void btnOrdered_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
+            this.layoutPanel.Controls.Clear();
+            LoadBread();
         }
 
         private void btnEmpty_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
+            this.layoutPanel.Controls.Clear();
+            LoadCake();
         }
+
+        void LoadCake()
+        {
+            List<FoodDTO> listFood = FoodDAL.Instance.GetFood();
+
+            foreach (FoodDTO item in listFood)
+            {
+
+                FoodInfoUsrCtrl foodInfo = new FoodInfoUsrCtrl(item.TenMA, item.DonGia);
+                if (item.MaLoai == "LOAI02")
+                    this.layoutPanel.Controls.Add(foodInfo);
+            }
+        }
+        void LoadBread()
+        {
+            List<FoodDTO> listFood = FoodDAL.Instance.GetFood();
+
+            foreach (FoodDTO item in listFood)
+            {
+
+                FoodInfoUsrCtrl foodInfo = new FoodInfoUsrCtrl(item.TenMA, item.DonGia);
+                if (item.MaLoai == "LOAI01")
+                    this.layoutPanel.Controls.Add(foodInfo);
+            }
+        }
+        void LoadFood()
+        {
+            List<FoodDTO> listFood = FoodDAL.Instance.GetFood();
+
+            foreach (FoodDTO item in listFood)
+            {
+
+                FoodInfoUsrCtrl foodInfo = new FoodInfoUsrCtrl(item.TenMA, item.DonGia);
+
+                this.layoutPanel.Controls.Add(foodInfo);
+            }
+        }
+
         private void insertFood()
         {
-            FoodInfoUsrCtrl food = new GUI.UsrCtrlMenu.FoodInfoUsrCtrl();
+            /*FoodInfoUsrCtrl food = new GUI.UsrCtrlMenu.FoodInfoUsrCtrl();
             // 
             // food
             // 
@@ -77,7 +123,7 @@ namespace GUI.UsrCtrlMenu
             //
             // end
             //
-            this.layoutPanel.Controls.Add(food);
+            this.layoutPanel.Controls.Add(food);*/
 
         }
     }
