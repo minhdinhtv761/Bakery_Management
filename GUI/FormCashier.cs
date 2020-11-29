@@ -97,7 +97,9 @@ namespace GUI
 
         private void menuSignOut_Click(object sender, EventArgs e)
         {
-
+            Form formLogin = new FormLogin();
+            this.Close();
+            formLogin.Show();
         }
 
         private void more_Click(object sender, EventArgs e)
