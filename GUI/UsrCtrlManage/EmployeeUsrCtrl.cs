@@ -68,6 +68,9 @@ namespace GUI.UsrCtrlManage
                 newRow.Cells[3].Value = item.SoDT1;
                 bunifuDataGridView1.Rows.Add(newRow);
             }
+            txbID.Text = bunifuDataGridView1.Rows[0].Cells[0].Value.ToString();
+            txbName.Text = bunifuDataGridView1.Rows[0].Cells[1].Value.ToString();
+            txbPhone.Text = bunifuDataGridView1.Rows[0].Cells[3].Value.ToString();
         }
 
         private void bunifuDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -86,19 +89,45 @@ namespace GUI.UsrCtrlManage
         void deleteEmployee(string id)
         {
             EmployeeDAL.Instance.DeleteEmployee(id);
-            this.bunifuDataGridView1.Controls.Clear();
+            bunifuDataGridView1.Rows.Clear();
             LoadDataGridView();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            /*string Manv = txbID.Text;
+            string Tennv = txbName.Text;
+            string Sodt = txbPhone.Text;
+            string Ngvl = dateBirth.ToString();
+            string Chucvu = dropDownPosition.selectedValue;
+            AddEmployee(Manv, Tennv, Sodt, Ngvl, Chucvu);*/
         }
 
-        void AddEmployee(string MaNV, string TenNV, string SoDT, DateTime NgVL, int ChucVu)
+        void AddEmployee(string MaNV, string TenNV, string SoDT, DateTime NgVL, string ChucVu)
         {
             EmployeeDAL.Instance.AddEmployee(MaNV, TenNV, SoDT, NgVL, ChucVu);
-            this.bunifuDataGridView1.Controls.Clear();
+            bunifuDataGridView1.Rows.Clear();
+            LoadDataGridView();
+        }
+
+        string getLink()
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                return open.FileName;
+            }
+            else
+            {
+                return "";
+            }
+        }
+
+        private void btnAddPic_Click(object sender, EventArgs e)
+        {
+            string link = this.getLink();
+            picUser.Image = new Bitmap(link);
         }
     }
 }

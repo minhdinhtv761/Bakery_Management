@@ -46,9 +46,9 @@ namespace GUI.DAL
             DataProvider.Instance.ExecuteQuery(query);
         }
 
-        public void AddEmployee(string MaNV,string TenNV,string SoDT,DateTime NgVL,int ChucVu)
+        public void AddEmployee(string MaNV,string TenNV,string SoDT,DateTime NgVL,string ChucVu)
         {
-            string query = string.Format("insert into MONAN values ('{0}','{1}','{2}','{3}')", MaNV,TenNV,SoDT,NgVL,ChucVu);
+            string query = string.Format("insert into MONAN (MANV,TENNV,SODT,NGVL,CHUCVU) values ('{0}','{1}','{2}','{3}','{4}')", MaNV,TenNV,SoDT,NgVL,ChucVu);
 
             DataProvider.Instance.ExecuteQuery(query);
         }

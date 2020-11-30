@@ -45,17 +45,19 @@ namespace GUI.DAL
             DataProvider.Instance.ExecuteQuery(query);
         }
 
-        public void AddFood(string maMA, string tenMA,int donGia)
+        public void AddFood(string maMA, string tenMA,int donGia,string DTV,string maLoai)
         {
-            string query = string.Format("insert into MONAN values ('{0}','{1}','{2}')", maMA, tenMA, donGia);
+            string query = string.Format("insert into MONAN (MAMA,TENMA,DONGIA,DVT,MALOAI) values ('{0}','{1}','{2}','{3}','{4}')", maMA, tenMA, donGia.ToString(), DTV, maLoai);
 
             DataProvider.Instance.ExecuteQuery(query);
         }
 
         public void EditFood(string maMa,string tenMa,int donGia,string DVT,string maLoai)
         {
-            string query = string.Format("update MONAN set ('{0}','{1}','{2}','{3}','{4}')", maMa, tenMa, donGia, DVT, maLoai);
+            string query = string.Format("update MONAN set TENMA = '{0}',DONGIA = '{1}' ,DVT = '{2}',MALOAI = '{3}' where MAMA = '{4}'", tenMa, donGia.ToString(), DVT, maLoai,maMa);
             DataProvider.Instance.ExecuteQuery(query);
         }
+
+
     }
 }

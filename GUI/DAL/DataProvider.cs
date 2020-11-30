@@ -46,10 +46,13 @@ namespace GUI.DAL
                             i++;
                         }
                     }
+                    
+
                 }
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
 
                 adapter.Fill(data);
+
 
                 connection.Close();
             }

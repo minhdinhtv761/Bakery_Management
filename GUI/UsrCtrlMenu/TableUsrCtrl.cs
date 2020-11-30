@@ -24,6 +24,7 @@ namespace GUI.UsrCtrlMenu
             bottomBorderBtn.BackColor = Styles.RGBs.pink;
             pnList.Controls.Add(bottomBorderBtn);
             this.btnAll_Click(btnAll, new EventArgs());
+            this.insertTable();
         }
         private void ActivateButton(object senderButton)
         {

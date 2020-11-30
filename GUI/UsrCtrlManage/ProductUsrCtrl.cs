@@ -44,10 +44,14 @@ namespace GUI.UsrCtrlManage
                 newRow.Cells[1].Value = item.TenMA;
                 newRow.Cells[2].Value = item.MaLoai;
                 newRow.Cells[3].Value = item.DonGia;
+                newRow.Cells[4].Value = item.DVT;
                 bunifuDataGridView1.Rows.Add(newRow);
-
             }
-
+            txbID.Text = bunifuDataGridView1.Rows[0].Cells[0].Value.ToString();
+            txbName.Text = bunifuDataGridView1.Rows[0].Cells[1].Value.ToString();
+            txbCategory.Text = bunifuDataGridView1.Rows[0].Cells[2].Value.ToString();
+            txbPrice.Text = bunifuDataGridView1.Rows[0].Cells[3].Value.ToString();
+            txbDVT.Text = bunifuDataGridView1.Rows[0].Cells[4].Value.ToString();
         }
 
         private void picFood_MouseLeave(object sender, EventArgs e)
@@ -57,9 +61,11 @@ namespace GUI.UsrCtrlManage
 
         private void bunifuDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txbID.Text = bunifuDataGridView1.SelectedCells[0].Value.ToString();
-            txbName.Text = bunifuDataGridView1.SelectedCells[1].Value.ToString();
-            txbPrice.Text = bunifuDataGridView1.SelectedCells[3].Value.ToString();
+            txbID.Text = bunifuDataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            txbName.Text = bunifuDataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            txbCategory.Text = bunifuDataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+            txbPrice.Text = bunifuDataGridView1.SelectedRows[0].Cells[3].Value.ToString();
+            txbDVT.Text = bunifuDataGridView1.SelectedRows[0].Cells[4].Value.ToString();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -67,13 +73,15 @@ namespace GUI.UsrCtrlManage
             string maMA = txbID.Text;
             string tenMA = txbName.Text;
             int donGia = int.Parse(txbPrice.Text);
-            AddFood(maMA, tenMA,donGia);
+            string DVT = txbDVT.Text;
+            string maLoai = txbCategory.Text;
+            AddFood(maMA, tenMA, donGia, DVT, maLoai);
         }
 
-        void AddFood(string maMA, string tenMA, int donGia)
+        void AddFood(string maMA, string tenMA, int donGia, string DTV, string maLoai)
         {
-            FoodDAL.Instance.AddFood(maMA, tenMA, donGia);
-            this.bunifuDataGridView1.Controls.Clear();
+            FoodDAL.Instance.AddFood(maMA, tenMA, donGia, DTV, maLoai);
+            bunifuDataGridView1.Rows.Clear();
             LoadDataGridView();
         }
 
@@ -86,20 +94,46 @@ namespace GUI.UsrCtrlManage
         void DeleteFood(string id)
         {
             FoodDAL.Instance.DeleteFood(id);
-            this.bunifuDataGridView1.Controls.Clear();
+            bunifuDataGridView1.Rows.Clear();
             LoadDataGridView();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            string maMA = txbID.Text;
+            string tenMA = txbName.Text;
+            int donGia = int.Parse(txbPrice.Text);
+            string DVT = txbDVT.Text;
+            string maLoai = txbCategory.Text;
+            EditFood(maMA, tenMA, donGia, DVT, maLoai);
         }
 
-        void AddFood(string maMa, string tenMa, int donGia, string DVT, string maLoai)
+        void EditFood(string maMa, string tenMa, int donGia, string DVT, string maLoai)
         {
             FoodDAL.Instance.EditFood(maMa, tenMa, donGia, DVT, maLoai);
-            this.bunifuDataGridView1.Controls.Clear();
+            bunifuDataGridView1.Rows.Clear();
             LoadDataGridView();
+        }
+
+
+        private void btnAddPic_Click(object sender, EventArgs e)
+        {
+            string link = this.getLink();
+            picFood.Image = new Bitmap(link);
+        }
+
+        string getLink()
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                return open.FileName;
+            }
+            else
+            {
+                return "";
+            }
         }
     }
 }
