@@ -45,18 +45,20 @@
             this.pnMain.Controls.Add(this.lbName);
             this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnMain.Location = new System.Drawing.Point(0, 0);
+            this.pnMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnMain.Name = "pnMain";
             this.pnMain.PanelColor = System.Drawing.Color.Transparent;
             this.pnMain.ShadowDept = 2;
             this.pnMain.ShadowTopLeftVisible = false;
-            this.pnMain.Size = new System.Drawing.Size(122, 147);
+            this.pnMain.Size = new System.Drawing.Size(163, 181);
             this.pnMain.TabIndex = 0;
             // 
             // picFood
             // 
             this.picFood.Location = new System.Drawing.Point(0, 0);
+            this.picFood.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picFood.Name = "picFood";
-            this.picFood.Size = new System.Drawing.Size(115, 89);
+            this.picFood.Size = new System.Drawing.Size(153, 110);
             this.picFood.TabIndex = 8;
             this.picFood.TabStop = false;
             this.picFood.Click += new System.EventHandler(this.MousseClick);
@@ -72,10 +74,10 @@
             this.lbPrice.BackColor = System.Drawing.Color.Transparent;
             this.lbPrice.Font = new System.Drawing.Font("Roboto", 10F);
             this.lbPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbPrice.Location = new System.Drawing.Point(1, 116);
+            this.lbPrice.Location = new System.Drawing.Point(1, 143);
             this.lbPrice.Margin = new System.Windows.Forms.Padding(0);
             this.lbPrice.Name = "lbPrice";
-            this.lbPrice.Size = new System.Drawing.Size(115, 25);
+            this.lbPrice.Size = new System.Drawing.Size(153, 31);
             this.lbPrice.TabIndex = 7;
             this.lbPrice.Text = "0";
             this.lbPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -94,10 +96,12 @@
             this.lbName.BackColor = System.Drawing.Color.Transparent;
             this.lbName.Font = new System.Drawing.Font("Roboto", 13F, System.Drawing.FontStyle.Bold);
             this.lbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
-            this.lbName.Location = new System.Drawing.Point(1, 92);
+            this.lbName.Location = new System.Drawing.Point(1, 113);
             this.lbName.Margin = new System.Windows.Forms.Padding(0);
+            this.lbName.MaximumSize = new System.Drawing.Size(153, 30);
+            this.lbName.MinimumSize = new System.Drawing.Size(153, 30);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(115, 24);
+            this.lbName.Size = new System.Drawing.Size(153, 30);
             this.lbName.TabIndex = 6;
             this.lbName.Text = "Item name";
             this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -110,11 +114,12 @@
             // 
             // FoodInfoUsrCtrl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnMain);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FoodInfoUsrCtrl";
-            this.Size = new System.Drawing.Size(122, 147);
+            this.Size = new System.Drawing.Size(163, 181);
             this.pnMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picFood)).EndInit();
             this.ResumeLayout(false);

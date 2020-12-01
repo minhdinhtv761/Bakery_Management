@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategoryUsrCtrl));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
@@ -42,9 +43,11 @@
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnLeft = new System.Windows.Forms.Panel();
             this.bunifuDataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.food = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.elipsepnRight = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pnSearch = new System.Windows.Forms.Panel();
             this.btnCreate = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -52,9 +55,6 @@
             this.elipsePnLeft = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.elipseBtnUpdate = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.elipseBtnDel = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.food = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).BeginInit();
             this.pnSearch.SuspendLayout();
@@ -64,9 +64,10 @@
             // 
             this.pnLeft.BackColor = System.Drawing.SystemColors.Control;
             this.pnLeft.Controls.Add(this.bunifuDataGridView1);
-            this.pnLeft.Location = new System.Drawing.Point(6, 49);
+            this.pnLeft.Location = new System.Drawing.Point(8, 60);
+            this.pnLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnLeft.Name = "pnLeft";
-            this.pnLeft.Size = new System.Drawing.Size(1251, 506);
+            this.pnLeft.Size = new System.Drawing.Size(1668, 623);
             this.pnLeft.TabIndex = 0;
             // 
             // bunifuDataGridView1
@@ -122,8 +123,10 @@
             this.bunifuDataGridView1.EnableHeadersVisualStyles = false;
             this.bunifuDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.bunifuDataGridView1.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuDataGridView1.HeaderBgColor = System.Drawing.Color.Empty;
             this.bunifuDataGridView1.HeaderForeColor = System.Drawing.Color.White;
             this.bunifuDataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.bunifuDataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuDataGridView1.Name = "bunifuDataGridView1";
             this.bunifuDataGridView1.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -135,11 +138,39 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.bunifuDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.bunifuDataGridView1.RowHeadersVisible = false;
+            this.bunifuDataGridView1.RowHeadersWidth = 51;
             this.bunifuDataGridView1.RowTemplate.Height = 40;
             this.bunifuDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bunifuDataGridView1.Size = new System.Drawing.Size(1251, 506);
+            this.bunifuDataGridView1.Size = new System.Drawing.Size(1668, 623);
             this.bunifuDataGridView1.TabIndex = 0;
             this.bunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.id.DefaultCellStyle = dataGridViewCellStyle3;
+            this.id.FillWeight = 137.6729F;
+            this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.HeaderText = "Name";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // food
+            // 
+            this.food.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.food.HeaderText = "Total foods";
+            this.food.MinimumWidth = 6;
+            this.food.Name = "food";
+            this.food.ReadOnly = true;
             // 
             // elipsepnRight
             // 
@@ -151,8 +182,9 @@
             this.pnSearch.Controls.Add(this.btnCreate);
             this.pnSearch.Controls.Add(this.txbSearch);
             this.pnSearch.Location = new System.Drawing.Point(0, 1);
+            this.pnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnSearch.Name = "pnSearch";
-            this.pnSearch.Size = new System.Drawing.Size(1257, 47);
+            this.pnSearch.Size = new System.Drawing.Size(1676, 58);
             this.pnSearch.TabIndex = 3;
             // 
             // btnCreate
@@ -192,7 +224,8 @@
             this.btnCreate.IdleIconLeftImage = null;
             this.btnCreate.IdleIconRightImage = null;
             this.btnCreate.IndicateFocus = false;
-            this.btnCreate.Location = new System.Drawing.Point(1128, 4);
+            this.btnCreate.Location = new System.Drawing.Point(1504, 5);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCreate.Name = "btnCreate";
             stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
             stateProperties1.BorderRadius = 20;
@@ -212,7 +245,7 @@
             stateProperties2.IconLeftImage = null;
             stateProperties2.IconRightImage = null;
             this.btnCreate.OnPressedState = stateProperties2;
-            this.btnCreate.Size = new System.Drawing.Size(126, 40);
+            this.btnCreate.Size = new System.Drawing.Size(168, 49);
             this.btnCreate.TabIndex = 22;
             this.btnCreate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCreate.TextMarginLeft = 0;
@@ -247,9 +280,10 @@
             this.txbSearch.IconRight = null;
             this.txbSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txbSearch.Lines = new string[0];
-            this.txbSearch.Location = new System.Drawing.Point(6, 7);
+            this.txbSearch.Location = new System.Drawing.Point(8, 9);
+            this.txbSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbSearch.MaxLength = 32767;
-            this.txbSearch.MinimumSize = new System.Drawing.Size(100, 35);
+            this.txbSearch.MinimumSize = new System.Drawing.Size(133, 43);
             this.txbSearch.Modified = false;
             this.txbSearch.Multiline = false;
             this.txbSearch.Name = "txbSearch";
@@ -282,7 +316,7 @@
             this.txbSearch.SelectionLength = 0;
             this.txbSearch.SelectionStart = 0;
             this.txbSearch.ShortcutsEnabled = true;
-            this.txbSearch.Size = new System.Drawing.Size(234, 35);
+            this.txbSearch.Size = new System.Drawing.Size(312, 43);
             this.txbSearch.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.txbSearch.TabIndex = 21;
             this.txbSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -292,6 +326,7 @@
             this.txbSearch.TextPlaceholder = "Search...";
             this.txbSearch.UseSystemPasswordChar = false;
             this.txbSearch.WordWrap = true;
+            this.txbSearch.TextChanged += new System.EventHandler(this.txbSearch_TextChanged);
             // 
             // elipsePnLeft
             // 
@@ -308,41 +343,18 @@
             this.elipseBtnDel.ElipseRadius = 20;
             this.elipseBtnDel.TargetControl = this;
             // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.id.DefaultCellStyle = dataGridViewCellStyle3;
-            this.id.FillWeight = 137.6729F;
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name.HeaderText = "Name";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // food
-            // 
-            this.food.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.food.HeaderText = "Total foods";
-            this.food.Name = "food";
-            this.food.ReadOnly = true;
-            // 
             // CategoryUsrCtrl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.pnLeft);
             this.Controls.Add(this.pnSearch);
-            this.MaximumSize = new System.Drawing.Size(1262, 562);
-            this.MinimumSize = new System.Drawing.Size(1262, 562);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximumSize = new System.Drawing.Size(1683, 692);
+            this.MinimumSize = new System.Drawing.Size(1683, 692);
             this.Name = "CategoryUsrCtrl";
-            this.Size = new System.Drawing.Size(1262, 562);
+            this.Size = new System.Drawing.Size(1683, 692);
             this.pnLeft.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).EndInit();
             this.pnSearch.ResumeLayout(false);

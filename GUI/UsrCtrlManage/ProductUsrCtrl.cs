@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using GUI.DAL;
 using GUI.DTO;
+using GUI.UsrCtrlMenu;
 
 namespace GUI.UsrCtrlManage
 {
@@ -135,5 +136,36 @@ namespace GUI.UsrCtrlManage
                 return "";
             }
         }
+
+        private void txbSearch_TextChanged(object sender, EventArgs e)
+        {
+            searchFood(txbSearch.Text);
+        }
+        private void txbSearch_Click(object sender, EventArgs e)
+        {
+            searchFood(txbSearch.Text);
+        }
+
+        public void searchFood(string search)
+        {
+            List<FoodDTO> foods = FoodDAL.Instance.GetFood();
+            this.bunifuDataGridView1.Rows.Clear();
+            foreach(FoodDTO food in foods)
+            {
+                if (food.TenMA.ToLower().Contains(this.txbSearch.Text.ToLower()))
+                {
+                    DataGridViewRow newRow = new DataGridViewRow();
+
+                    newRow.CreateCells(bunifuDataGridView1);
+                    newRow.Cells[0].Value = food.MaMA;
+                    newRow.Cells[1].Value = food.TenMA;
+                    newRow.Cells[2].Value = food.MaLoai;
+                    newRow.Cells[3].Value = food.DonGia;
+                    newRow.Cells[4].Value = food.DVT;
+                    this.bunifuDataGridView1.Rows.Add(newRow);
+                }
+            }
+        }
+
     }
 }

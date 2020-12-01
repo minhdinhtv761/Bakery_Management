@@ -66,18 +66,21 @@ namespace GUI.UsrCtrlManage
                 newRow.Cells[1].Value = item.TenNV1;
                 newRow.Cells[2].Value = item.ChucVu1;
                 newRow.Cells[3].Value = item.SoDT1;
+                newRow.Cells[4].Value = item.NgVL1;
                 bunifuDataGridView1.Rows.Add(newRow);
             }
             txbID.Text = bunifuDataGridView1.Rows[0].Cells[0].Value.ToString();
             txbName.Text = bunifuDataGridView1.Rows[0].Cells[1].Value.ToString();
+            txbdateworking.Text = bunifuDataGridView1.Rows[0].Cells[2].Value.ToString();
             txbPhone.Text = bunifuDataGridView1.Rows[0].Cells[3].Value.ToString();
         }
 
         private void bunifuDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txbID.Text = bunifuDataGridView1.SelectedCells[0].Value.ToString();
-            txbName.Text = bunifuDataGridView1.SelectedCells[1].Value.ToString();
-            txbPhone.Text = bunifuDataGridView1.SelectedCells[3].Value.ToString();
+            txbID.Text = bunifuDataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            txbName.Text = bunifuDataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            txbdateworking.Text = bunifuDataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+            txbPhone.Text = bunifuDataGridView1.SelectedRows[0].Cells[3].Value.ToString();
         }
 
         private void btnDel_Click(object sender, EventArgs e)
@@ -95,15 +98,15 @@ namespace GUI.UsrCtrlManage
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            /*string Manv = txbID.Text;
+            string Manv = txbID.Text;
             string Tennv = txbName.Text;
             string Sodt = txbPhone.Text;
-            string Ngvl = dateBirth.ToString();
+            string Ngvl = txbdateworking.Text ;
             string Chucvu = dropDownPosition.selectedValue;
-            AddEmployee(Manv, Tennv, Sodt, Ngvl, Chucvu);*/
+            AddEmployee(Manv, Tennv, Sodt, Ngvl, Chucvu);
         }
 
-        void AddEmployee(string MaNV, string TenNV, string SoDT, DateTime NgVL, string ChucVu)
+        void AddEmployee(string MaNV, string TenNV, string SoDT, string NgVL, string ChucVu)
         {
             EmployeeDAL.Instance.AddEmployee(MaNV, TenNV, SoDT, NgVL, ChucVu);
             bunifuDataGridView1.Rows.Clear();
@@ -128,6 +131,11 @@ namespace GUI.UsrCtrlManage
         {
             string link = this.getLink();
             picUser.Image = new Bitmap(link);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

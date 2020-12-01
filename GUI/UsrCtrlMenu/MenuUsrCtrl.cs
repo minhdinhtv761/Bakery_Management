@@ -33,7 +33,7 @@ namespace GUI.UsrCtrlMenu
                 //Button
                 DisableButton();
                 currButton = (BunifuButton)senderButton;
-                currButton.Font = new System.Drawing.Font("Roboto Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                currButton.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 //Border Button
                 bottomBorderBtn.Location = new Point(currButton.Location.X, 49);
                 bottomBorderBtn.Visible = true;
@@ -44,7 +44,7 @@ namespace GUI.UsrCtrlMenu
         {
             if (currButton != null)
             {
-                currButton.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                currButton.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             }
         }
 
@@ -125,6 +125,27 @@ namespace GUI.UsrCtrlMenu
             //
             this.layoutPanel.Controls.Add(food);*/
 
+        }
+
+        private void txbSearch_TextChanged(object sender, EventArgs e)
+        {
+            searchFood(txbSearch.Text);
+        }
+
+        public void searchFood(string search)
+        {
+            List<FoodDTO> foods = FoodDAL.Instance.GetFood();
+            this.layoutPanel.Controls.Clear();
+
+            foreach (FoodDTO food in foods)
+            {
+                if (food.TenMA.ToLower().Contains(this.txbSearch.Text.ToLower()))
+                {
+                    FoodInfoUsrCtrl item = new FoodInfoUsrCtrl(food.TenMA, food.DonGia);
+
+                    this.layoutPanel.Controls.Add(item);
+                }
+            }
         }
     }
 }

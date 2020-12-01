@@ -52,6 +52,10 @@
             this.TABLE = new GUI.UsrCtrlMenu.TableUsrCtrl();
             this.pnRight = new System.Windows.Forms.Panel();
             this.layoutListBill = new System.Windows.Forms.FlowLayoutPanel();
+            this.billInfoUsrCtrl1 = new GUI.UsrCtrlMenu.BillInfoUsrCtrl();
+            this.billInfoUsrCtrl2 = new GUI.UsrCtrlMenu.BillInfoUsrCtrl();
+            this.billInfoUsrCtrl3 = new GUI.UsrCtrlMenu.BillInfoUsrCtrl();
+            this.billInfoUsrCtrl4 = new GUI.UsrCtrlMenu.BillInfoUsrCtrl();
             this.pnPayment = new System.Windows.Forms.Panel();
             this.picName = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.btnPay = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -86,6 +90,7 @@
             this.menuDrop.SuspendLayout();
             this.pnLeft.SuspendLayout();
             this.pnRight.SuspendLayout();
+            this.layoutListBill.SuspendLayout();
             this.pnPayment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picName)).BeginInit();
             this.pnList.SuspendLayout();
@@ -103,9 +108,10 @@
             lbName.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
             lbName.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            lbName.Location = new System.Drawing.Point(44, 8);
+            lbName.Location = new System.Drawing.Point(59, 10);
+            lbName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbName.Name = "lbName";
-            lbName.Size = new System.Drawing.Size(191, 32);
+            lbName.Size = new System.Drawing.Size(255, 39);
             lbName.TabIndex = 5;
             lbName.Text = "Your name";
             lbName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -120,10 +126,11 @@
             this.pnMain.Controls.Add(this.pnLeft);
             this.pnMain.Controls.Add(this.pnRight);
             this.pnMain.Controls.Add(this.pnHeader);
-            this.pnMain.Location = new System.Drawing.Point(24, 0);
-            this.pnMain.MaximumSize = new System.Drawing.Size(1318, 767);
+            this.pnMain.Location = new System.Drawing.Point(32, 0);
+            this.pnMain.Margin = new System.Windows.Forms.Padding(4);
+            this.pnMain.MaximumSize = new System.Drawing.Size(1757, 944);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(1318, 589);
+            this.pnMain.Size = new System.Drawing.Size(1757, 725);
             this.pnMain.TabIndex = 0;
             // 
             // menuDrop
@@ -133,9 +140,10 @@
             this.menuDrop.Controls.Add(this.menuManage);
             this.menuDrop.Controls.Add(this.menuInfo);
             this.menuDrop.ForeColor = System.Drawing.SystemColors.Control;
-            this.menuDrop.Location = new System.Drawing.Point(1105, 27);
+            this.menuDrop.Location = new System.Drawing.Point(1473, 33);
+            this.menuDrop.Margin = new System.Windows.Forms.Padding(4);
             this.menuDrop.Name = "menuDrop";
-            this.menuDrop.Size = new System.Drawing.Size(124, 107);
+            this.menuDrop.Size = new System.Drawing.Size(165, 132);
             this.menuDrop.TabIndex = 11;
             this.menuDrop.Visible = false;
             // 
@@ -155,11 +163,11 @@
             this.menuSignOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.menuSignOut.IconSize = 20;
             this.menuSignOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.menuSignOut.Location = new System.Drawing.Point(0, 70);
+            this.menuSignOut.Location = new System.Drawing.Point(0, 86);
             this.menuSignOut.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.menuSignOut.Name = "menuSignOut";
             this.menuSignOut.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuSignOut.Size = new System.Drawing.Size(124, 35);
+            this.menuSignOut.Size = new System.Drawing.Size(165, 43);
             this.menuSignOut.TabIndex = 2;
             this.menuSignOut.Text = "Sign out";
             this.menuSignOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -184,11 +192,11 @@
             this.menuManage.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.menuManage.IconSize = 20;
             this.menuManage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.menuManage.Location = new System.Drawing.Point(0, 35);
+            this.menuManage.Location = new System.Drawing.Point(0, 43);
             this.menuManage.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.menuManage.Name = "menuManage";
             this.menuManage.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuManage.Size = new System.Drawing.Size(124, 35);
+            this.menuManage.Size = new System.Drawing.Size(165, 43);
             this.menuManage.TabIndex = 1;
             this.menuManage.Text = "Manage";
             this.menuManage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -216,7 +224,7 @@
             this.menuInfo.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.menuInfo.Name = "menuInfo";
             this.menuInfo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuInfo.Size = new System.Drawing.Size(124, 35);
+            this.menuInfo.Size = new System.Drawing.Size(165, 43);
             this.menuInfo.TabIndex = 0;
             this.menuInfo.Text = "Infomation";
             this.menuInfo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -232,10 +240,11 @@
             this.pnLeft.BackColor = System.Drawing.Color.Transparent;
             this.pnLeft.Controls.Add(this.MENU);
             this.pnLeft.Controls.Add(this.TABLE);
-            this.pnLeft.Location = new System.Drawing.Point(0, 45);
-            this.pnLeft.MaximumSize = new System.Drawing.Size(644, 731);
+            this.pnLeft.Location = new System.Drawing.Point(0, 55);
+            this.pnLeft.Margin = new System.Windows.Forms.Padding(4);
+            this.pnLeft.MaximumSize = new System.Drawing.Size(859, 900);
             this.pnLeft.Name = "pnLeft";
-            this.pnLeft.Size = new System.Drawing.Size(644, 544);
+            this.pnLeft.Size = new System.Drawing.Size(859, 670);
             this.pnLeft.TabIndex = 1;
             // 
             // MENU
@@ -243,10 +252,11 @@
             this.MENU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(250)))));
             this.MENU.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MENU.Location = new System.Drawing.Point(0, 0);
-            this.MENU.MaximumSize = new System.Drawing.Size(644, 731);
-            this.MENU.MinimumSize = new System.Drawing.Size(644, 544);
+            this.MENU.Margin = new System.Windows.Forms.Padding(5);
+            this.MENU.MaximumSize = new System.Drawing.Size(859, 670);
+            this.MENU.MinimumSize = new System.Drawing.Size(859, 670);
             this.MENU.Name = "MENU";
-            this.MENU.Size = new System.Drawing.Size(644, 544);
+            this.MENU.Size = new System.Drawing.Size(859, 670);
             this.MENU.TabIndex = 1;
             // 
             // TABLE
@@ -254,9 +264,10 @@
             this.TABLE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(238)))), ((int)(((byte)(250)))));
             this.TABLE.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TABLE.Location = new System.Drawing.Point(0, 0);
-            this.TABLE.MaximumSize = new System.Drawing.Size(644, 731);
+            this.TABLE.Margin = new System.Windows.Forms.Padding(5);
+            this.TABLE.MaximumSize = new System.Drawing.Size(859, 900);
             this.TABLE.Name = "TABLE";
-            this.TABLE.Size = new System.Drawing.Size(644, 544);
+            this.TABLE.Size = new System.Drawing.Size(859, 670);
             this.TABLE.TabIndex = 0;
             // 
             // pnRight
@@ -269,10 +280,11 @@
             this.pnRight.Controls.Add(this.pnPayment);
             this.pnRight.Controls.Add(this.pnList);
             this.pnRight.Controls.Add(this.pnPaymentInfo);
-            this.pnRight.Location = new System.Drawing.Point(674, 45);
-            this.pnRight.MaximumSize = new System.Drawing.Size(644, 731);
+            this.pnRight.Location = new System.Drawing.Point(899, 55);
+            this.pnRight.Margin = new System.Windows.Forms.Padding(4);
+            this.pnRight.MaximumSize = new System.Drawing.Size(859, 900);
             this.pnRight.Name = "pnRight";
-            this.pnRight.Size = new System.Drawing.Size(644, 544);
+            this.pnRight.Size = new System.Drawing.Size(859, 670);
             this.pnRight.TabIndex = 2;
             // 
             // layoutListBill
@@ -280,11 +292,80 @@
             this.layoutListBill.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.layoutListBill.AutoScroll = true;
             this.layoutListBill.BackColor = System.Drawing.SystemColors.Control;
-            this.layoutListBill.Location = new System.Drawing.Point(0, 52);
-            this.layoutListBill.MaximumSize = new System.Drawing.Size(644, 684);
+            this.layoutListBill.Controls.Add(this.billInfoUsrCtrl1);
+            this.layoutListBill.Controls.Add(this.billInfoUsrCtrl2);
+            this.layoutListBill.Controls.Add(this.billInfoUsrCtrl3);
+            this.layoutListBill.Controls.Add(this.billInfoUsrCtrl4);
+            this.layoutListBill.Location = new System.Drawing.Point(0, 64);
+            this.layoutListBill.Margin = new System.Windows.Forms.Padding(4);
+            this.layoutListBill.MaximumSize = new System.Drawing.Size(859, 842);
             this.layoutListBill.Name = "layoutListBill";
-            this.layoutListBill.Size = new System.Drawing.Size(644, 363);
+            this.layoutListBill.Size = new System.Drawing.Size(859, 447);
             this.layoutListBill.TabIndex = 5;
+            // 
+            // billInfoUsrCtrl1
+            // 
+            this.billInfoUsrCtrl1.BackColor = System.Drawing.SystemColors.Control;
+            this.billInfoUsrCtrl1.ItemName = "Item name";
+            this.billInfoUsrCtrl1.Location = new System.Drawing.Point(4, 4);
+            this.billInfoUsrCtrl1.Margin = new System.Windows.Forms.Padding(4);
+            this.billInfoUsrCtrl1.MaximumSize = new System.Drawing.Size(851, 81);
+            this.billInfoUsrCtrl1.MinimumSize = new System.Drawing.Size(827, 81);
+            this.billInfoUsrCtrl1.Name = "billInfoUsrCtrl1";
+            this.billInfoUsrCtrl1.NO = 1;
+            this.billInfoUsrCtrl1.Price = "0";
+            this.billInfoUsrCtrl1.QTY = 1;
+            this.billInfoUsrCtrl1.Size = new System.Drawing.Size(851, 81);
+            this.billInfoUsrCtrl1.TabIndex = 0;
+            this.billInfoUsrCtrl1.Total = ((uint)(0u));
+            // 
+            // billInfoUsrCtrl2
+            // 
+            this.billInfoUsrCtrl2.BackColor = System.Drawing.SystemColors.Control;
+            this.billInfoUsrCtrl2.ItemName = "Item name";
+            this.billInfoUsrCtrl2.Location = new System.Drawing.Point(4, 93);
+            this.billInfoUsrCtrl2.Margin = new System.Windows.Forms.Padding(4);
+            this.billInfoUsrCtrl2.MaximumSize = new System.Drawing.Size(851, 81);
+            this.billInfoUsrCtrl2.MinimumSize = new System.Drawing.Size(827, 81);
+            this.billInfoUsrCtrl2.Name = "billInfoUsrCtrl2";
+            this.billInfoUsrCtrl2.NO = 1;
+            this.billInfoUsrCtrl2.Price = "0";
+            this.billInfoUsrCtrl2.QTY = 1;
+            this.billInfoUsrCtrl2.Size = new System.Drawing.Size(851, 81);
+            this.billInfoUsrCtrl2.TabIndex = 1;
+            this.billInfoUsrCtrl2.Total = ((uint)(0u));
+            // 
+            // billInfoUsrCtrl3
+            // 
+            this.billInfoUsrCtrl3.BackColor = System.Drawing.SystemColors.Control;
+            this.billInfoUsrCtrl3.ItemName = "Item name";
+            this.billInfoUsrCtrl3.Location = new System.Drawing.Point(4, 182);
+            this.billInfoUsrCtrl3.Margin = new System.Windows.Forms.Padding(4);
+            this.billInfoUsrCtrl3.MaximumSize = new System.Drawing.Size(851, 81);
+            this.billInfoUsrCtrl3.MinimumSize = new System.Drawing.Size(827, 81);
+            this.billInfoUsrCtrl3.Name = "billInfoUsrCtrl3";
+            this.billInfoUsrCtrl3.NO = 1;
+            this.billInfoUsrCtrl3.Price = "0";
+            this.billInfoUsrCtrl3.QTY = 1;
+            this.billInfoUsrCtrl3.Size = new System.Drawing.Size(851, 81);
+            this.billInfoUsrCtrl3.TabIndex = 2;
+            this.billInfoUsrCtrl3.Total = ((uint)(0u));
+            // 
+            // billInfoUsrCtrl4
+            // 
+            this.billInfoUsrCtrl4.BackColor = System.Drawing.SystemColors.Control;
+            this.billInfoUsrCtrl4.ItemName = "Item name";
+            this.billInfoUsrCtrl4.Location = new System.Drawing.Point(4, 271);
+            this.billInfoUsrCtrl4.Margin = new System.Windows.Forms.Padding(4);
+            this.billInfoUsrCtrl4.MaximumSize = new System.Drawing.Size(851, 81);
+            this.billInfoUsrCtrl4.MinimumSize = new System.Drawing.Size(827, 81);
+            this.billInfoUsrCtrl4.Name = "billInfoUsrCtrl4";
+            this.billInfoUsrCtrl4.NO = 1;
+            this.billInfoUsrCtrl4.Price = "0";
+            this.billInfoUsrCtrl4.QTY = 1;
+            this.billInfoUsrCtrl4.Size = new System.Drawing.Size(851, 81);
+            this.billInfoUsrCtrl4.TabIndex = 3;
+            this.billInfoUsrCtrl4.Total = ((uint)(0u));
             // 
             // pnPayment
             // 
@@ -295,9 +376,10 @@
             this.pnPayment.Controls.Add(this.btnPay);
             this.pnPayment.Controls.Add(this.lbTotal);
             this.pnPayment.Controls.Add(this.lbTextTotal);
-            this.pnPayment.Location = new System.Drawing.Point(0, 480);
+            this.pnPayment.Location = new System.Drawing.Point(0, 591);
+            this.pnPayment.Margin = new System.Windows.Forms.Padding(4);
             this.pnPayment.Name = "pnPayment";
-            this.pnPayment.Size = new System.Drawing.Size(644, 65);
+            this.pnPayment.Size = new System.Drawing.Size(859, 80);
             this.pnPayment.TabIndex = 7;
             // 
             // picName
@@ -307,7 +389,8 @@
             this.picName.BorderRadius = 0;
             this.picName.Image = ((System.Drawing.Image)(resources.GetObject("picName.Image")));
             this.picName.IsCircle = false;
-            this.picName.Location = new System.Drawing.Point(6, 8);
+            this.picName.Location = new System.Drawing.Point(8, 10);
+            this.picName.Margin = new System.Windows.Forms.Padding(4);
             this.picName.Name = "picName";
             this.picName.Size = new System.Drawing.Size(32, 32);
             this.picName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -338,13 +421,14 @@
             this.btnPay.IconVisible = true;
             this.btnPay.IconZoom = 60D;
             this.btnPay.IsTab = false;
-            this.btnPay.Location = new System.Drawing.Point(419, 3);
+            this.btnPay.Location = new System.Drawing.Point(559, 4);
+            this.btnPay.Margin = new System.Windows.Forms.Padding(5);
             this.btnPay.Name = "btnPay";
             this.btnPay.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
             this.btnPay.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(72)))), ((int)(((byte)(107)))));
             this.btnPay.OnHoverTextColor = System.Drawing.Color.White;
             this.btnPay.selected = true;
-            this.btnPay.Size = new System.Drawing.Size(223, 59);
+            this.btnPay.Size = new System.Drawing.Size(297, 73);
             this.btnPay.TabIndex = 0;
             this.btnPay.Text = "PAY";
             this.btnPay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -360,9 +444,10 @@
             this.lbTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbTotal.Font = new System.Drawing.Font("Roboto Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
-            this.lbTotal.Location = new System.Drawing.Point(263, 29);
+            this.lbTotal.Location = new System.Drawing.Point(351, 36);
+            this.lbTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(134, 35);
+            this.lbTotal.Size = new System.Drawing.Size(179, 43);
             this.lbTotal.TabIndex = 3;
             this.lbTotal.Text = "0";
             this.lbTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -376,9 +461,12 @@
             this.lbTextTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbTextTotal.Font = new System.Drawing.Font("Roboto Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTextTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
-            this.lbTextTotal.Location = new System.Drawing.Point(292, 4);
+            this.lbTextTotal.Location = new System.Drawing.Point(389, 5);
+            this.lbTextTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTextTotal.MaximumSize = new System.Drawing.Size(98, 33);
+            this.lbTextTotal.MinimumSize = new System.Drawing.Size(98, 33);
             this.lbTextTotal.Name = "lbTextTotal";
-            this.lbTextTotal.Size = new System.Drawing.Size(76, 25);
+            this.lbTextTotal.Size = new System.Drawing.Size(98, 33);
             this.lbTextTotal.TabIndex = 2;
             this.lbTextTotal.Text = "TOTAL";
             this.lbTextTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -393,8 +481,9 @@
             this.pnList.Controls.Add(this.toggleTakeAway);
             this.pnList.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnList.Location = new System.Drawing.Point(0, 0);
+            this.pnList.Margin = new System.Windows.Forms.Padding(4);
             this.pnList.Name = "pnList";
-            this.pnList.Size = new System.Drawing.Size(644, 51);
+            this.pnList.Size = new System.Drawing.Size(859, 63);
             this.pnList.TabIndex = 1;
             // 
             // icTable
@@ -405,7 +494,8 @@
             this.icTable.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
             this.icTable.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.icTable.IconSize = 25;
-            this.icTable.Location = new System.Drawing.Point(18, 15);
+            this.icTable.Location = new System.Drawing.Point(24, 18);
+            this.icTable.Margin = new System.Windows.Forms.Padding(4);
             this.icTable.Name = "icTable";
             this.icTable.Size = new System.Drawing.Size(25, 25);
             this.icTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -417,9 +507,10 @@
             this.lbTableID.AutoSize = true;
             this.lbTableID.Font = new System.Drawing.Font("Roboto Medium", 9F, System.Drawing.FontStyle.Bold);
             this.lbTableID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbTableID.Location = new System.Drawing.Point(49, 19);
+            this.lbTableID.Location = new System.Drawing.Point(65, 23);
+            this.lbTableID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTableID.Name = "lbTableID";
-            this.lbTableID.Size = new System.Drawing.Size(58, 14);
+            this.lbTableID.Size = new System.Drawing.Size(70, 18);
             this.lbTableID.TabIndex = 21;
             this.lbTableID.Text = "Table ID";
             // 
@@ -451,9 +542,10 @@
             this.txbSearch.IconRight = null;
             this.txbSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txbSearch.Lines = new string[0];
-            this.txbSearch.Location = new System.Drawing.Point(432, 11);
+            this.txbSearch.Location = new System.Drawing.Point(576, 14);
+            this.txbSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txbSearch.MaxLength = 32767;
-            this.txbSearch.MinimumSize = new System.Drawing.Size(100, 35);
+            this.txbSearch.MinimumSize = new System.Drawing.Size(133, 43);
             this.txbSearch.Modified = false;
             this.txbSearch.Multiline = false;
             this.txbSearch.Name = "txbSearch";
@@ -486,7 +578,7 @@
             this.txbSearch.SelectionLength = 0;
             this.txbSearch.SelectionStart = 0;
             this.txbSearch.ShortcutsEnabled = true;
-            this.txbSearch.Size = new System.Drawing.Size(200, 35);
+            this.txbSearch.Size = new System.Drawing.Size(267, 43);
             this.txbSearch.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.txbSearch.TabIndex = 20;
             this.txbSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -506,9 +598,10 @@
             this.lbTakeAway.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbTakeAway.Font = new System.Drawing.Font("Roboto Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTakeAway.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbTakeAway.Location = new System.Drawing.Point(168, 19);
+            this.lbTakeAway.Location = new System.Drawing.Point(224, 23);
+            this.lbTakeAway.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTakeAway.Name = "lbTakeAway";
-            this.lbTakeAway.Size = new System.Drawing.Size(73, 14);
+            this.lbTakeAway.Size = new System.Drawing.Size(87, 18);
             this.lbTakeAway.TabIndex = 19;
             this.lbTakeAway.Text = "Take away";
             this.lbTakeAway.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -519,9 +612,10 @@
             this.toggleTakeAway.BackColor = System.Drawing.Color.Transparent;
             this.toggleTakeAway.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toggleTakeAway.BackgroundImage")));
             this.toggleTakeAway.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.toggleTakeAway.Location = new System.Drawing.Point(123, 16);
+            this.toggleTakeAway.Location = new System.Drawing.Point(164, 20);
+            this.toggleTakeAway.Margin = new System.Windows.Forms.Padding(5);
             this.toggleTakeAway.Name = "toggleTakeAway";
-            this.toggleTakeAway.Size = new System.Drawing.Size(35, 20);
+            this.toggleTakeAway.Size = new System.Drawing.Size(47, 25);
             this.toggleTakeAway.TabIndex = 0;
             toggleState1.BackColor = System.Drawing.Color.Empty;
             toggleState1.BackColorInner = System.Drawing.Color.Empty;
@@ -563,9 +657,10 @@
             this.pnPaymentInfo.Controls.Add(this.lbTextSale);
             this.pnPaymentInfo.Controls.Add(this.lbSubtotal);
             this.pnPaymentInfo.Controls.Add(this.lbTextSutotal);
-            this.pnPaymentInfo.Location = new System.Drawing.Point(0, 415);
+            this.pnPaymentInfo.Location = new System.Drawing.Point(0, 511);
+            this.pnPaymentInfo.Margin = new System.Windows.Forms.Padding(4);
             this.pnPaymentInfo.Name = "pnPaymentInfo";
-            this.pnPaymentInfo.Size = new System.Drawing.Size(644, 65);
+            this.pnPaymentInfo.Size = new System.Drawing.Size(859, 80);
             this.pnPaymentInfo.TabIndex = 6;
             // 
             // txbSale
@@ -597,9 +692,10 @@
             this.txbSale.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txbSale.Lines = new string[] {
         "0"};
-            this.txbSale.Location = new System.Drawing.Point(508, 26);
+            this.txbSale.Location = new System.Drawing.Point(677, 32);
+            this.txbSale.Margin = new System.Windows.Forms.Padding(4);
             this.txbSale.MaxLength = 32767;
-            this.txbSale.MinimumSize = new System.Drawing.Size(63, 29);
+            this.txbSale.MinimumSize = new System.Drawing.Size(84, 36);
             this.txbSale.Modified = false;
             this.txbSale.Multiline = false;
             this.txbSale.Name = "txbSale";
@@ -632,7 +728,7 @@
             this.txbSale.SelectionLength = 0;
             this.txbSale.SelectionStart = 0;
             this.txbSale.ShortcutsEnabled = true;
-            this.txbSale.Size = new System.Drawing.Size(63, 29);
+            this.txbSale.Size = new System.Drawing.Size(84, 36);
             this.txbSale.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.txbSale.TabIndex = 13;
             this.txbSale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -652,10 +748,11 @@
             this.lbItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbItems.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbItems.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbItems.Location = new System.Drawing.Point(251, 8);
+            this.lbItems.Location = new System.Drawing.Point(335, 10);
+            this.lbItems.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbItems.Name = "lbItems";
             this.lbItems.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbItems.Size = new System.Drawing.Size(62, 18);
+            this.lbItems.Size = new System.Drawing.Size(83, 22);
             this.lbItems.TabIndex = 12;
             this.lbItems.Text = "0";
             this.lbItems.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -669,9 +766,10 @@
             this.lbTextNumQTY.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbTextNumQTY.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTextNumQTY.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbTextNumQTY.Location = new System.Drawing.Point(319, 8);
+            this.lbTextNumQTY.Location = new System.Drawing.Point(425, 10);
+            this.lbTextNumQTY.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTextNumQTY.Name = "lbTextNumQTY";
-            this.lbTextNumQTY.Size = new System.Drawing.Size(46, 18);
+            this.lbTextNumQTY.Size = new System.Drawing.Size(56, 22);
             this.lbTextNumQTY.TabIndex = 11;
             this.lbTextNumQTY.Text = "items";
             this.lbTextNumQTY.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -685,9 +783,10 @@
             this.lbPercent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbPercent.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPercent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(146)))), ((int)(((byte)(123)))));
-            this.lbPercent.Location = new System.Drawing.Point(576, 34);
+            this.lbPercent.Location = new System.Drawing.Point(768, 42);
+            this.lbPercent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPercent.Name = "lbPercent";
-            this.lbPercent.Size = new System.Drawing.Size(19, 18);
+            this.lbPercent.Size = new System.Drawing.Size(24, 23);
             this.lbPercent.TabIndex = 10;
             this.lbPercent.Text = "%";
             this.lbPercent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -701,9 +800,10 @@
             this.lbTextSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbTextSale.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTextSale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(146)))), ((int)(((byte)(123)))));
-            this.lbTextSale.Location = new System.Drawing.Point(12, 34);
+            this.lbTextSale.Location = new System.Drawing.Point(16, 42);
+            this.lbTextSale.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTextSale.Name = "lbTextSale";
-            this.lbTextSale.Size = new System.Drawing.Size(60, 18);
+            this.lbTextSale.Size = new System.Drawing.Size(76, 23);
             this.lbTextSale.TabIndex = 8;
             this.lbTextSale.Text = "Sale off";
             this.lbTextSale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -716,9 +816,10 @@
             this.lbSubtotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbSubtotal.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSubtotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbSubtotal.Location = new System.Drawing.Point(495, 8);
+            this.lbSubtotal.Location = new System.Drawing.Point(660, 10);
+            this.lbSubtotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSubtotal.Name = "lbSubtotal";
-            this.lbSubtotal.Size = new System.Drawing.Size(92, 18);
+            this.lbSubtotal.Size = new System.Drawing.Size(123, 22);
             this.lbSubtotal.TabIndex = 7;
             this.lbSubtotal.Text = "Subtotal";
             this.lbSubtotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -732,9 +833,10 @@
             this.lbTextSutotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbTextSutotal.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTextSutotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbTextSutotal.Location = new System.Drawing.Point(12, 8);
+            this.lbTextSutotal.Location = new System.Drawing.Point(16, 10);
+            this.lbTextSutotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTextSutotal.Name = "lbTextSutotal";
-            this.lbTextSutotal.Size = new System.Drawing.Size(63, 18);
+            this.lbTextSutotal.Size = new System.Drawing.Size(78, 22);
             this.lbTextSutotal.TabIndex = 6;
             this.lbTextSutotal.Text = "Subtotal";
             this.lbTextSutotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -749,9 +851,10 @@
             this.pnHeader.Controls.Add(this.close);
             this.pnHeader.Controls.Add(this.btnMenu);
             this.pnHeader.Controls.Add(this.btnTable);
-            this.pnHeader.Location = new System.Drawing.Point(0, 3);
+            this.pnHeader.Location = new System.Drawing.Point(0, 4);
+            this.pnHeader.Margin = new System.Windows.Forms.Padding(4);
             this.pnHeader.Name = "pnHeader";
-            this.pnHeader.Size = new System.Drawing.Size(1318, 41);
+            this.pnHeader.Size = new System.Drawing.Size(1757, 50);
             this.pnHeader.TabIndex = 0;
             // 
             // more
@@ -760,9 +863,10 @@
             this.more.Cursor = System.Windows.Forms.Cursors.Hand;
             this.more.Image = ((System.Drawing.Image)(resources.GetObject("more.Image")));
             this.more.ImageActive = null;
-            this.more.Location = new System.Drawing.Point(1205, 0);
+            this.more.Location = new System.Drawing.Point(1607, 0);
+            this.more.Margin = new System.Windows.Forms.Padding(4);
             this.more.Name = "more";
-            this.more.Size = new System.Drawing.Size(38, 24);
+            this.more.Size = new System.Drawing.Size(51, 30);
             this.more.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.more.TabIndex = 11;
             this.more.TabStop = false;
@@ -775,9 +879,10 @@
             this.minimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.minimize.Image = ((System.Drawing.Image)(resources.GetObject("minimize.Image")));
             this.minimize.ImageActive = null;
-            this.minimize.Location = new System.Drawing.Point(1242, 0);
+            this.minimize.Location = new System.Drawing.Point(1656, 0);
+            this.minimize.Margin = new System.Windows.Forms.Padding(4);
             this.minimize.Name = "minimize";
-            this.minimize.Size = new System.Drawing.Size(38, 24);
+            this.minimize.Size = new System.Drawing.Size(51, 30);
             this.minimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.minimize.TabIndex = 10;
             this.minimize.TabStop = false;
@@ -790,9 +895,10 @@
             this.close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.close.Image = ((System.Drawing.Image)(resources.GetObject("close.Image")));
             this.close.ImageActive = null;
-            this.close.Location = new System.Drawing.Point(1280, 0);
+            this.close.Location = new System.Drawing.Point(1707, 0);
+            this.close.Margin = new System.Windows.Forms.Padding(4);
             this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(38, 24);
+            this.close.Size = new System.Drawing.Size(51, 30);
             this.close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.close.TabIndex = 9;
             this.close.TabStop = false;
@@ -812,9 +918,12 @@
             this.btnMenu.IconColor = System.Drawing.SystemColors.Control;
             this.btnMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMenu.IconSize = 17;
-            this.btnMenu.Location = new System.Drawing.Point(107, 4);
+            this.btnMenu.Location = new System.Drawing.Point(143, 5);
+            this.btnMenu.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMenu.MaximumSize = new System.Drawing.Size(123, 52);
+            this.btnMenu.MinimumSize = new System.Drawing.Size(123, 52);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(92, 42);
+            this.btnMenu.Size = new System.Drawing.Size(123, 52);
             this.btnMenu.TabIndex = 8;
             this.btnMenu.Text = "MENU";
             this.btnMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -834,9 +943,12 @@
             this.btnTable.IconColor = System.Drawing.SystemColors.Control;
             this.btnTable.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTable.IconSize = 17;
-            this.btnTable.Location = new System.Drawing.Point(12, 4);
+            this.btnTable.Location = new System.Drawing.Point(16, 5);
+            this.btnTable.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTable.MaximumSize = new System.Drawing.Size(123, 52);
+            this.btnTable.MinimumSize = new System.Drawing.Size(123, 52);
             this.btnTable.Name = "btnTable";
-            this.btnTable.Size = new System.Drawing.Size(92, 42);
+            this.btnTable.Size = new System.Drawing.Size(123, 52);
             this.btnTable.TabIndex = 7;
             this.btnTable.Text = "TABLE";
             this.btnTable.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -865,20 +977,23 @@
             // 
             // FormCashier
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
-            this.ClientSize = new System.Drawing.Size(1366, 625);
+            this.ClientSize = new System.Drawing.Size(1821, 769);
             this.Controls.Add(this.pnMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(1366, 625);
-            this.MinimumSize = new System.Drawing.Size(1364, 625);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1821, 769);
+            this.MinimumSize = new System.Drawing.Size(1821, 769);
             this.Name = "FormCashier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.pnMain.ResumeLayout(false);
             this.menuDrop.ResumeLayout(false);
             this.pnLeft.ResumeLayout(false);
             this.pnRight.ResumeLayout(false);
+            this.layoutListBill.ResumeLayout(false);
             this.pnPayment.ResumeLayout(false);
             this.pnPayment.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picName)).EndInit();
@@ -936,6 +1051,10 @@
         private Bunifu.Framework.UI.BunifuImageButton more;
         private FontAwesome.Sharp.IconPictureBox icTable;
         private System.Windows.Forms.Label lbTableID;
+        private UsrCtrlMenu.BillInfoUsrCtrl billInfoUsrCtrl1;
+        private UsrCtrlMenu.BillInfoUsrCtrl billInfoUsrCtrl2;
+        private UsrCtrlMenu.BillInfoUsrCtrl billInfoUsrCtrl3;
+        private UsrCtrlMenu.BillInfoUsrCtrl billInfoUsrCtrl4;
     }
 }
 
