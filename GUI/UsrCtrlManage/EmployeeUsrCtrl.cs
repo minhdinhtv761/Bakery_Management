@@ -71,19 +71,21 @@ namespace GUI.UsrCtrlManage
             }
             txbID.Text = bunifuDataGridView1.Rows[0].Cells[0].Value.ToString();
             txbName.Text = bunifuDataGridView1.Rows[0].Cells[1].Value.ToString();
-            txbdateworking.Text = bunifuDataGridView1.Rows[0].Cells[2].Value.ToString();
+            txbChucVu.Text = bunifuDataGridView1.Rows[0].Cells[2].Value.ToString();
             txbPhone.Text = bunifuDataGridView1.Rows[0].Cells[3].Value.ToString();
+            txbdateworking.Text = bunifuDataGridView1.Rows[0].Cells[4].Value.ToString();
         }
 
         private void bunifuDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txbID.Text = bunifuDataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             txbName.Text = bunifuDataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-            txbdateworking.Text = bunifuDataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+            txbChucVu.Text = bunifuDataGridView1.SelectedRows[0].Cells[2].Value.ToString();
             txbPhone.Text = bunifuDataGridView1.SelectedRows[0].Cells[3].Value.ToString();
+            txbdateworking.Text = bunifuDataGridView1.SelectedRows[0].Cells[4].Value.ToString();
         }
 
-        private void btnDel_Click(object sender, EventArgs e)
+        private void btnDel_Click(object sender, EventArgs e)        //delete
         {
             string id = txbID.Text;
             deleteEmployee(id);
@@ -96,19 +98,36 @@ namespace GUI.UsrCtrlManage
             LoadDataGridView();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)             //update - Add
         {
             string Manv = txbID.Text;
             string Tennv = txbName.Text;
             string Sodt = txbPhone.Text;
             string Ngvl = txbdateworking.Text ;
-            string Chucvu = dropDownPosition.selectedValue;
+            string Chucvu = txbChucVu.Text;
             AddEmployee(Manv, Tennv, Sodt, Ngvl, Chucvu);
         }
 
         void AddEmployee(string MaNV, string TenNV, string SoDT, string NgVL, string ChucVu)
         {
             EmployeeDAL.Instance.AddEmployee(MaNV, TenNV, SoDT, NgVL, ChucVu);
+            bunifuDataGridView1.Rows.Clear();
+            LoadDataGridView();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)          //Save - Edit 
+        {
+            string Manv = txbID.Text;
+            string Tennv = txbName.Text;
+            string Sodt = txbPhone.Text;
+            string Ngvl = txbdateworking.Text;
+            string Chucvu = txbChucVu.Text;
+            EditEmployee(Manv, Tennv, Sodt, Ngvl, Chucvu);
+        }
+
+        void EditEmployee(string MaNV, string TenNV, string SoDT, string NgVL, string ChucVu)
+        {
+            EmployeeDAL.Instance.EditEmployee(MaNV, TenNV, SoDT, NgVL, ChucVu);
             bunifuDataGridView1.Rows.Clear();
             LoadDataGridView();
         }
@@ -133,9 +152,31 @@ namespace GUI.UsrCtrlManage
             picUser.Image = new Bitmap(link);
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
 
+        public void searchEmployee(string search)
+        {
+            List<EmployeeDTO> staffs = EmployeeDAL.Instance.GetFood();
+            this.bunifuDataGridView1.Rows.Clear();
+            foreach (EmployeeDTO staff in staffs)
+            {
+                if (staff.TenNV1.ToLower().Contains(this.txbSearch.Text.ToLower()))
+                {
+                    DataGridViewRow newRow = new DataGridViewRow();
+
+                    newRow.CreateCells(bunifuDataGridView1);
+                    newRow.Cells[0].Value = staff.MaNV1;
+                    newRow.Cells[1].Value = staff.TenNV1;
+                    newRow.Cells[2].Value = staff.ChucVu1;
+                    newRow.Cells[3].Value = staff.SoDT1;
+                    newRow.Cells[4].Value = staff.NgVL1;
+                    this.bunifuDataGridView1.Rows.Add(newRow);
+                }
+            }
+        }
+
+        private void txbSearch_TextChanged(object sender, EventArgs e)
+        {
+            searchEmployee(txbSearch.Text);
         }
     }
 }

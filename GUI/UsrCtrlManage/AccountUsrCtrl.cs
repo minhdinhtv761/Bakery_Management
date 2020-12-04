@@ -41,12 +41,15 @@ namespace GUI.UsrCtrlManage
 
                 newRow.CreateCells(bunifuDataGridView1);
                 newRow.Cells[0].Value = item.MaNV1;
-                //newRow.Cells[1].Value = item.Pass1;
                 newRow.Cells[2].Value = item.Type1;
                 bunifuDataGridView1.Rows.Add(newRow);
             }
             txbID.Text = bunifuDataGridView1.Rows[0].Cells[0].Value.ToString();
         }
-      
+
+        private void bunifuDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txbID.Text = bunifuDataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+        }
     }
 }

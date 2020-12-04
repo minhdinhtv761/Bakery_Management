@@ -90,9 +90,10 @@
             // 
             this.pnLeft.BackColor = System.Drawing.SystemColors.Control;
             this.pnLeft.Controls.Add(this.bunifuDataGridView1);
-            this.pnLeft.Location = new System.Drawing.Point(6, 49);
+            this.pnLeft.Location = new System.Drawing.Point(8, 60);
+            this.pnLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnLeft.Name = "pnLeft";
-            this.pnLeft.Size = new System.Drawing.Size(715, 506);
+            this.pnLeft.Size = new System.Drawing.Size(953, 623);
             this.pnLeft.TabIndex = 0;
             // 
             // bunifuDataGridView1
@@ -151,14 +152,17 @@
             this.bunifuDataGridView1.HeaderBgColor = System.Drawing.Color.Empty;
             this.bunifuDataGridView1.HeaderForeColor = System.Drawing.Color.White;
             this.bunifuDataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.bunifuDataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuDataGridView1.Name = "bunifuDataGridView1";
             this.bunifuDataGridView1.ReadOnly = true;
             this.bunifuDataGridView1.RowHeadersVisible = false;
+            this.bunifuDataGridView1.RowHeadersWidth = 51;
             this.bunifuDataGridView1.RowTemplate.Height = 40;
             this.bunifuDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bunifuDataGridView1.Size = new System.Drawing.Size(715, 506);
+            this.bunifuDataGridView1.Size = new System.Drawing.Size(953, 623);
             this.bunifuDataGridView1.TabIndex = 0;
             this.bunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.bunifuDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuDataGridView1_CellClick);
             // 
             // user
             // 
@@ -167,12 +171,14 @@
             this.user.DefaultCellStyle = dataGridViewCellStyle3;
             this.user.FillWeight = 137.6729F;
             this.user.HeaderText = "User name";
+            this.user.MinimumWidth = 6;
             this.user.Name = "user";
             this.user.ReadOnly = true;
             // 
             // name
             // 
             this.name.HeaderText = "Name";
+            this.name.MinimumWidth = 6;
             this.name.Name = "name";
             this.name.ReadOnly = true;
             // 
@@ -180,6 +186,7 @@
             // 
             this.type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.type.HeaderText = "Type";
+            this.type.MinimumWidth = 6;
             this.type.Name = "type";
             this.type.ReadOnly = true;
             // 
@@ -191,9 +198,10 @@
             this.pnRight.Controls.Add(this.lbInfo);
             this.pnRight.Controls.Add(this.pnInfo);
             this.pnRight.Controls.Add(this.pnBtn);
-            this.pnRight.Location = new System.Drawing.Point(729, 8);
+            this.pnRight.Location = new System.Drawing.Point(972, 10);
+            this.pnRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnRight.Name = "pnRight";
-            this.pnRight.Size = new System.Drawing.Size(525, 547);
+            this.pnRight.Size = new System.Drawing.Size(700, 673);
             this.pnRight.TabIndex = 2;
             // 
             // label1
@@ -202,9 +210,10 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
-            this.label1.Location = new System.Drawing.Point(19, 269);
+            this.label1.Location = new System.Drawing.Point(25, 331);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 34);
+            this.label1.Size = new System.Drawing.Size(257, 42);
             this.label1.TabIndex = 13;
             this.label1.Text = "Change password";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -217,9 +226,10 @@
             this.pnPass.Controls.Add(this.txbOldPass);
             this.pnPass.Controls.Add(this.lbRePass);
             this.pnPass.Controls.Add(this.lbOldPass);
-            this.pnPass.Location = new System.Drawing.Point(19, 313);
+            this.pnPass.Location = new System.Drawing.Point(25, 385);
+            this.pnPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnPass.Name = "pnPass";
-            this.pnPass.Size = new System.Drawing.Size(494, 149);
+            this.pnPass.Size = new System.Drawing.Size(659, 183);
             this.pnPass.TabIndex = 12;
             // 
             // txbRePass
@@ -238,11 +248,11 @@
             this.txbRePass.LineIdleColor = System.Drawing.Color.Gray;
             this.txbRePass.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbRePass.LineThickness = 1;
-            this.txbRePass.Location = new System.Drawing.Point(161, 86);
-            this.txbRePass.Margin = new System.Windows.Forms.Padding(4);
+            this.txbRePass.Location = new System.Drawing.Point(215, 106);
+            this.txbRePass.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txbRePass.MaxLength = 32767;
             this.txbRePass.Name = "txbRePass";
-            this.txbRePass.Size = new System.Drawing.Size(219, 34);
+            this.txbRePass.Size = new System.Drawing.Size(292, 42);
             this.txbRePass.TabIndex = 16;
             this.txbRePass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -262,11 +272,11 @@
             this.tcbNewPass.LineIdleColor = System.Drawing.Color.Gray;
             this.tcbNewPass.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.tcbNewPass.LineThickness = 1;
-            this.tcbNewPass.Location = new System.Drawing.Point(161, 44);
-            this.tcbNewPass.Margin = new System.Windows.Forms.Padding(4);
+            this.tcbNewPass.Location = new System.Drawing.Point(215, 54);
+            this.tcbNewPass.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.tcbNewPass.MaxLength = 32767;
             this.tcbNewPass.Name = "tcbNewPass";
-            this.tcbNewPass.Size = new System.Drawing.Size(219, 34);
+            this.tcbNewPass.Size = new System.Drawing.Size(292, 42);
             this.tcbNewPass.TabIndex = 15;
             this.tcbNewPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -276,9 +286,10 @@
             this.lbNewPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbNewPass.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNewPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbNewPass.Location = new System.Drawing.Point(2, 44);
+            this.lbNewPass.Location = new System.Drawing.Point(3, 54);
+            this.lbNewPass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbNewPass.Name = "lbNewPass";
-            this.lbNewPass.Size = new System.Drawing.Size(152, 34);
+            this.lbNewPass.Size = new System.Drawing.Size(203, 42);
             this.lbNewPass.TabIndex = 10;
             this.lbNewPass.Text = "New password";
             this.lbNewPass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -299,11 +310,11 @@
             this.txbOldPass.LineIdleColor = System.Drawing.Color.Gray;
             this.txbOldPass.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbOldPass.LineThickness = 1;
-            this.txbOldPass.Location = new System.Drawing.Point(161, 1);
-            this.txbOldPass.Margin = new System.Windows.Forms.Padding(4);
+            this.txbOldPass.Location = new System.Drawing.Point(215, 1);
+            this.txbOldPass.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txbOldPass.MaxLength = 32767;
             this.txbOldPass.Name = "txbOldPass";
-            this.txbOldPass.Size = new System.Drawing.Size(219, 34);
+            this.txbOldPass.Size = new System.Drawing.Size(292, 42);
             this.txbOldPass.TabIndex = 14;
             this.txbOldPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -313,9 +324,10 @@
             this.lbRePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbRePass.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRePass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbRePass.Location = new System.Drawing.Point(2, 86);
+            this.lbRePass.Location = new System.Drawing.Point(3, 106);
+            this.lbRePass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbRePass.Name = "lbRePass";
-            this.lbRePass.Size = new System.Drawing.Size(152, 34);
+            this.lbRePass.Size = new System.Drawing.Size(203, 42);
             this.lbRePass.TabIndex = 11;
             this.lbRePass.Text = "Re-enter password";
             this.lbRePass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -326,9 +338,10 @@
             this.lbOldPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbOldPass.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbOldPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbOldPass.Location = new System.Drawing.Point(2, 2);
+            this.lbOldPass.Location = new System.Drawing.Point(3, 2);
+            this.lbOldPass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbOldPass.Name = "lbOldPass";
-            this.lbOldPass.Size = new System.Drawing.Size(152, 34);
+            this.lbOldPass.Size = new System.Drawing.Size(203, 42);
             this.lbOldPass.TabIndex = 10;
             this.lbOldPass.Text = "Old password";
             this.lbOldPass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -339,9 +352,10 @@
             this.lbInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbInfo.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
-            this.lbInfo.Location = new System.Drawing.Point(19, 6);
+            this.lbInfo.Location = new System.Drawing.Point(25, 7);
+            this.lbInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbInfo.Name = "lbInfo";
-            this.lbInfo.Size = new System.Drawing.Size(193, 34);
+            this.lbInfo.Size = new System.Drawing.Size(257, 42);
             this.lbInfo.TabIndex = 11;
             this.lbInfo.Text = "Infomation";
             this.lbInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -358,9 +372,10 @@
             this.pnInfo.Controls.Add(this.txbID);
             this.pnInfo.Controls.Add(this.lbName);
             this.pnInfo.Controls.Add(this.lbUser);
-            this.pnInfo.Location = new System.Drawing.Point(19, 50);
+            this.pnInfo.Location = new System.Drawing.Point(25, 62);
+            this.pnInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnInfo.Name = "pnInfo";
-            this.pnInfo.Size = new System.Drawing.Size(494, 209);
+            this.pnInfo.Size = new System.Drawing.Size(659, 257);
             this.pnInfo.TabIndex = 3;
             // 
             // dropDownPosition
@@ -377,12 +392,13 @@
         "--Selection--",
         "Staff",
         "Manager"};
-            this.dropDownPosition.Location = new System.Drawing.Point(161, 172);
+            this.dropDownPosition.Location = new System.Drawing.Point(215, 212);
+            this.dropDownPosition.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.dropDownPosition.Name = "dropDownPosition";
             this.dropDownPosition.NomalColor = System.Drawing.SystemColors.Control;
             this.dropDownPosition.onHoverColor = System.Drawing.Color.White;
             this.dropDownPosition.selectedIndex = 0;
-            this.dropDownPosition.Size = new System.Drawing.Size(220, 34);
+            this.dropDownPosition.Size = new System.Drawing.Size(293, 42);
             this.dropDownPosition.TabIndex = 36;
             // 
             // lbPosition
@@ -390,9 +406,10 @@
             this.lbPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbPosition.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbPosition.Location = new System.Drawing.Point(2, 172);
+            this.lbPosition.Location = new System.Drawing.Point(3, 212);
+            this.lbPosition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPosition.Name = "lbPosition";
-            this.lbPosition.Size = new System.Drawing.Size(152, 34);
+            this.lbPosition.Size = new System.Drawing.Size(203, 42);
             this.lbPosition.TabIndex = 35;
             this.lbPosition.Text = "Position";
             this.lbPosition.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -413,11 +430,11 @@
             this.txbEmail.LineIdleColor = System.Drawing.Color.Gray;
             this.txbEmail.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbEmail.LineThickness = 1;
-            this.txbEmail.Location = new System.Drawing.Point(161, 131);
-            this.txbEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txbEmail.Location = new System.Drawing.Point(215, 161);
+            this.txbEmail.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txbEmail.MaxLength = 32767;
             this.txbEmail.Name = "txbEmail";
-            this.txbEmail.Size = new System.Drawing.Size(219, 34);
+            this.txbEmail.Size = new System.Drawing.Size(292, 42);
             this.txbEmail.TabIndex = 32;
             this.txbEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -426,9 +443,10 @@
             this.lbEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbEmail.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbEmail.Location = new System.Drawing.Point(2, 131);
+            this.lbEmail.Location = new System.Drawing.Point(3, 161);
+            this.lbEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(152, 34);
+            this.lbEmail.Size = new System.Drawing.Size(203, 42);
             this.lbEmail.TabIndex = 31;
             this.lbEmail.Text = "E-mail";
             this.lbEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -449,11 +467,11 @@
             this.txbPhone.LineIdleColor = System.Drawing.Color.Gray;
             this.txbPhone.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbPhone.LineThickness = 1;
-            this.txbPhone.Location = new System.Drawing.Point(161, 47);
-            this.txbPhone.Margin = new System.Windows.Forms.Padding(4);
+            this.txbPhone.Location = new System.Drawing.Point(215, 58);
+            this.txbPhone.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txbPhone.MaxLength = 32767;
             this.txbPhone.Name = "txbPhone";
-            this.txbPhone.Size = new System.Drawing.Size(219, 34);
+            this.txbPhone.Size = new System.Drawing.Size(292, 42);
             this.txbPhone.TabIndex = 14;
             this.txbPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -462,9 +480,10 @@
             this.lbPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbPhone.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbPhone.Location = new System.Drawing.Point(2, 47);
+            this.lbPhone.Location = new System.Drawing.Point(3, 58);
+            this.lbPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPhone.Name = "lbPhone";
-            this.lbPhone.Size = new System.Drawing.Size(152, 34);
+            this.lbPhone.Size = new System.Drawing.Size(203, 42);
             this.lbPhone.TabIndex = 10;
             this.lbPhone.Text = "ID";
             this.lbPhone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -485,11 +504,11 @@
             this.txbName.LineIdleColor = System.Drawing.Color.Gray;
             this.txbName.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbName.LineThickness = 1;
-            this.txbName.Location = new System.Drawing.Point(161, 89);
-            this.txbName.Margin = new System.Windows.Forms.Padding(4);
+            this.txbName.Location = new System.Drawing.Point(215, 110);
+            this.txbName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txbName.MaxLength = 32767;
             this.txbName.Name = "txbName";
-            this.txbName.Size = new System.Drawing.Size(219, 34);
+            this.txbName.Size = new System.Drawing.Size(292, 42);
             this.txbName.TabIndex = 15;
             this.txbName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -508,11 +527,11 @@
             this.txbID.LineIdleColor = System.Drawing.Color.Gray;
             this.txbID.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbID.LineThickness = 1;
-            this.txbID.Location = new System.Drawing.Point(161, 5);
-            this.txbID.Margin = new System.Windows.Forms.Padding(4);
+            this.txbID.Location = new System.Drawing.Point(215, 6);
+            this.txbID.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txbID.MaxLength = 32767;
             this.txbID.Name = "txbID";
-            this.txbID.Size = new System.Drawing.Size(219, 34);
+            this.txbID.Size = new System.Drawing.Size(292, 42);
             this.txbID.TabIndex = 14;
             this.txbID.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -521,9 +540,10 @@
             this.lbName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbName.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbName.Location = new System.Drawing.Point(2, 89);
+            this.lbName.Location = new System.Drawing.Point(3, 110);
+            this.lbName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(152, 34);
+            this.lbName.Size = new System.Drawing.Size(203, 42);
             this.lbName.TabIndex = 11;
             this.lbName.Text = "Name";
             this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -533,9 +553,10 @@
             this.lbUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbUser.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbUser.Location = new System.Drawing.Point(2, 5);
+            this.lbUser.Location = new System.Drawing.Point(3, 6);
+            this.lbUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(152, 34);
+            this.lbUser.Size = new System.Drawing.Size(203, 42);
             this.lbUser.TabIndex = 10;
             this.lbUser.Text = "User name";
             this.lbUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -544,9 +565,10 @@
             // 
             this.pnBtn.Controls.Add(this.btnDel);
             this.pnBtn.Controls.Add(this.btnUpdate);
-            this.pnBtn.Location = new System.Drawing.Point(291, 470);
+            this.pnBtn.Location = new System.Drawing.Point(388, 578);
+            this.pnBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnBtn.Name = "pnBtn";
-            this.pnBtn.Size = new System.Drawing.Size(222, 53);
+            this.pnBtn.Size = new System.Drawing.Size(296, 65);
             this.pnBtn.TabIndex = 2;
             // 
             // btnDel
@@ -579,7 +601,7 @@
             this.btnDel.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
             this.btnDel.OnHoverTextColor = System.Drawing.Color.White;
             this.btnDel.selected = true;
-            this.btnDel.Size = new System.Drawing.Size(102, 50);
+            this.btnDel.Size = new System.Drawing.Size(136, 62);
             this.btnDel.TabIndex = 3;
             this.btnDel.Text = " Delete";
             this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -609,14 +631,14 @@
             this.btnUpdate.IconVisible = true;
             this.btnUpdate.IconZoom = 30D;
             this.btnUpdate.IsTab = false;
-            this.btnUpdate.Location = new System.Drawing.Point(105, 1);
+            this.btnUpdate.Location = new System.Drawing.Point(139, 1);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(1);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
             this.btnUpdate.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(72)))), ((int)(((byte)(107)))));
             this.btnUpdate.OnHoverTextColor = System.Drawing.SystemColors.Window;
             this.btnUpdate.selected = true;
-            this.btnUpdate.Size = new System.Drawing.Size(114, 50);
+            this.btnUpdate.Size = new System.Drawing.Size(152, 62);
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -633,8 +655,9 @@
             this.pnSearch.Controls.Add(this.btnCreate);
             this.pnSearch.Controls.Add(this.txbSearch);
             this.pnSearch.Location = new System.Drawing.Point(0, 1);
+            this.pnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnSearch.Name = "pnSearch";
-            this.pnSearch.Size = new System.Drawing.Size(721, 47);
+            this.pnSearch.Size = new System.Drawing.Size(961, 58);
             this.pnSearch.TabIndex = 3;
             // 
             // btnCreate
@@ -674,7 +697,8 @@
             this.btnCreate.IdleIconLeftImage = null;
             this.btnCreate.IdleIconRightImage = null;
             this.btnCreate.IndicateFocus = false;
-            this.btnCreate.Location = new System.Drawing.Point(592, 4);
+            this.btnCreate.Location = new System.Drawing.Point(789, 5);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCreate.Name = "btnCreate";
             stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
             stateProperties1.BorderRadius = 20;
@@ -694,7 +718,7 @@
             stateProperties2.IconLeftImage = null;
             stateProperties2.IconRightImage = null;
             this.btnCreate.OnPressedState = stateProperties2;
-            this.btnCreate.Size = new System.Drawing.Size(126, 40);
+            this.btnCreate.Size = new System.Drawing.Size(168, 49);
             this.btnCreate.TabIndex = 23;
             this.btnCreate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCreate.TextMarginLeft = 0;
@@ -729,9 +753,10 @@
             this.txbSearch.IconRight = null;
             this.txbSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txbSearch.Lines = new string[0];
-            this.txbSearch.Location = new System.Drawing.Point(6, 7);
+            this.txbSearch.Location = new System.Drawing.Point(8, 9);
+            this.txbSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbSearch.MaxLength = 32767;
-            this.txbSearch.MinimumSize = new System.Drawing.Size(100, 35);
+            this.txbSearch.MinimumSize = new System.Drawing.Size(133, 43);
             this.txbSearch.Modified = false;
             this.txbSearch.Multiline = false;
             this.txbSearch.Name = "txbSearch";
@@ -764,7 +789,7 @@
             this.txbSearch.SelectionLength = 0;
             this.txbSearch.SelectionStart = 0;
             this.txbSearch.ShortcutsEnabled = true;
-            this.txbSearch.Size = new System.Drawing.Size(234, 35);
+            this.txbSearch.Size = new System.Drawing.Size(312, 43);
             this.txbSearch.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.txbSearch.TabIndex = 21;
             this.txbSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -792,16 +817,17 @@
             // 
             // AccountUsrCtrl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.pnRight);
             this.Controls.Add(this.pnLeft);
             this.Controls.Add(this.pnSearch);
-            this.MaximumSize = new System.Drawing.Size(1262, 562);
-            this.MinimumSize = new System.Drawing.Size(1262, 562);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximumSize = new System.Drawing.Size(1683, 692);
+            this.MinimumSize = new System.Drawing.Size(1683, 692);
             this.Name = "AccountUsrCtrl";
-            this.Size = new System.Drawing.Size(1262, 562);
+            this.Size = new System.Drawing.Size(1683, 692);
             this.pnLeft.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).EndInit();
             this.pnRight.ResumeLayout(false);

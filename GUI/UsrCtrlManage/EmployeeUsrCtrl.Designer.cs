@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeUsrCtrl));
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             this.pnLeft = new System.Windows.Forms.Panel();
             this.bunifuDataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,8 +50,6 @@
             this.lbInfo = new System.Windows.Forms.Label();
             this.pnInfo = new System.Windows.Forms.Panel();
             this.txbdateworking = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.dropDownPosition = new Bunifu.Framework.UI.BunifuDropdown();
-            this.lbPosition = new System.Windows.Forms.Label();
             this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label1 = new System.Windows.Forms.Label();
             this.dropDownAcc = new Bunifu.Framework.UI.BunifuDropdown();
@@ -60,11 +58,6 @@
             this.lbAdd = new System.Windows.Forms.Label();
             this.txbPhone = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.lbPhone = new System.Windows.Forms.Label();
-            this.lbFemale = new System.Windows.Forms.Label();
-            this.radioFemale = new Bunifu.UI.WinForms.BunifuRadioButton();
-            this.lbMale = new System.Windows.Forms.Label();
-            this.radioMale = new Bunifu.UI.WinForms.BunifuRadioButton();
-            this.lbGender = new System.Windows.Forms.Label();
             this.lbDate = new System.Windows.Forms.Label();
             this.txbName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txbID = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -85,6 +78,13 @@
             this.elipseBtnSave = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.elipseBtnUpdate = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.elipseBtnDel = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.lbPosition = new System.Windows.Forms.Label();
+            this.radioFemale = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.lbFemale = new System.Windows.Forms.Label();
+            this.lbMale = new System.Windows.Forms.Label();
+            this.radioMale = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.lbGender = new System.Windows.Forms.Label();
+            this.txbChucVu = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.pnLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).BeginInit();
             this.pnRight.SuspendLayout();
@@ -110,21 +110,21 @@
             this.bunifuDataGridView1.AllowCustomTheming = false;
             this.bunifuDataGridView1.AllowUserToAddRows = false;
             this.bunifuDataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.bunifuDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.bunifuDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.bunifuDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.bunifuDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.bunifuDataGridView1.ColumnHeadersHeight = 40;
             this.bunifuDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -148,14 +148,14 @@
             this.bunifuDataGridView1.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.bunifuDataGridView1.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             this.bunifuDataGridView1.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.bunifuDataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bunifuDataGridView1.DefaultCellStyle = dataGridViewCellStyle10;
             this.bunifuDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuDataGridView1.EnableHeadersVisualStyles = false;
             this.bunifuDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
@@ -178,8 +178,8 @@
             // id
             // 
             this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.id.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.id.DefaultCellStyle = dataGridViewCellStyle8;
             this.id.FillWeight = 137.6729F;
             this.id.HeaderText = "ID";
             this.id.MinimumWidth = 6;
@@ -210,8 +210,8 @@
             // phone
             // 
             this.phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.phone.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.phone.DefaultCellStyle = dataGridViewCellStyle9;
             this.phone.FillWeight = 50.887F;
             this.phone.HeaderText = "Phone";
             this.phone.MinimumWidth = 6;
@@ -254,22 +254,22 @@
             // 
             // pnInfo
             // 
+            this.pnInfo.Controls.Add(this.txbChucVu);
             this.pnInfo.Controls.Add(this.txbdateworking);
-            this.pnInfo.Controls.Add(this.dropDownPosition);
             this.pnInfo.Controls.Add(this.lbPosition);
             this.pnInfo.Controls.Add(this.bunifuMaterialTextbox1);
+            this.pnInfo.Controls.Add(this.radioMale);
+            this.pnInfo.Controls.Add(this.lbFemale);
+            this.pnInfo.Controls.Add(this.lbGender);
+            this.pnInfo.Controls.Add(this.lbMale);
             this.pnInfo.Controls.Add(this.label1);
+            this.pnInfo.Controls.Add(this.radioFemale);
             this.pnInfo.Controls.Add(this.dropDownAcc);
             this.pnInfo.Controls.Add(this.lbAccount);
             this.pnInfo.Controls.Add(this.txbAdd);
             this.pnInfo.Controls.Add(this.lbAdd);
             this.pnInfo.Controls.Add(this.txbPhone);
             this.pnInfo.Controls.Add(this.lbPhone);
-            this.pnInfo.Controls.Add(this.lbFemale);
-            this.pnInfo.Controls.Add(this.radioFemale);
-            this.pnInfo.Controls.Add(this.lbMale);
-            this.pnInfo.Controls.Add(this.radioMale);
-            this.pnInfo.Controls.Add(this.lbGender);
             this.pnInfo.Controls.Add(this.lbDate);
             this.pnInfo.Controls.Add(this.txbName);
             this.pnInfo.Controls.Add(this.txbID);
@@ -296,49 +296,13 @@
             this.txbdateworking.LineIdleColor = System.Drawing.Color.Gray;
             this.txbdateworking.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbdateworking.LineThickness = 1;
-            this.txbdateworking.Location = new System.Drawing.Point(125, 111);
+            this.txbdateworking.Location = new System.Drawing.Point(123, 206);
             this.txbdateworking.Margin = new System.Windows.Forms.Padding(5);
             this.txbdateworking.MaxLength = 32767;
             this.txbdateworking.Name = "txbdateworking";
             this.txbdateworking.Size = new System.Drawing.Size(292, 42);
             this.txbdateworking.TabIndex = 35;
             this.txbdateworking.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // dropDownPosition
-            // 
-            this.dropDownPosition.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.dropDownPosition.BackColor = System.Drawing.Color.Transparent;
-            this.dropDownPosition.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.dropDownPosition.BorderRadius = 3;
-            this.dropDownPosition.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dropDownPosition.DisabledColor = System.Drawing.SystemColors.GrayText;
-            this.dropDownPosition.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dropDownPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.dropDownPosition.items = new string[] {
-        "--Selection--",
-        "Staff",
-        "Manager"};
-            this.dropDownPosition.Location = new System.Drawing.Point(120, 359);
-            this.dropDownPosition.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.dropDownPosition.Name = "dropDownPosition";
-            this.dropDownPosition.NomalColor = System.Drawing.SystemColors.Control;
-            this.dropDownPosition.onHoverColor = System.Drawing.Color.White;
-            this.dropDownPosition.selectedIndex = 0;
-            this.dropDownPosition.Size = new System.Drawing.Size(293, 42);
-            this.dropDownPosition.TabIndex = 34;
-            // 
-            // lbPosition
-            // 
-            this.lbPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbPosition.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbPosition.Location = new System.Drawing.Point(3, 359);
-            this.lbPosition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbPosition.Name = "lbPosition";
-            this.lbPosition.Size = new System.Drawing.Size(111, 42);
-            this.lbPosition.TabIndex = 33;
-            this.lbPosition.Text = "Position";
-            this.lbPosition.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // bunifuMaterialTextbox1
             // 
@@ -461,7 +425,7 @@
             this.txbPhone.LineIdleColor = System.Drawing.Color.Gray;
             this.txbPhone.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbPhone.LineThickness = 1;
-            this.txbPhone.Location = new System.Drawing.Point(124, 208);
+            this.txbPhone.Location = new System.Drawing.Point(123, 154);
             this.txbPhone.Margin = new System.Windows.Forms.Padding(5);
             this.txbPhone.MaxLength = 32767;
             this.txbPhone.Name = "txbPhone";
@@ -474,7 +438,7 @@
             this.lbPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbPhone.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbPhone.Location = new System.Drawing.Point(3, 208);
+            this.lbPhone.Location = new System.Drawing.Point(3, 164);
             this.lbPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPhone.Name = "lbPhone";
             this.lbPhone.Size = new System.Drawing.Size(111, 42);
@@ -482,83 +446,12 @@
             this.lbPhone.Text = "Phone";
             this.lbPhone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lbFemale
-            // 
-            this.lbFemale.Enabled = false;
-            this.lbFemale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbFemale.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFemale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbFemale.Location = new System.Drawing.Point(291, 158);
-            this.lbFemale.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbFemale.Name = "lbFemale";
-            this.lbFemale.Size = new System.Drawing.Size(84, 42);
-            this.lbFemale.TabIndex = 26;
-            this.lbFemale.Text = "Female";
-            this.lbFemale.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // radioFemale
-            // 
-            this.radioFemale.BackColor = System.Drawing.SystemColors.Control;
-            this.radioFemale.Checked = false;
-            this.radioFemale.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radioFemale.Location = new System.Drawing.Point(261, 169);
-            this.radioFemale.Margin = new System.Windows.Forms.Padding(4);
-            this.radioFemale.Name = "radioFemale";
-            this.radioFemale.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.radioFemale.RadioColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.radioFemale.Size = new System.Drawing.Size(21, 21);
-            this.radioFemale.TabIndex = 25;
-            this.radioFemale.Text = null;
-            this.radioFemale.Click += new System.EventHandler(this.radioFemale_Click);
-            // 
-            // lbMale
-            // 
-            this.lbMale.Enabled = false;
-            this.lbMale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbMale.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbMale.Location = new System.Drawing.Point(169, 158);
-            this.lbMale.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbMale.Name = "lbMale";
-            this.lbMale.Size = new System.Drawing.Size(60, 42);
-            this.lbMale.TabIndex = 24;
-            this.lbMale.Text = "Male";
-            this.lbMale.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // radioMale
-            // 
-            this.radioMale.BackColor = System.Drawing.SystemColors.Control;
-            this.radioMale.Checked = true;
-            this.radioMale.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radioMale.Location = new System.Drawing.Point(140, 169);
-            this.radioMale.Margin = new System.Windows.Forms.Padding(4);
-            this.radioMale.Name = "radioMale";
-            this.radioMale.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.radioMale.RadioColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.radioMale.Size = new System.Drawing.Size(21, 21);
-            this.radioMale.TabIndex = 23;
-            this.radioMale.Text = null;
-            this.radioMale.Click += new System.EventHandler(this.radioMale_Click);
-            // 
-            // lbGender
-            // 
-            this.lbGender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbGender.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbGender.Location = new System.Drawing.Point(3, 158);
-            this.lbGender.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbGender.Name = "lbGender";
-            this.lbGender.Size = new System.Drawing.Size(111, 42);
-            this.lbGender.TabIndex = 22;
-            this.lbGender.Text = "Gender";
-            this.lbGender.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // lbDate
             // 
             this.lbDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbDate.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.lbDate.Location = new System.Drawing.Point(3, 107);
+            this.lbDate.Location = new System.Drawing.Point(3, 216);
             this.lbDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbDate.Name = "lbDate";
             this.lbDate.Size = new System.Drawing.Size(111, 42);
@@ -890,26 +783,26 @@
             this.txbSearch.Modified = false;
             this.txbSearch.Multiline = false;
             this.txbSearch.Name = "txbSearch";
-            stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbSearch.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            stateProperties2.FillColor = System.Drawing.Color.White;
-            stateProperties2.ForeColor = System.Drawing.Color.Empty;
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txbSearch.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbSearch.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txbSearch.OnIdleState = stateProperties4;
+            stateProperties5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
+            stateProperties5.FillColor = System.Drawing.Color.Empty;
+            stateProperties5.ForeColor = System.Drawing.Color.Empty;
+            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbSearch.OnActiveState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
+            stateProperties6.FillColor = System.Drawing.Color.White;
+            stateProperties6.ForeColor = System.Drawing.Color.Empty;
+            stateProperties6.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txbSearch.OnDisabledState = stateProperties6;
+            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
+            stateProperties7.FillColor = System.Drawing.Color.Empty;
+            stateProperties7.ForeColor = System.Drawing.Color.Empty;
+            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbSearch.OnHoverState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
+            stateProperties8.FillColor = System.Drawing.Color.White;
+            stateProperties8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
+            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txbSearch.OnIdleState = stateProperties8;
             this.txbSearch.PasswordChar = '\0';
             this.txbSearch.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txbSearch.PlaceholderText = "Search...";
@@ -949,6 +842,113 @@
             // 
             this.elipseBtnDel.ElipseRadius = 20;
             this.elipseBtnDel.TargetControl = this.btnDel;
+            // 
+            // lbPosition
+            // 
+            this.lbPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbPosition.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
+            this.lbPosition.Location = new System.Drawing.Point(3, 112);
+            this.lbPosition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbPosition.Name = "lbPosition";
+            this.lbPosition.Size = new System.Drawing.Size(111, 42);
+            this.lbPosition.TabIndex = 33;
+            this.lbPosition.Text = "Position";
+            this.lbPosition.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // radioFemale
+            // 
+            this.radioFemale.BackColor = System.Drawing.SystemColors.Control;
+            this.radioFemale.Checked = false;
+            this.radioFemale.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.radioFemale.Location = new System.Drawing.Point(270, 378);
+            this.radioFemale.Margin = new System.Windows.Forms.Padding(4);
+            this.radioFemale.Name = "radioFemale";
+            this.radioFemale.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
+            this.radioFemale.RadioColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
+            this.radioFemale.Size = new System.Drawing.Size(21, 21);
+            this.radioFemale.TabIndex = 25;
+            this.radioFemale.Text = null;
+            this.radioFemale.Click += new System.EventHandler(this.radioFemale_Click);
+            // 
+            // lbFemale
+            // 
+            this.lbFemale.Enabled = false;
+            this.lbFemale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbFemale.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFemale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
+            this.lbFemale.Location = new System.Drawing.Point(289, 367);
+            this.lbFemale.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbFemale.Name = "lbFemale";
+            this.lbFemale.Size = new System.Drawing.Size(84, 42);
+            this.lbFemale.TabIndex = 26;
+            this.lbFemale.Text = "Female";
+            this.lbFemale.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbMale
+            // 
+            this.lbMale.Enabled = false;
+            this.lbMale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbMale.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
+            this.lbMale.Location = new System.Drawing.Point(149, 367);
+            this.lbMale.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbMale.Name = "lbMale";
+            this.lbMale.Size = new System.Drawing.Size(60, 42);
+            this.lbMale.TabIndex = 24;
+            this.lbMale.Text = "Male";
+            this.lbMale.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // radioMale
+            // 
+            this.radioMale.BackColor = System.Drawing.SystemColors.Control;
+            this.radioMale.Checked = true;
+            this.radioMale.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.radioMale.Location = new System.Drawing.Point(124, 378);
+            this.radioMale.Margin = new System.Windows.Forms.Padding(4);
+            this.radioMale.Name = "radioMale";
+            this.radioMale.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
+            this.radioMale.RadioColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
+            this.radioMale.Size = new System.Drawing.Size(21, 21);
+            this.radioMale.TabIndex = 23;
+            this.radioMale.Text = null;
+            this.radioMale.Click += new System.EventHandler(this.radioMale_Click);
+            // 
+            // lbGender
+            // 
+            this.lbGender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbGender.Font = new System.Drawing.Font("Roboto", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
+            this.lbGender.Location = new System.Drawing.Point(3, 367);
+            this.lbGender.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbGender.Name = "lbGender";
+            this.lbGender.Size = new System.Drawing.Size(111, 42);
+            this.lbGender.TabIndex = 22;
+            this.lbGender.Text = "Gender";
+            this.lbGender.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txbChucVu
+            // 
+            this.txbChucVu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txbChucVu.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txbChucVu.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txbChucVu.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbChucVu.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbChucVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
+            this.txbChucVu.HintForeColor = System.Drawing.SystemColors.ControlDark;
+            this.txbChucVu.HintText = "";
+            this.txbChucVu.isPassword = false;
+            this.txbChucVu.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
+            this.txbChucVu.LineIdleColor = System.Drawing.Color.Gray;
+            this.txbChucVu.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
+            this.txbChucVu.LineThickness = 1;
+            this.txbChucVu.Location = new System.Drawing.Point(123, 102);
+            this.txbChucVu.Margin = new System.Windows.Forms.Padding(5);
+            this.txbChucVu.MaxLength = 32767;
+            this.txbChucVu.Name = "txbChucVu";
+            this.txbChucVu.Size = new System.Drawing.Size(292, 42);
+            this.txbChucVu.TabIndex = 36;
+            this.txbChucVu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // EmployeeUsrCtrl
             // 
@@ -1001,11 +1001,6 @@
         private Bunifu.Framework.UI.BunifuElipse elipseBtnDel;
         private Bunifu.UI.WinForms.BunifuDataGridView bunifuDataGridView1;
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txbSearch;
-        private System.Windows.Forms.Label lbFemale;
-        private Bunifu.UI.WinForms.BunifuRadioButton radioFemale;
-        private System.Windows.Forms.Label lbMale;
-        private Bunifu.UI.WinForms.BunifuRadioButton radioMale;
-        private System.Windows.Forms.Label lbGender;
         private System.Windows.Forms.Label lbDate;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txbPhone;
         private System.Windows.Forms.Label lbPhone;
@@ -1015,8 +1010,6 @@
         private Bunifu.Framework.UI.BunifuDropdown dropDownAcc;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuDropdown dropDownPosition;
-        private System.Windows.Forms.Label lbPosition;
         private Bunifu.Framework.UI.BunifuFlatButton btnAddPic;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txbdateworking;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
@@ -1024,5 +1017,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn position;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.Label lbPosition;
+        private System.Windows.Forms.Label lbFemale;
+        private Bunifu.UI.WinForms.BunifuRadioButton radioFemale;
+        private System.Windows.Forms.Label lbMale;
+        private Bunifu.UI.WinForms.BunifuRadioButton radioMale;
+        private System.Windows.Forms.Label lbGender;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txbChucVu;
     }
 }

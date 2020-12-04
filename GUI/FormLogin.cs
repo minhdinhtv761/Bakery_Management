@@ -24,6 +24,16 @@ namespace GUI
             this.Close();
         }
 
+        private bool LoginAdmin(string username, string password)
+        {
+            return AccountDAL.Instance.LoginAdmin(username, password);
+        }
+
+        private bool LoginStaff(string username, string password)
+        {
+            return AccountDAL.Instance.LoginStaff(username, password);
+        }
+
         private bool Login(string username, string password)
         {
             return AccountDAL.Instance.Login(username, password);

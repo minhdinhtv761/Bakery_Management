@@ -72,5 +72,11 @@ namespace GUI.DAL
             return result.Rows.Count > 0;
         }
 
+        public void changePassword(string username, string password)
+        {
+            //password = Encryptor.Instance.Encrypt(password);
+            DataProvider.Instance.ExecuteQuery(string.Format("UPDATE ACCOUNT SET MATKHAU = '{0}' WHERE MANV = '{1}' ", password, username));
+        }
+
     }
 }
