@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using GUI.DAL;
 
 namespace GUI.UsrCtrlManage
 {
@@ -14,6 +15,7 @@ namespace GUI.UsrCtrlManage
         public AccountUsrCtrl()
         {
             InitializeComponent();
+            LoadDataGridView();
         }
 
         private void txbPrice_KeyPress(object sender, KeyPressEventArgs e)
@@ -30,6 +32,21 @@ namespace GUI.UsrCtrlManage
             formAccount.ShowDialog();
         }
 
+        void LoadDataGridView()
+        {
+            this.bunifuDataGridView1.Controls.Clear();
+            foreach (var item in AccountDAL.Instance.GetAccount())
+            {
+                DataGridViewRow newRow = new DataGridViewRow();
+
+                newRow.CreateCells(bunifuDataGridView1);
+                newRow.Cells[0].Value = item.MaNV1;
+                //newRow.Cells[1].Value = item.Pass1;
+                newRow.Cells[2].Value = item.Type1;
+                bunifuDataGridView1.Rows.Add(newRow);
+            }
+            txbID.Text = bunifuDataGridView1.Rows[0].Cells[0].Value.ToString();
+        }
       
     }
 }

@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using GUI.DAL;
+using GUI.DTO;
 
 namespace GUI
 {
@@ -13,7 +15,7 @@ namespace GUI
     {
         public FormLogin()
         {
-            InitializeComponent();
+            InitializeComponent();          
         }
 
         private void close_Click(object sender, EventArgs e)
@@ -22,18 +24,57 @@ namespace GUI
             this.Close();
         }
 
+        private bool Login(string username, string password)
+        {
+            return AccountDAL.Instance.Login(username, password);
+        }
+
         private void btnCashier_Click(object sender, EventArgs e)
         {
-            Form formCashier = new FormCashier();
-            formCashier.Show();
-            this.Hide();
+            string username = this.txbID.Text;
+            string password = this.txbPass.Text;
+            try
+            {
+                if (Login(username, password))
+                {
+                    Form formCashier = new FormCashier();
+                    formCashier.Show();
+                    this.Hide();
+                    this.txbID.Text = this.txbPass.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Error");
+                }
+            }
+            catch
+            {
+
+            }
         }
 
         private void btnManager_Click(object sender, EventArgs e)
         {
-            Form formManager = new FormManager();
-            formManager.Show();
-            this.Hide();
+            string username = this.txbID.Text;
+            string password = this.txbPass.Text;
+            try
+            {
+                if (Login(username, password))
+                {
+                    Form formManager = new FormManager();
+                    formManager.Show();
+                    this.Hide();
+                    this.txbID.Text = this.txbPass.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Error");
+                }
+            }
+            catch
+            {
+
+            }
         }
     }
 }

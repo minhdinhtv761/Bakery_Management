@@ -78,7 +78,7 @@
             this.pnControl.Controls.Add(this.close);
             this.pnControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnControl.Location = new System.Drawing.Point(0, 0);
-            this.pnControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnControl.Margin = new System.Windows.Forms.Padding(4);
             this.pnControl.Name = "pnControl";
             this.pnControl.Size = new System.Drawing.Size(1683, 44);
             this.pnControl.TabIndex = 0;
@@ -90,7 +90,7 @@
             this.minimize.Image = ((System.Drawing.Image)(resources.GetObject("minimize.Image")));
             this.minimize.ImageActive = null;
             this.minimize.Location = new System.Drawing.Point(1560, 7);
-            this.minimize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.minimize.Margin = new System.Windows.Forms.Padding(4);
             this.minimize.Name = "minimize";
             this.minimize.Size = new System.Drawing.Size(51, 30);
             this.minimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -106,7 +106,7 @@
             this.close.Image = ((System.Drawing.Image)(resources.GetObject("close.Image")));
             this.close.ImageActive = null;
             this.close.Location = new System.Drawing.Point(1616, 7);
-            this.close.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.close.Margin = new System.Windows.Forms.Padding(4);
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(51, 30);
             this.close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -127,7 +127,7 @@
             this.pnList.Controls.Add(this.btnProduct);
             this.pnList.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnList.Location = new System.Drawing.Point(0, 44);
-            this.pnList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnList.Margin = new System.Windows.Forms.Padding(4);
             this.pnList.Name = "pnList";
             this.pnList.Size = new System.Drawing.Size(1683, 64);
             this.pnList.TabIndex = 1;
@@ -136,7 +136,7 @@
             // 
             this.pnLine.BackColor = System.Drawing.SystemColors.ControlDark;
             this.pnLine.Location = new System.Drawing.Point(0, 62);
-            this.pnLine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnLine.Margin = new System.Windows.Forms.Padding(4);
             this.pnLine.Name = "pnLine";
             this.pnLine.Size = new System.Drawing.Size(1683, 2);
             this.pnLine.TabIndex = 15;
@@ -288,7 +288,7 @@
             // 
             this.pnMain.Controls.Add(this.pages);
             this.pnMain.Location = new System.Drawing.Point(0, 107);
-            this.pnMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnMain.Margin = new System.Windows.Forms.Padding(4);
             this.pnMain.Name = "pnMain";
             this.pnMain.Size = new System.Drawing.Size(1683, 692);
             this.pnMain.TabIndex = 2;
@@ -305,7 +305,7 @@
             this.pages.Controls.Add(this.ACCOUNT);
             this.pages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pages.Location = new System.Drawing.Point(0, 0);
-            this.pages.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pages.Margin = new System.Windows.Forms.Padding(4);
             this.pages.Multiline = true;
             this.pages.Name = "pages";
             this.pages.Padding = new System.Drawing.Point(0, 0);
@@ -338,9 +338,9 @@
             // 
             this.PRODUCT.Controls.Add(this.productUsrCtrl1);
             this.PRODUCT.Location = new System.Drawing.Point(4, 4);
-            this.PRODUCT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PRODUCT.Margin = new System.Windows.Forms.Padding(4);
             this.PRODUCT.Name = "PRODUCT";
-            this.PRODUCT.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PRODUCT.Padding = new System.Windows.Forms.Padding(4);
             this.PRODUCT.Size = new System.Drawing.Size(1675, 663);
             this.PRODUCT.TabIndex = 0;
             this.PRODUCT.Text = "PRODUCT";
@@ -362,9 +362,9 @@
             // 
             this.TABLE.Controls.Add(this.tableUsrCtrl1);
             this.TABLE.Location = new System.Drawing.Point(4, 4);
-            this.TABLE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TABLE.Margin = new System.Windows.Forms.Padding(4);
             this.TABLE.Name = "TABLE";
-            this.TABLE.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TABLE.Padding = new System.Windows.Forms.Padding(4);
             this.TABLE.Size = new System.Drawing.Size(1675, 663);
             this.TABLE.TabIndex = 1;
             this.TABLE.Text = "TABLE";
@@ -375,7 +375,7 @@
             this.tableUsrCtrl1.BackColor = System.Drawing.Color.White;
             this.tableUsrCtrl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableUsrCtrl1.Location = new System.Drawing.Point(4, 4);
-            this.tableUsrCtrl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tableUsrCtrl1.Margin = new System.Windows.Forms.Padding(5);
             this.tableUsrCtrl1.MaximumSize = new System.Drawing.Size(1683, 692);
             this.tableUsrCtrl1.MinimumSize = new System.Drawing.Size(1683, 692);
             this.tableUsrCtrl1.Name = "tableUsrCtrl1";
@@ -386,9 +386,9 @@
             // 
             this.CATEGORY.Controls.Add(this.categoryUsrCtrl1);
             this.CATEGORY.Location = new System.Drawing.Point(4, 4);
-            this.CATEGORY.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CATEGORY.Margin = new System.Windows.Forms.Padding(4);
             this.CATEGORY.Name = "CATEGORY";
-            this.CATEGORY.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CATEGORY.Padding = new System.Windows.Forms.Padding(4);
             this.CATEGORY.Size = new System.Drawing.Size(1675, 663);
             this.CATEGORY.TabIndex = 2;
             this.CATEGORY.Text = "CATEGORY";
@@ -399,7 +399,7 @@
             this.categoryUsrCtrl1.BackColor = System.Drawing.Color.White;
             this.categoryUsrCtrl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.categoryUsrCtrl1.Location = new System.Drawing.Point(4, 4);
-            this.categoryUsrCtrl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.categoryUsrCtrl1.Margin = new System.Windows.Forms.Padding(5);
             this.categoryUsrCtrl1.MaximumSize = new System.Drawing.Size(1683, 692);
             this.categoryUsrCtrl1.MinimumSize = new System.Drawing.Size(1683, 692);
             this.categoryUsrCtrl1.Name = "categoryUsrCtrl1";
@@ -410,9 +410,9 @@
             // 
             this.EMPLOYEE.Controls.Add(this.employeeUsrCtrl1);
             this.EMPLOYEE.Location = new System.Drawing.Point(4, 4);
-            this.EMPLOYEE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EMPLOYEE.Margin = new System.Windows.Forms.Padding(4);
             this.EMPLOYEE.Name = "EMPLOYEE";
-            this.EMPLOYEE.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EMPLOYEE.Padding = new System.Windows.Forms.Padding(4);
             this.EMPLOYEE.Size = new System.Drawing.Size(1675, 663);
             this.EMPLOYEE.TabIndex = 3;
             this.EMPLOYEE.Text = "EMPLOYEE";
@@ -423,7 +423,7 @@
             this.employeeUsrCtrl1.BackColor = System.Drawing.Color.White;
             this.employeeUsrCtrl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.employeeUsrCtrl1.Location = new System.Drawing.Point(4, 4);
-            this.employeeUsrCtrl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.employeeUsrCtrl1.Margin = new System.Windows.Forms.Padding(5);
             this.employeeUsrCtrl1.MaximumSize = new System.Drawing.Size(1683, 692);
             this.employeeUsrCtrl1.MinimumSize = new System.Drawing.Size(1683, 692);
             this.employeeUsrCtrl1.Name = "employeeUsrCtrl1";
@@ -434,9 +434,9 @@
             // 
             this.INVOICES.Controls.Add(this.invoicesUsrCtrl1);
             this.INVOICES.Location = new System.Drawing.Point(4, 4);
-            this.INVOICES.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.INVOICES.Margin = new System.Windows.Forms.Padding(4);
             this.INVOICES.Name = "INVOICES";
-            this.INVOICES.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.INVOICES.Padding = new System.Windows.Forms.Padding(4);
             this.INVOICES.Size = new System.Drawing.Size(1675, 663);
             this.INVOICES.TabIndex = 4;
             this.INVOICES.Text = "INVOICES";
@@ -446,7 +446,7 @@
             // 
             this.invoicesUsrCtrl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.invoicesUsrCtrl1.Location = new System.Drawing.Point(4, 4);
-            this.invoicesUsrCtrl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.invoicesUsrCtrl1.Margin = new System.Windows.Forms.Padding(5);
             this.invoicesUsrCtrl1.MaximumSize = new System.Drawing.Size(1683, 692);
             this.invoicesUsrCtrl1.MinimumSize = new System.Drawing.Size(1683, 692);
             this.invoicesUsrCtrl1.Name = "invoicesUsrCtrl1";
@@ -457,9 +457,9 @@
             // 
             this.ACCOUNT.Controls.Add(this.accountUsrCtrl1);
             this.ACCOUNT.Location = new System.Drawing.Point(4, 4);
-            this.ACCOUNT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ACCOUNT.Margin = new System.Windows.Forms.Padding(4);
             this.ACCOUNT.Name = "ACCOUNT";
-            this.ACCOUNT.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ACCOUNT.Padding = new System.Windows.Forms.Padding(4);
             this.ACCOUNT.Size = new System.Drawing.Size(1675, 663);
             this.ACCOUNT.TabIndex = 5;
             this.ACCOUNT.Text = "ACCOUNT";
@@ -470,7 +470,7 @@
             this.accountUsrCtrl1.BackColor = System.Drawing.Color.White;
             this.accountUsrCtrl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.accountUsrCtrl1.Location = new System.Drawing.Point(4, 4);
-            this.accountUsrCtrl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.accountUsrCtrl1.Margin = new System.Windows.Forms.Padding(5);
             this.accountUsrCtrl1.MaximumSize = new System.Drawing.Size(1683, 692);
             this.accountUsrCtrl1.MinimumSize = new System.Drawing.Size(1683, 692);
             this.accountUsrCtrl1.Name = "accountUsrCtrl1";
@@ -487,7 +487,7 @@
             this.Controls.Add(this.pnControl);
             this.Controls.Add(this.pnMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormManager";

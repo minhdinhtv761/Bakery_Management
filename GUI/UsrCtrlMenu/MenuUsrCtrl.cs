@@ -48,21 +48,21 @@ namespace GUI.UsrCtrlMenu
             }
         }
 
-        private void btnAll_Click(object sender, EventArgs e)
+        private void btnAll_Click(object sender, EventArgs e)    //ALL
         {
             ActivateButton(sender);
             this.layoutPanel.Controls.Clear();
             LoadFood();
         }
 
-        private void btnOrdered_Click(object sender, EventArgs e)
+        private void btnOrdered_Click(object sender, EventArgs e)     //Bread
         {
             ActivateButton(sender);
             this.layoutPanel.Controls.Clear();
             LoadBread();
         }
 
-        private void btnEmpty_Click(object sender, EventArgs e)
+        private void btnEmpty_Click(object sender, EventArgs e)      //Cake
         {
             ActivateButton(sender);
             this.layoutPanel.Controls.Clear();

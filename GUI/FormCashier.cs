@@ -8,6 +8,8 @@ using System.Text;
 using FontAwesome.Sharp;
 using Bunifu.UI.WinForms;
 using System.Windows.Forms;
+using GUI.DTO;
+using GUI.DAL;
 
 namespace GUI
 {
