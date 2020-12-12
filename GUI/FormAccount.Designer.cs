@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAccount));
             this.elipseForm = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dropDownPosition = new Bunifu.Framework.UI.BunifuDropdown();
             this.lbPosition = new System.Windows.Forms.Label();
             this.txbID = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.lbUser = new System.Windows.Forms.Label();
@@ -47,6 +46,7 @@
             this.elipseBtnDel = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.elipseBtnSave = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.lbInfo = new System.Windows.Forms.Label();
+            this.txbChucVu = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panel1.SuspendLayout();
             this.pnBtn.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +58,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dropDownPosition);
+            this.panel1.Controls.Add(this.txbChucVu);
             this.panel1.Controls.Add(this.lbPosition);
             this.panel1.Controls.Add(this.txbID);
             this.panel1.Controls.Add(this.lbUser);
@@ -67,33 +67,10 @@
             this.panel1.Controls.Add(this.lbRePass);
             this.panel1.Controls.Add(this.lbPass);
             this.panel1.Location = new System.Drawing.Point(47, 80);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(540, 215);
             this.panel1.TabIndex = 0;
-            // 
-            // dropDownPosition
-            // 
-            this.dropDownPosition.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.dropDownPosition.BackColor = System.Drawing.Color.Transparent;
-            this.dropDownPosition.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.dropDownPosition.BorderRadius = 3;
-            this.dropDownPosition.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dropDownPosition.DisabledColor = System.Drawing.SystemColors.GrayText;
-            this.dropDownPosition.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dropDownPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.dropDownPosition.items = new string[] {
-        "--Selection--",
-        "Staff",
-        "Manager"};
-            this.dropDownPosition.Location = new System.Drawing.Point(216, 153);
-            this.dropDownPosition.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.dropDownPosition.Name = "dropDownPosition";
-            this.dropDownPosition.NomalColor = System.Drawing.SystemColors.Control;
-            this.dropDownPosition.onHoverColor = System.Drawing.Color.White;
-            this.dropDownPosition.selectedIndex = 0;
-            this.dropDownPosition.Size = new System.Drawing.Size(293, 42);
-            this.dropDownPosition.TabIndex = 46;
             // 
             // lbPosition
             // 
@@ -124,7 +101,7 @@
             this.txbID.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbID.LineThickness = 1;
             this.txbID.Location = new System.Drawing.Point(216, 0);
-            this.txbID.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txbID.Margin = new System.Windows.Forms.Padding(5);
             this.txbID.MaxLength = 32767;
             this.txbID.Name = "txbID";
             this.txbID.Size = new System.Drawing.Size(292, 42);
@@ -160,7 +137,7 @@
             this.txbRePass.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbRePass.LineThickness = 1;
             this.txbRePass.Location = new System.Drawing.Point(216, 102);
-            this.txbRePass.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txbRePass.Margin = new System.Windows.Forms.Padding(5);
             this.txbRePass.MaxLength = 32767;
             this.txbRePass.Name = "txbRePass";
             this.txbRePass.Size = new System.Drawing.Size(292, 42);
@@ -183,7 +160,7 @@
             this.txbOldPass.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbOldPass.LineThickness = 1;
             this.txbOldPass.Location = new System.Drawing.Point(216, 50);
-            this.txbOldPass.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txbOldPass.Margin = new System.Windows.Forms.Padding(5);
             this.txbOldPass.MaxLength = 32767;
             this.txbOldPass.Name = "txbOldPass";
             this.txbOldPass.Size = new System.Drawing.Size(292, 42);
@@ -221,7 +198,7 @@
             this.pnBtn.Controls.Add(this.btnCancel);
             this.pnBtn.Controls.Add(this.btnSave);
             this.pnBtn.Location = new System.Drawing.Point(164, 322);
-            this.pnBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnBtn.Margin = new System.Windows.Forms.Padding(4);
             this.pnBtn.Name = "pnBtn";
             this.pnBtn.Size = new System.Drawing.Size(287, 65);
             this.pnBtn.TabIndex = 3;
@@ -300,6 +277,7 @@
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.Textcolor = System.Drawing.Color.White;
             this.btnSave.TextFont = new System.Drawing.Font("Roboto Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // elipseBtnUpdate
             // 
@@ -330,6 +308,29 @@
             this.lbInfo.Text = "Create a new account";
             this.lbInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // txbChucVu
+            // 
+            this.txbChucVu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txbChucVu.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txbChucVu.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txbChucVu.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbChucVu.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbChucVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
+            this.txbChucVu.HintForeColor = System.Drawing.SystemColors.ControlDark;
+            this.txbChucVu.HintText = "";
+            this.txbChucVu.isPassword = false;
+            this.txbChucVu.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
+            this.txbChucVu.LineIdleColor = System.Drawing.Color.Gray;
+            this.txbChucVu.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
+            this.txbChucVu.LineThickness = 1;
+            this.txbChucVu.Location = new System.Drawing.Point(216, 153);
+            this.txbChucVu.Margin = new System.Windows.Forms.Padding(5);
+            this.txbChucVu.MaxLength = 32767;
+            this.txbChucVu.Name = "txbChucVu";
+            this.txbChucVu.Size = new System.Drawing.Size(292, 42);
+            this.txbChucVu.TabIndex = 46;
+            this.txbChucVu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
             // FormAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -339,7 +340,7 @@
             this.Controls.Add(this.pnBtn);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(1040, 554);
             this.Name = "FormAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -354,7 +355,6 @@
 
         private Bunifu.Framework.UI.BunifuElipse elipseForm;
         private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuDropdown dropDownPosition;
         private System.Windows.Forms.Label lbPosition;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txbID;
         private System.Windows.Forms.Label lbUser;
@@ -369,5 +369,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnSave;
         private Bunifu.Framework.UI.BunifuElipse elipseBtnSave;
         private System.Windows.Forms.Label lbInfo;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txbChucVu;
     }
 }

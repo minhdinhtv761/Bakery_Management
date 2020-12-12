@@ -17,10 +17,10 @@ namespace GUI.UsrCtrlManage
         }
 
  
-        private void btnCreate_Click(object sender, EventArgs e)
+      /*  private void btnCreate_Click(object sender, EventArgs e)
         {
             Form formAccount = new FormAccount();
             formAccount.ShowDialog();
-        }
+        }*/
     }
 }

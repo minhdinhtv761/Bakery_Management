@@ -73,7 +73,8 @@ namespace GUI.UsrCtrlManage
             txbName.Text = bunifuDataGridView1.Rows[0].Cells[1].Value.ToString();
             txbChucVu.Text = bunifuDataGridView1.Rows[0].Cells[2].Value.ToString();
             txbPhone.Text = bunifuDataGridView1.Rows[0].Cells[3].Value.ToString();
-            txbdateworking.Text = bunifuDataGridView1.Rows[0].Cells[4].Value.ToString();
+            //txbdateworking.Text = bunifuDataGridView1.Rows[0].Cells[4].Value.ToString();
+            dateworking.Value =(DateTime) bunifuDataGridView1.Rows[0].Cells[4].Value;
         }
 
         private void bunifuDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -82,7 +83,8 @@ namespace GUI.UsrCtrlManage
             txbName.Text = bunifuDataGridView1.SelectedRows[0].Cells[1].Value.ToString();
             txbChucVu.Text = bunifuDataGridView1.SelectedRows[0].Cells[2].Value.ToString();
             txbPhone.Text = bunifuDataGridView1.SelectedRows[0].Cells[3].Value.ToString();
-            txbdateworking.Text = bunifuDataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+            //txbdateworking.Text = bunifuDataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+            dateworking.Value = (DateTime)bunifuDataGridView1.SelectedRows[0].Cells[4].Value ;
         }
 
         private void btnDel_Click(object sender, EventArgs e)        //delete
@@ -103,12 +105,12 @@ namespace GUI.UsrCtrlManage
             string Manv = txbID.Text;
             string Tennv = txbName.Text;
             string Sodt = txbPhone.Text;
-            string Ngvl = txbdateworking.Text ;
+            DateTime Ngvl = dateworking.Value ;
             string Chucvu = txbChucVu.Text;
             AddEmployee(Manv, Tennv, Sodt, Ngvl, Chucvu);
         }
 
-        void AddEmployee(string MaNV, string TenNV, string SoDT, string NgVL, string ChucVu)
+        void AddEmployee(string MaNV, string TenNV, string SoDT, DateTime NgVL, string ChucVu)
         {
             EmployeeDAL.Instance.AddEmployee(MaNV, TenNV, SoDT, NgVL, ChucVu);
             bunifuDataGridView1.Rows.Clear();
@@ -120,12 +122,12 @@ namespace GUI.UsrCtrlManage
             string Manv = txbID.Text;
             string Tennv = txbName.Text;
             string Sodt = txbPhone.Text;
-            string Ngvl = txbdateworking.Text;
+            DateTime Ngvl = dateworking.Value;
             string Chucvu = txbChucVu.Text;
             EditEmployee(Manv, Tennv, Sodt, Ngvl, Chucvu);
         }
 
-        void EditEmployee(string MaNV, string TenNV, string SoDT, string NgVL, string ChucVu)
+        void EditEmployee(string MaNV, string TenNV, string SoDT, DateTime NgVL, string ChucVu)
         {
             EmployeeDAL.Instance.EditEmployee(MaNV, TenNV, SoDT, NgVL, ChucVu);
             bunifuDataGridView1.Rows.Clear();

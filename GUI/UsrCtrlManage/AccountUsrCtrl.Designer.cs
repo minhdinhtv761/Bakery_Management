@@ -91,7 +91,7 @@
             this.pnLeft.BackColor = System.Drawing.SystemColors.Control;
             this.pnLeft.Controls.Add(this.bunifuDataGridView1);
             this.pnLeft.Location = new System.Drawing.Point(8, 60);
-            this.pnLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnLeft.Margin = new System.Windows.Forms.Padding(4);
             this.pnLeft.Name = "pnLeft";
             this.pnLeft.Size = new System.Drawing.Size(953, 623);
             this.pnLeft.TabIndex = 0;
@@ -152,7 +152,7 @@
             this.bunifuDataGridView1.HeaderBgColor = System.Drawing.Color.Empty;
             this.bunifuDataGridView1.HeaderForeColor = System.Drawing.Color.White;
             this.bunifuDataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuDataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuDataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuDataGridView1.Name = "bunifuDataGridView1";
             this.bunifuDataGridView1.ReadOnly = true;
             this.bunifuDataGridView1.RowHeadersVisible = false;
@@ -199,7 +199,7 @@
             this.pnRight.Controls.Add(this.pnInfo);
             this.pnRight.Controls.Add(this.pnBtn);
             this.pnRight.Location = new System.Drawing.Point(972, 10);
-            this.pnRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnRight.Margin = new System.Windows.Forms.Padding(4);
             this.pnRight.Name = "pnRight";
             this.pnRight.Size = new System.Drawing.Size(700, 673);
             this.pnRight.TabIndex = 2;
@@ -227,7 +227,7 @@
             this.pnPass.Controls.Add(this.lbRePass);
             this.pnPass.Controls.Add(this.lbOldPass);
             this.pnPass.Location = new System.Drawing.Point(25, 385);
-            this.pnPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnPass.Margin = new System.Windows.Forms.Padding(4);
             this.pnPass.Name = "pnPass";
             this.pnPass.Size = new System.Drawing.Size(659, 183);
             this.pnPass.TabIndex = 12;
@@ -249,7 +249,7 @@
             this.txbRePass.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbRePass.LineThickness = 1;
             this.txbRePass.Location = new System.Drawing.Point(215, 106);
-            this.txbRePass.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txbRePass.Margin = new System.Windows.Forms.Padding(5);
             this.txbRePass.MaxLength = 32767;
             this.txbRePass.Name = "txbRePass";
             this.txbRePass.Size = new System.Drawing.Size(292, 42);
@@ -273,7 +273,7 @@
             this.tcbNewPass.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.tcbNewPass.LineThickness = 1;
             this.tcbNewPass.Location = new System.Drawing.Point(215, 54);
-            this.tcbNewPass.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tcbNewPass.Margin = new System.Windows.Forms.Padding(5);
             this.tcbNewPass.MaxLength = 32767;
             this.tcbNewPass.Name = "tcbNewPass";
             this.tcbNewPass.Size = new System.Drawing.Size(292, 42);
@@ -311,7 +311,7 @@
             this.txbOldPass.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbOldPass.LineThickness = 1;
             this.txbOldPass.Location = new System.Drawing.Point(215, 1);
-            this.txbOldPass.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txbOldPass.Margin = new System.Windows.Forms.Padding(5);
             this.txbOldPass.MaxLength = 32767;
             this.txbOldPass.Name = "txbOldPass";
             this.txbOldPass.Size = new System.Drawing.Size(292, 42);
@@ -373,7 +373,7 @@
             this.pnInfo.Controls.Add(this.lbName);
             this.pnInfo.Controls.Add(this.lbUser);
             this.pnInfo.Location = new System.Drawing.Point(25, 62);
-            this.pnInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnInfo.Margin = new System.Windows.Forms.Padding(4);
             this.pnInfo.Name = "pnInfo";
             this.pnInfo.Size = new System.Drawing.Size(659, 257);
             this.pnInfo.TabIndex = 3;
@@ -431,7 +431,7 @@
             this.txbEmail.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbEmail.LineThickness = 1;
             this.txbEmail.Location = new System.Drawing.Point(215, 161);
-            this.txbEmail.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txbEmail.Margin = new System.Windows.Forms.Padding(5);
             this.txbEmail.MaxLength = 32767;
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(292, 42);
@@ -468,7 +468,7 @@
             this.txbPhone.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbPhone.LineThickness = 1;
             this.txbPhone.Location = new System.Drawing.Point(215, 58);
-            this.txbPhone.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txbPhone.Margin = new System.Windows.Forms.Padding(5);
             this.txbPhone.MaxLength = 32767;
             this.txbPhone.Name = "txbPhone";
             this.txbPhone.Size = new System.Drawing.Size(292, 42);
@@ -505,7 +505,7 @@
             this.txbName.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbName.LineThickness = 1;
             this.txbName.Location = new System.Drawing.Point(215, 110);
-            this.txbName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txbName.Margin = new System.Windows.Forms.Padding(5);
             this.txbName.MaxLength = 32767;
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(292, 42);
@@ -528,7 +528,7 @@
             this.txbID.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbID.LineThickness = 1;
             this.txbID.Location = new System.Drawing.Point(215, 6);
-            this.txbID.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txbID.Margin = new System.Windows.Forms.Padding(5);
             this.txbID.MaxLength = 32767;
             this.txbID.Name = "txbID";
             this.txbID.Size = new System.Drawing.Size(292, 42);
@@ -566,7 +566,7 @@
             this.pnBtn.Controls.Add(this.btnDel);
             this.pnBtn.Controls.Add(this.btnUpdate);
             this.pnBtn.Location = new System.Drawing.Point(388, 578);
-            this.pnBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnBtn.Margin = new System.Windows.Forms.Padding(4);
             this.pnBtn.Name = "pnBtn";
             this.pnBtn.Size = new System.Drawing.Size(296, 65);
             this.pnBtn.TabIndex = 2;
@@ -607,6 +607,7 @@
             this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDel.Textcolor = System.Drawing.Color.White;
             this.btnDel.TextFont = new System.Drawing.Font("Roboto Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnUpdate
             // 
@@ -655,7 +656,7 @@
             this.pnSearch.Controls.Add(this.btnCreate);
             this.pnSearch.Controls.Add(this.txbSearch);
             this.pnSearch.Location = new System.Drawing.Point(0, 1);
-            this.pnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.pnSearch.Name = "pnSearch";
             this.pnSearch.Size = new System.Drawing.Size(961, 58);
             this.pnSearch.TabIndex = 3;
@@ -698,7 +699,7 @@
             this.btnCreate.IdleIconRightImage = null;
             this.btnCreate.IndicateFocus = false;
             this.btnCreate.Location = new System.Drawing.Point(789, 5);
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreate.Name = "btnCreate";
             stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
             stateProperties1.BorderRadius = 20;
@@ -754,7 +755,7 @@
             this.txbSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txbSearch.Lines = new string[0];
             this.txbSearch.Location = new System.Drawing.Point(8, 9);
-            this.txbSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txbSearch.MaxLength = 32767;
             this.txbSearch.MinimumSize = new System.Drawing.Size(133, 43);
             this.txbSearch.Modified = false;
@@ -823,7 +824,7 @@
             this.Controls.Add(this.pnRight);
             this.Controls.Add(this.pnLeft);
             this.Controls.Add(this.pnSearch);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(1683, 692);
             this.MinimumSize = new System.Drawing.Size(1683, 692);
             this.Name = "AccountUsrCtrl";

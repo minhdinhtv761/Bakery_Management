@@ -38,5 +38,11 @@ namespace GUI.DAL
 
             return categorys;
         }
+
+        public void updateCategory(string maloai, string tenloai, int total)
+        {
+            string query = string.Format("update PHANLOAI set TENLOAI = '{0}', TOTAL = '{1}' where MALOAI = '{2}'", tenloai, total, maloai);
+            DataProvider.Instance.ExecuteQuery(query);
+        }
     }
 }

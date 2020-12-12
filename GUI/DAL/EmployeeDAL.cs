@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -46,14 +46,14 @@ namespace GUI.DAL
             DataProvider.Instance.ExecuteQuery(query);
         }
 
-        public void AddEmployee(string MaNV,string TenNV,string SoDT,string NgVL,string ChucVu)
+        public void AddEmployee(string MaNV,string TenNV,string SoDT,DateTime NgVL,string ChucVu)
         {
             string query = string.Format("insert into NHANVIEN (MANV,TENNV,SODT,NGVL,CHUCVU) values ('{0}','{1}','{2}','{3}','{4}')", MaNV,TenNV,SoDT,NgVL,ChucVu);
 
             DataProvider.Instance.ExecuteQuery(query);
         }
 
-        public void EditEmployee(string MaNV, string TenNV, string SoDT, string NgVL, string ChucVu)
+        public void EditEmployee(string MaNV, string TenNV, string SoDT, DateTime NgVL, string ChucVu)
         {
             string query = string.Format("update NHANVIEN set TENNV = '{0}', SODT = '{1}', NGVL = '{2}', CHUCVU = '{3}' where MANV = '{4}'", TenNV, SoDT, NgVL, ChucVu, MaNV);
             DataProvider.Instance.ExecuteQuery(query);

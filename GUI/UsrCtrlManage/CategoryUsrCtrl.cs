@@ -17,6 +17,8 @@ namespace GUI.UsrCtrlManage
         {
             InitializeComponent();
             LoadDataGridVew();
+            
+            
         }
 
         void LoadDataGridVew()
@@ -34,12 +36,19 @@ namespace GUI.UsrCtrlManage
             }
         }
 
-       
+        void updateCategory(string maloai, string tenloai, int total)
+        {
+            CategoryDAL.Instance.updateCategory(maloai, tenloai, total);
+            bunifuDataGridView1.Rows.Clear();
+            LoadDataGridVew();
+        }
+
+       /*
         private void btnCreate_Click(object sender, EventArgs e)
         {
             Form formAccount = new FormAccount();
             formAccount.ShowDialog();
-        }
+        }*/
 
         private void txbSearch_TextChanged(object sender, EventArgs e)
         {

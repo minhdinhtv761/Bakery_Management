@@ -28,13 +28,12 @@ namespace GUI.UsrCtrlManage
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            Form formAccount = new FormAccount();
+            Form formAccount = new FormAccount(this);
             formAccount.ShowDialog();
         }
-
-        void LoadDataGridView()
+        public void LoadDataGridView()
         {
-            this.bunifuDataGridView1.Controls.Clear();
+            this.bunifuDataGridView1.Rows.Clear();
             foreach (var item in AccountDAL.Instance.GetAccount())
             {
                 DataGridViewRow newRow = new DataGridViewRow();
@@ -50,6 +49,19 @@ namespace GUI.UsrCtrlManage
         private void bunifuDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txbID.Text = bunifuDataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            string username = txbID.Text;
+            DelAccount(username);
+        }
+
+        void DelAccount(string username)
+        {
+            AccountDAL.Instance.deleteAccount(username);
+            bunifuDataGridView1.Rows.Clear();
+            LoadDataGridView();
         }
     }
 }

@@ -78,5 +78,27 @@ namespace GUI.DAL
             DataProvider.Instance.ExecuteQuery(string.Format("UPDATE ACCOUNT SET MATKHAU = '{0}' WHERE MANV = '{1}' ", password, username));
         }
 
+        public void deleteAccount(string username)
+        {
+            string query = string.Format("delete from ACCOUNT where MANV = '{0}'", username);
+
+            DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public bool addAccount (string username, string password, int type)
+        {
+            //password = Encryptor.Instance.Encrypt(password);
+
+            try
+            {
+                string query= string.Format("insert into ACCOUNT (MANV,MATKHAU,Type) values ('{0}','{1}','{2}')", username, password, type);
+                return DataProvider.Instance.ExecuteNonQuery(query) > 0;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }
