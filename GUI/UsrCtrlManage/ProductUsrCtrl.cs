@@ -76,7 +76,7 @@ namespace GUI.UsrCtrlManage
             int donGia = int.Parse(txbPrice.Text);
             string DVT = txbDVT.Text;
             string maLoai = txbCategory.Text;
-            AddFood(maMA, tenMA, donGia, DVT, maLoai);
+            EditFood(maMA, tenMA, donGia, DVT, maLoai);
         }
 
         void AddFood(string maMA, string tenMA, int donGia, string DTV, string maLoai)
@@ -106,7 +106,7 @@ namespace GUI.UsrCtrlManage
             int donGia = int.Parse(txbPrice.Text);
             string DVT = txbDVT.Text;
             string maLoai = txbCategory.Text;
-            EditFood(maMA, tenMA, donGia, DVT, maLoai);
+            AddFood(maMA, tenMA, donGia, DVT, maLoai);          
         }
 
         void EditFood(string maMa, string tenMa, int donGia, string DVT, string maLoai)

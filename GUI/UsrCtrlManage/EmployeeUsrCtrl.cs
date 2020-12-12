@@ -73,7 +73,6 @@ namespace GUI.UsrCtrlManage
             txbName.Text = bunifuDataGridView1.Rows[0].Cells[1].Value.ToString();
             txbChucVu.Text = bunifuDataGridView1.Rows[0].Cells[2].Value.ToString();
             txbPhone.Text = bunifuDataGridView1.Rows[0].Cells[3].Value.ToString();
-            //txbdateworking.Text = bunifuDataGridView1.Rows[0].Cells[4].Value.ToString();
             dateworking.Value =(DateTime) bunifuDataGridView1.Rows[0].Cells[4].Value;
         }
 
@@ -83,7 +82,6 @@ namespace GUI.UsrCtrlManage
             txbName.Text = bunifuDataGridView1.SelectedRows[0].Cells[1].Value.ToString();
             txbChucVu.Text = bunifuDataGridView1.SelectedRows[0].Cells[2].Value.ToString();
             txbPhone.Text = bunifuDataGridView1.SelectedRows[0].Cells[3].Value.ToString();
-            //txbdateworking.Text = bunifuDataGridView1.SelectedRows[0].Cells[4].Value.ToString();
             dateworking.Value = (DateTime)bunifuDataGridView1.SelectedRows[0].Cells[4].Value ;
         }
 
@@ -105,9 +103,9 @@ namespace GUI.UsrCtrlManage
             string Manv = txbID.Text;
             string Tennv = txbName.Text;
             string Sodt = txbPhone.Text;
-            DateTime Ngvl = dateworking.Value ;
+            DateTime Ngvl = dateworking.Value;
             string Chucvu = txbChucVu.Text;
-            AddEmployee(Manv, Tennv, Sodt, Ngvl, Chucvu);
+            EditEmployee(Manv, Tennv, Sodt, Ngvl, Chucvu);
         }
 
         void AddEmployee(string MaNV, string TenNV, string SoDT, DateTime NgVL, string ChucVu)
@@ -124,7 +122,7 @@ namespace GUI.UsrCtrlManage
             string Sodt = txbPhone.Text;
             DateTime Ngvl = dateworking.Value;
             string Chucvu = txbChucVu.Text;
-            EditEmployee(Manv, Tennv, Sodt, Ngvl, Chucvu);
+            AddEmployee(Manv, Tennv, Sodt, Ngvl, Chucvu);            
         }
 
         void EditEmployee(string MaNV, string TenNV, string SoDT, DateTime NgVL, string ChucVu)
