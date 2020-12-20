@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using GUI.DAL;
 using GUI.DTO;
+using System.Data.SqlClient;
 
 namespace GUI.UsrCtrlManage
 {
@@ -146,10 +147,13 @@ namespace GUI.UsrCtrlManage
             }
         }
 
+        string imgLocation = "";
+        
+
         private void btnAddPic_Click(object sender, EventArgs e)
         {
             string link = this.getLink();
-            picUser.Image = new Bitmap(link);
+            picUser.Image = new Bitmap(link);          
         }
 
 

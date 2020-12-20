@@ -45,11 +45,13 @@ namespace GUI.DAL
             DataProvider.Instance.ExecuteQuery(query);
         }
 
-        public void AddFood(string maMA, string tenMA,int donGia,string DTV,string maLoai)
+        public void AddFood(string maMA, string tenMA,int donGia,string DTV,string maLoai,byte[] Image)
         {
-            string query = string.Format("insert into MONAN (MAMA,TENMA,DONGIA,DVT,MALOAI) values ('{0}','{1}','{2}','{3}','{4}')", maMA, tenMA, donGia.ToString(), DTV, maLoai);
+            /*string query = string.Format("insert into MONAN (MAMA,TENMA,DONGIA,DVT,MALOAI,LinkImage) values ('{0}','{1}','{2}','{3}','{4}','{5}')", maMA, tenMA, donGia.ToString(), DTV, maLoai,Image);
 
-            DataProvider.Instance.ExecuteQuery(query);
+            DataProvider.Instance.ExecuteQuery(query);*/
+            DataProvider.Instance.ExecuteQuery("USP_AddDrink @MAMA , @TENMA , @DONGIA , @DVT , @MALOAI , @LinkImage ",
+                new object[] { maMA, tenMA, donGia, DTV, maLoai, Image });
         }
 
         public void EditFood(string maMa,string tenMa,int donGia,string DVT,string maLoai)

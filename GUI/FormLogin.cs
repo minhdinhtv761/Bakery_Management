@@ -54,7 +54,7 @@ namespace GUI
                 }
                 else
                 {
-                    MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Error");
+                    MessageBox.Show("Username or Password does not correct!", "Error");
                 }
             }
             catch
@@ -78,7 +78,7 @@ namespace GUI
                 }
                 else
                 {
-                    MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Error");
+                    MessageBox.Show("Username or Password does not correct!", "Error");
                 }
             }
             catch

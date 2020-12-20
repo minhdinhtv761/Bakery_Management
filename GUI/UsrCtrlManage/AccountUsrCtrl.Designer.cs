@@ -48,9 +48,10 @@
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnRight = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.txbChucVu = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.pnPass = new System.Windows.Forms.Panel();
             this.txbRePass = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.tcbNewPass = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txbNewPass = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.lbNewPass = new System.Windows.Forms.Label();
             this.txbOldPass = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.lbRePass = new System.Windows.Forms.Label();
@@ -77,6 +78,7 @@
             this.elipsePnLeft = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.elipseBtnUpdate = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.elipseBtnDel = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.pnLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).BeginInit();
             this.pnRight.SuspendLayout();
@@ -194,6 +196,7 @@
             // 
             this.pnRight.BackColor = System.Drawing.SystemColors.Control;
             this.pnRight.Controls.Add(this.label1);
+            this.pnRight.Controls.Add(this.txbChucVu);
             this.pnRight.Controls.Add(this.pnPass);
             this.pnRight.Controls.Add(this.lbInfo);
             this.pnRight.Controls.Add(this.pnInfo);
@@ -218,10 +221,33 @@
             this.label1.Text = "Change password";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // txbChucVu
+            // 
+            this.txbChucVu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txbChucVu.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txbChucVu.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txbChucVu.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbChucVu.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbChucVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
+            this.txbChucVu.HintForeColor = System.Drawing.SystemColors.ControlDark;
+            this.txbChucVu.HintText = "";
+            this.txbChucVu.isPassword = false;
+            this.txbChucVu.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
+            this.txbChucVu.LineIdleColor = System.Drawing.Color.Gray;
+            this.txbChucVu.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
+            this.txbChucVu.LineThickness = 1;
+            this.txbChucVu.Location = new System.Drawing.Point(241, 328);
+            this.txbChucVu.Margin = new System.Windows.Forms.Padding(5);
+            this.txbChucVu.MaxLength = 32767;
+            this.txbChucVu.Name = "txbChucVu";
+            this.txbChucVu.Size = new System.Drawing.Size(292, 42);
+            this.txbChucVu.TabIndex = 37;
+            this.txbChucVu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
             // pnPass
             // 
             this.pnPass.Controls.Add(this.txbRePass);
-            this.pnPass.Controls.Add(this.tcbNewPass);
+            this.pnPass.Controls.Add(this.txbNewPass);
             this.pnPass.Controls.Add(this.lbNewPass);
             this.pnPass.Controls.Add(this.txbOldPass);
             this.pnPass.Controls.Add(this.lbRePass);
@@ -256,29 +282,29 @@
             this.txbRePass.TabIndex = 16;
             this.txbRePass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // tcbNewPass
+            // txbNewPass
             // 
-            this.tcbNewPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.tcbNewPass.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.tcbNewPass.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.tcbNewPass.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.tcbNewPass.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tcbNewPass.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tcbNewPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
-            this.tcbNewPass.HintForeColor = System.Drawing.SystemColors.ControlDark;
-            this.tcbNewPass.HintText = "123456";
-            this.tcbNewPass.isPassword = true;
-            this.tcbNewPass.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
-            this.tcbNewPass.LineIdleColor = System.Drawing.Color.Gray;
-            this.tcbNewPass.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
-            this.tcbNewPass.LineThickness = 1;
-            this.tcbNewPass.Location = new System.Drawing.Point(215, 54);
-            this.tcbNewPass.Margin = new System.Windows.Forms.Padding(5);
-            this.tcbNewPass.MaxLength = 32767;
-            this.tcbNewPass.Name = "tcbNewPass";
-            this.tcbNewPass.Size = new System.Drawing.Size(292, 42);
-            this.tcbNewPass.TabIndex = 15;
-            this.tcbNewPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txbNewPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txbNewPass.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txbNewPass.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txbNewPass.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txbNewPass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbNewPass.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNewPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
+            this.txbNewPass.HintForeColor = System.Drawing.SystemColors.ControlDark;
+            this.txbNewPass.HintText = "123456";
+            this.txbNewPass.isPassword = true;
+            this.txbNewPass.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
+            this.txbNewPass.LineIdleColor = System.Drawing.Color.Gray;
+            this.txbNewPass.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
+            this.txbNewPass.LineThickness = 1;
+            this.txbNewPass.Location = new System.Drawing.Point(215, 54);
+            this.txbNewPass.Margin = new System.Windows.Forms.Padding(5);
+            this.txbNewPass.MaxLength = 32767;
+            this.txbNewPass.Name = "txbNewPass";
+            this.txbNewPass.Size = new System.Drawing.Size(292, 42);
+            this.txbNewPass.TabIndex = 15;
+            this.txbNewPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // lbNewPass
             // 
@@ -392,7 +418,7 @@
         "--Selection--",
         "Staff",
         "Manager"};
-            this.dropDownPosition.Location = new System.Drawing.Point(215, 212);
+            this.dropDownPosition.Location = new System.Drawing.Point(214, 209);
             this.dropDownPosition.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.dropDownPosition.Name = "dropDownPosition";
             this.dropDownPosition.NomalColor = System.Drawing.SystemColors.Control;
@@ -504,7 +530,7 @@
             this.txbName.LineIdleColor = System.Drawing.Color.Gray;
             this.txbName.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(113)))));
             this.txbName.LineThickness = 1;
-            this.txbName.Location = new System.Drawing.Point(215, 110);
+            this.txbName.Location = new System.Drawing.Point(216, 110);
             this.txbName.Margin = new System.Windows.Forms.Padding(5);
             this.txbName.MaxLength = 32767;
             this.txbName.Name = "txbName";
@@ -645,6 +671,7 @@
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUpdate.Textcolor = System.Drawing.Color.White;
             this.btnUpdate.TextFont = new System.Drawing.Font("Roboto Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // elipsepnRight
             // 
@@ -704,7 +731,7 @@
             stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(83)))), ((int)(((byte)(124)))));
             stateProperties1.BorderRadius = 20;
             stateProperties1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties1.BorderThickness = 0;
+            stateProperties1.BorderThickness = 1;
             stateProperties1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(72)))), ((int)(((byte)(107)))));
             stateProperties1.ForeColor = System.Drawing.Color.White;
             stateProperties1.IconLeftImage = null;
@@ -713,7 +740,7 @@
             stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(72)))), ((int)(((byte)(107)))));
             stateProperties2.BorderRadius = 20;
             stateProperties2.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties2.BorderThickness = 0;
+            stateProperties2.BorderThickness = 1;
             stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(72)))), ((int)(((byte)(107)))));
             stateProperties2.ForeColor = System.Drawing.Color.White;
             stateProperties2.IconLeftImage = null;
@@ -816,11 +843,24 @@
             this.elipseBtnDel.ElipseRadius = 20;
             this.elipseBtnDel.TargetControl = this.btnDel;
             // 
+            // iconButton1
+            // 
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.Location = new System.Drawing.Point(0, 0);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(75, 23);
+            this.iconButton1.TabIndex = 4;
+            this.iconButton1.Text = "iconButton1";
+            this.iconButton1.UseVisualStyleBackColor = true;
+            // 
             // AccountUsrCtrl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.pnRight);
             this.Controls.Add(this.pnLeft);
             this.Controls.Add(this.pnSearch);
@@ -872,11 +912,13 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox txbPhone;
         private System.Windows.Forms.Label lbPhone;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txbRePass;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox tcbNewPass;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txbNewPass;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuDropdown dropDownPosition;
         private System.Windows.Forms.Label lbPosition;
         private Bunifu.Framework.UI.BunifuElipse elipseBtnDel;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnCreate;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txbChucVu;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

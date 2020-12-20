@@ -13,12 +13,14 @@ namespace GUI.DTO
         private int donGia;
         private string dVT;
         private string maLoai;
+        private byte[] image;
 
         public string MaMA { get => maMA; set => maMA = value; }
         public string TenMA { get => tenMA; set => tenMA = value; }
         public int DonGia { get => donGia; set => donGia = value; }
         public string DVT { get => dVT; set => dVT = value; }
         public string MaLoai { get => maLoai; set => maLoai = value; }
+        public byte[] Image { get => image; set => image = value; }
 
         public FoodDTO(string maMA, string tenMA, int donGia, string dvt, string maLoai)
         {
@@ -35,6 +37,8 @@ namespace GUI.DTO
             this.donGia = (int)row["DonGia"];
             this.dVT = row["DVT"].ToString();
             this.maLoai = row["maLOAI"].ToString();
+            if (!Convert.IsDBNull(row["LinkImage"]))
+                this.image = (byte[])row["LinkImage"];
         }
     }
 }

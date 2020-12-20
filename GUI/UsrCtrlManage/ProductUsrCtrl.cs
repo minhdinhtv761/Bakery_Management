@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using GUI.DAL;
 using GUI.DTO;
 using GUI.UsrCtrlMenu;
+using System.Runtime.InteropServices;
+using System.Threading.Tasks;
+using System.IO;
 
 namespace GUI.UsrCtrlManage
 {
@@ -50,7 +53,7 @@ namespace GUI.UsrCtrlManage
             }
             txbID.Text = bunifuDataGridView1.Rows[0].Cells[0].Value.ToString();
             txbName.Text = bunifuDataGridView1.Rows[0].Cells[1].Value.ToString();
-            txbCategory.Text = bunifuDataGridView1.Rows[0].Cells[2].Value.ToString();
+            txbCategory.Text = bunifuDataGridView1.Rows[0].Cells[2].Value.ToString();   
             txbPrice.Text = bunifuDataGridView1.Rows[0].Cells[3].Value.ToString();
             txbDVT.Text = bunifuDataGridView1.Rows[0].Cells[4].Value.ToString();
         }
@@ -79,12 +82,6 @@ namespace GUI.UsrCtrlManage
             EditFood(maMA, tenMA, donGia, DVT, maLoai);
         }
 
-        void AddFood(string maMA, string tenMA, int donGia, string DTV, string maLoai)
-        {
-            FoodDAL.Instance.AddFood(maMA, tenMA, donGia, DTV, maLoai);
-            bunifuDataGridView1.Rows.Clear();
-            LoadDataGridView();
-        }
 
         private void btnDel_Click(object sender, EventArgs e)
         {
@@ -99,6 +96,13 @@ namespace GUI.UsrCtrlManage
             LoadDataGridView();
         }
 
+        void AddFood(string maMA, string tenMA, int donGia, string DTV, string maLoai,byte[] Image)
+        {
+            FoodDAL.Instance.AddFood(maMA, tenMA, donGia, DTV, maLoai, Image);
+            bunifuDataGridView1.Rows.Clear();
+            LoadDataGridView();
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             string maMA = txbID.Text;
@@ -106,7 +110,12 @@ namespace GUI.UsrCtrlManage
             int donGia = int.Parse(txbPrice.Text);
             string DVT = txbDVT.Text;
             string maLoai = txbCategory.Text;
-            AddFood(maMA, tenMA, donGia, DVT, maLoai);          
+
+            FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+            BinaryReader brs = new BinaryReader(stream);
+            images = brs.ReadBytes((int)stream.Length);
+
+            AddFood(maMA, tenMA, donGia, DVT, maLoai, images);    
         }
 
         void EditFood(string maMa, string tenMa, int donGia, string DVT, string maLoai)
@@ -116,11 +125,21 @@ namespace GUI.UsrCtrlManage
             LoadDataGridView();
         }
 
+        string imgLocation = "";
+        byte[] images = null;
+        SqlCommand cmd;
 
         private void btnAddPic_Click(object sender, EventArgs e)
         {
-            string link = this.getLink();
-            picFood.Image = new Bitmap(link);
+            /*string link = this.getLink();
+            picFood.Image = new Bitmap(link);*/
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "png files(*.png)|*.png|jpg files(*.jpg)|*.jpg|All files(*.*)|*.*";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                imgLocation = dialog.FileName.ToString();
+                picFood.ImageLocation = imgLocation;
+            }
         }
 
         string getLink()
