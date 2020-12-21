@@ -78,7 +78,6 @@
             this.elipsePnLeft = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.elipseBtnUpdate = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.elipseBtnDel = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.pnLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).BeginInit();
             this.pnRight.SuspendLayout();
@@ -843,24 +842,11 @@
             this.elipseBtnDel.ElipseRadius = 20;
             this.elipseBtnDel.TargetControl = this.btnDel;
             // 
-            // iconButton1
-            // 
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(0, 0);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(75, 23);
-            this.iconButton1.TabIndex = 4;
-            this.iconButton1.Text = "iconButton1";
-            this.iconButton1.UseVisualStyleBackColor = true;
-            // 
             // AccountUsrCtrl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.pnRight);
             this.Controls.Add(this.pnLeft);
             this.Controls.Add(this.pnSearch);
@@ -919,6 +905,5 @@
         private Bunifu.Framework.UI.BunifuElipse elipseBtnDel;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnCreate;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txbChucVu;
-        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

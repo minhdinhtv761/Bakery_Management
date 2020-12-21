@@ -46,16 +46,18 @@ namespace GUI.DAL
             DataProvider.Instance.ExecuteQuery(query);
         }
 
-        public void AddEmployee(string MaNV,string TenNV,string SoDT,DateTime NgVL,string ChucVu)
+        public void AddEmployee(string MaNV,string TenNV,string SoDT,DateTime NgVL,string ChucVu,string DiaChi,string email, string gioitinh)
         {
-            string query = string.Format("insert into NHANVIEN (MANV,TENNV,SODT,NGVL,CHUCVU) values ('{0}','{1}','{2}','{3}','{4}')", MaNV,TenNV,SoDT,NgVL,ChucVu);
+            string query = string.Format("insert into NHANVIEN (MANV,TENNV,SODT,NGVL,CHUCVU,DIACHI,EMAIL,GIOITINH) " +
+                "values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}')", MaNV,TenNV,SoDT,NgVL,ChucVu,DiaChi,email,gioitinh);
 
             DataProvider.Instance.ExecuteQuery(query);
         }
 
-        public void EditEmployee(string MaNV, string TenNV, string SoDT, DateTime NgVL, string ChucVu)
+        public void EditEmployee(string MaNV, string TenNV, string SoDT, DateTime NgVL, string ChucVu, string DiaChi, string email, string gioitinh)
         {
-            string query = string.Format("update NHANVIEN set TENNV = '{0}', SODT = '{1}', NGVL = '{2}', CHUCVU = '{3}' where MANV = '{4}'", TenNV, SoDT, NgVL, ChucVu, MaNV);
+            string query = string.Format("update NHANVIEN set TENNV = '{0}', SODT = '{1}', NGVL = '{2}', CHUCVU = '{3}', DIACHI = '{4}', " +
+                "EMAIL = '{5}', GIOITINH = '{6}' where MANV = '{7}'", TenNV, SoDT, NgVL, ChucVu, DiaChi, email, gioitinh, MaNV);
             DataProvider.Instance.ExecuteQuery(query);
         }
     }

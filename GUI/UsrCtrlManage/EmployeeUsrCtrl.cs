@@ -46,7 +46,7 @@ namespace GUI.UsrCtrlManage
             lbFemale.Enabled = false;
         }
 
-     
+
 
         private void radioFemale_Click(object sender, EventArgs e)
         {
@@ -74,8 +74,11 @@ namespace GUI.UsrCtrlManage
             txbName.Text = bunifuDataGridView1.Rows[0].Cells[1].Value.ToString();
             txbChucVu.Text = bunifuDataGridView1.Rows[0].Cells[2].Value.ToString();
             txbPhone.Text = bunifuDataGridView1.Rows[0].Cells[3].Value.ToString();
-            dateworking.Value =(DateTime) bunifuDataGridView1.Rows[0].Cells[4].Value;
+            dateworking.Value = (DateTime)bunifuDataGridView1.Rows[0].Cells[4].Value;
+
         }
+
+        //string sex = "";
 
         private void bunifuDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -83,7 +86,33 @@ namespace GUI.UsrCtrlManage
             txbName.Text = bunifuDataGridView1.SelectedRows[0].Cells[1].Value.ToString();
             txbChucVu.Text = bunifuDataGridView1.SelectedRows[0].Cells[2].Value.ToString();
             txbPhone.Text = bunifuDataGridView1.SelectedRows[0].Cells[3].Value.ToString();
-            dateworking.Value = (DateTime)bunifuDataGridView1.SelectedRows[0].Cells[4].Value ;
+            dateworking.Value = (DateTime)bunifuDataGridView1.SelectedRows[0].Cells[4].Value;
+
+            SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-UKMBISK7;Initial Catalog=QUANLY_TIEMBANH;Integrated Security=True");
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Select * from NHANVIEN", con);
+            SqlDataReader da = cmd.ExecuteReader();
+            while (da.Read())
+            {
+                if (da["MANV"].ToString() == txbID.Text)
+                {
+                    txbAdd.Text = (da["DIACHI"].ToString());
+                    txbEmail.Text = (da["EMAIL"].ToString());
+                    if (da["GIOITINH"].ToString() == "Male")
+                    {
+                        radioMale.Checked = true;
+                        radioFemale.Checked = false;
+                    }
+                    else if (da["GIOITINH"].ToString() == "Female")
+                    {
+                        radioFemale.Checked = true;
+                        radioMale.Checked = false;
+                    }                       
+                    break;
+                }
+            }
+
+            con.Close();
         }
 
         private void btnDel_Click(object sender, EventArgs e)        //delete
@@ -99,39 +128,63 @@ namespace GUI.UsrCtrlManage
             LoadDataGridView();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)             //update - Add
+        void EditEmployee(string MaNV, string TenNV, string SoDT, DateTime NgVL, string ChucVu, string DiaChi, string email, string gioitinh)
         {
+            EmployeeDAL.Instance.EditEmployee(MaNV, TenNV, SoDT, NgVL, ChucVu, DiaChi, email, gioitinh);
+            bunifuDataGridView1.Rows.Clear();
+            LoadDataGridView();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)             //update - Edit
+        {
+            string gioitinh = "";
+            if (radioMale.Checked)
+            {
+                gioitinh = "Male";
+            }
+            else if (radioFemale.Checked)
+            {
+                gioitinh = "Female";
+            }
             string Manv = txbID.Text;
             string Tennv = txbName.Text;
             string Sodt = txbPhone.Text;
             DateTime Ngvl = dateworking.Value;
             string Chucvu = txbChucVu.Text;
-            EditEmployee(Manv, Tennv, Sodt, Ngvl, Chucvu);
+            string diachi = txbAdd.Text;
+            string email = txbEmail.Text;
+
+            EditEmployee(Manv, Tennv, Sodt, Ngvl, Chucvu, diachi, email, gioitinh);
         }
 
-        void AddEmployee(string MaNV, string TenNV, string SoDT, DateTime NgVL, string ChucVu)
+        void AddEmployee(string MaNV, string TenNV, string SoDT, DateTime NgVL, string ChucVu, string DiaChi, string email, string gioitinh)
         {
-            EmployeeDAL.Instance.AddEmployee(MaNV, TenNV, SoDT, NgVL, ChucVu);
+            EmployeeDAL.Instance.AddEmployee(MaNV, TenNV, SoDT, NgVL, ChucVu, DiaChi, email, gioitinh);
             bunifuDataGridView1.Rows.Clear();
             LoadDataGridView();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)          //Save - Edit 
+        private void btnSave_Click(object sender, EventArgs e)          //Save - Add 
         {
+            string gioitinh = "";
+            if (radioMale.Checked)
+            {
+                gioitinh = "Male";
+            }
+            else if (radioFemale.Checked)
+            {
+                gioitinh = "Female";
+            }
             string Manv = txbID.Text;
             string Tennv = txbName.Text;
             string Sodt = txbPhone.Text;
             DateTime Ngvl = dateworking.Value;
             string Chucvu = txbChucVu.Text;
-            AddEmployee(Manv, Tennv, Sodt, Ngvl, Chucvu);            
+            string DiaChi = txbAdd.Text;
+            string email = txbEmail.Text;
+            AddEmployee(Manv, Tennv, Sodt, Ngvl, Chucvu, DiaChi, email, gioitinh);
         }
 
-        void EditEmployee(string MaNV, string TenNV, string SoDT, DateTime NgVL, string ChucVu)
-        {
-            EmployeeDAL.Instance.EditEmployee(MaNV, TenNV, SoDT, NgVL, ChucVu);
-            bunifuDataGridView1.Rows.Clear();
-            LoadDataGridView();
-        }
 
         string getLink()
         {
@@ -148,14 +201,13 @@ namespace GUI.UsrCtrlManage
         }
 
         string imgLocation = "";
-        
+
 
         private void btnAddPic_Click(object sender, EventArgs e)
         {
             string link = this.getLink();
-            picUser.Image = new Bitmap(link);          
+            picUser.Image = new Bitmap(link);
         }
-
 
         public void searchEmployee(string search)
         {
