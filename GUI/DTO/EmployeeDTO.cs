@@ -17,6 +17,7 @@ namespace GUI.DTO
         private string DiaChi;
         private string Email;
         private string GioiTinh;
+        private byte[] image;
 
         public string MaNV1 { get => MaNV; set => MaNV = value; }
         public string TenNV1 { get => TenNV; set => TenNV = value; }
@@ -26,6 +27,7 @@ namespace GUI.DTO
         public string DiaChi1 { get => DiaChi; set => DiaChi = value; }
         public string Email1 { get => Email; set => Email = value; }
         public string GioiTinh1 { get => GioiTinh; set => GioiTinh = value; }
+        public byte[] Image { get => image; set => image = value; }
 
         public EmployeeDTO(string MaNV, string TenNV, int ChucVu, string SoDT, DateTime NgVL, string DiaChi, string Email, string GioiTinh)
         {
@@ -48,6 +50,8 @@ namespace GUI.DTO
             this.DiaChi = row["DIACHI"].ToString();
             this.Email = row["EMAIL"].ToString();
             this.GioiTinh = row["GIOITINH"].ToString();
+            if (!Convert.IsDBNull(row["LinkImage"]))
+                this.image = (byte[])row["LinkImage"];
         }
     }
 }

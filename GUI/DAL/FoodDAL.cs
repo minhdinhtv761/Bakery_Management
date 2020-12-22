@@ -54,10 +54,12 @@ namespace GUI.DAL
                 new object[] { maMA, tenMA, donGia, DTV, maLoai, Image });
         }
 
-        public void EditFood(string maMa,string tenMa,int donGia,string DVT,string maLoai)
+        public void EditFood(string maMA,string tenMA,int donGia,string DVT,string maLoai, byte[] Image)
         {
-            string query = string.Format("update MONAN set TENMA = '{0}',DONGIA = '{1}' ,DVT = '{2}',MALOAI = '{3}' where MAMA = '{4}'", tenMa, donGia.ToString(), DVT, maLoai,maMa);
-            DataProvider.Instance.ExecuteQuery(query);
+            /*string query = string.Format("update MONAN set TENMA = '{0}',DONGIA = '{1}' ,DVT = '{2}',MALOAI = '{3}' where MAMA = '{4}'", tenMa, donGia.ToString(), DVT, maLoai,maMa);
+            DataProvider.Instance.ExecuteQuery(query);*/
+            DataProvider.Instance.ExecuteQuery("USP_EditFood @MAMA , @TENMA , @DONGIA , @DVT , @MALOAI , @LinkImage ",
+                new object[] { maMA, tenMA, donGia, DVT, maLoai, Image });
         }
 
 

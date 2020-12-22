@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnMain = new Bunifu.UI.WinForm.BunifuShadowPanel.BunifuShadowPanel();
+            this.btnChoose = new System.Windows.Forms.Button();
             this.picFood = new System.Windows.Forms.PictureBox();
             this.lbPrice = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
@@ -40,12 +41,13 @@
             // 
             this.pnMain.BackColor = System.Drawing.SystemColors.Control;
             this.pnMain.BorderColor = System.Drawing.Color.Transparent;
+            this.pnMain.Controls.Add(this.btnChoose);
             this.pnMain.Controls.Add(this.picFood);
             this.pnMain.Controls.Add(this.lbPrice);
             this.pnMain.Controls.Add(this.lbName);
             this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnMain.Location = new System.Drawing.Point(0, 0);
-            this.pnMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnMain.Margin = new System.Windows.Forms.Padding(4);
             this.pnMain.Name = "pnMain";
             this.pnMain.PanelColor = System.Drawing.Color.Transparent;
             this.pnMain.ShadowDept = 2;
@@ -53,10 +55,22 @@
             this.pnMain.Size = new System.Drawing.Size(163, 181);
             this.pnMain.TabIndex = 0;
             // 
+            // btnChoose
+            // 
+            this.btnChoose.BackColor = System.Drawing.Color.Transparent;
+            this.btnChoose.Location = new System.Drawing.Point(3, 3);
+            this.btnChoose.Name = "btnChoose";
+            this.btnChoose.Size = new System.Drawing.Size(157, 175);
+            this.btnChoose.TabIndex = 9;
+            this.btnChoose.Text = "button1";
+            this.btnChoose.UseVisualStyleBackColor = false;
+            this.btnChoose.Visible = false;
+            this.btnChoose.Click += new System.EventHandler(this.btnChoose_Click);
+            // 
             // picFood
             // 
             this.picFood.Location = new System.Drawing.Point(0, 0);
-            this.picFood.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picFood.Margin = new System.Windows.Forms.Padding(4);
             this.picFood.Name = "picFood";
             this.picFood.Size = new System.Drawing.Size(153, 110);
             this.picFood.TabIndex = 8;
@@ -117,7 +131,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnMain);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FoodInfoUsrCtrl";
             this.Size = new System.Drawing.Size(163, 181);
             this.pnMain.ResumeLayout(false);
@@ -132,5 +146,6 @@
         private System.Windows.Forms.Label lbPrice;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.PictureBox picFood;
+        private System.Windows.Forms.Button btnChoose;
     }
 }

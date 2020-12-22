@@ -37,5 +37,31 @@ namespace GUI.DAL
 
             return bills;
         }
+
+        public bool ExistBillbyIDBill(int idBill)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery(string.Format("SELECT * FROM HOADON where MAHD = {0}", idBill));
+
+            return data.Rows.Count > 0;
+        }
+
+        public int GetMAXIDBill()
+        {
+            try
+            {
+                return (int)DataProvider.Instance.ExecuteScalar("select MAX(MAHD) from HOADON");
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
+        public void InsertBill(int id, string staffID)
+        {
+            string query = string.Format("insert into HOADON (MAHD, MANV) values ({0}, {1})", id, staffID);
+            DataProvider.Instance.ExecuteNonQuery(query);
+            //DataProvider.Instance.ExecuteNonQuery("USP_InsertBill @ID , @StaffID , @Note", new object[] { id, staffID, "Đặt món" });
+        }
     }
 }

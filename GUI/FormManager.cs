@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using FontAwesome.Sharp;
 using System.Windows.Forms;
+using GUI.UsrCtrlManage;
 
 namespace GUI
 {
@@ -63,6 +64,7 @@ namespace GUI
         private void btnCategory_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
+            this.categoryUsrCtrl1.updateCategory();
         }
 
         private void btnEmployee_Click(object sender, EventArgs e)

@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using GUI.DAL;
 
 namespace GUI.UsrCtrlMenu
 {
@@ -16,6 +17,21 @@ namespace GUI.UsrCtrlMenu
             InitializeComponent();
             this.lbTotal.Text = this.lbPrice.Text;
         }
+
+        public BillInfoUsrCtrl(int MaHD, string TenMA, int price, int count)
+        {
+            InitializeComponent();
+            this.lbNO.Text = MaHD.ToString();
+            this.lbName.Text = TenMA;
+            this.lbPrice.Text = string.Format("{0:n0}", price).ToString();
+            this.txbQTY.Text = count.ToString();
+            this.lbTotal.Text= string.Format("{0:n0}", price * count).ToString();
+        }
+
+        public event EventHandler onValueChanged = null;
+        public event EventHandler onDel = null;
+
+
         public int NO
         {
             get { return Convert.ToInt32(this.lbNO.Text); }
@@ -65,7 +81,7 @@ namespace GUI.UsrCtrlMenu
         private void ComputeTotal()
         {
             uint total = Convert.ToUInt32(Price) * Convert.ToUInt32(QTY);
-            Total = total;
+            Total = total;            
         }
 
         private void icBtnTrash_Click(object sender, EventArgs e)
@@ -102,6 +118,12 @@ namespace GUI.UsrCtrlMenu
         private void txbQTY_TextChange(object sender, EventArgs e)
         {
             ComputeTotal();
+
+            BillInfoDAL.Instance.UpdateBillInfo(int.Parse(this.lbName.Text), int.Parse(this.txbQTY.Text));
+            if (onValueChanged != null)
+            {
+                onValueChanged.Invoke(this, new EventArgs());
+            }
         }
         //#1
         public event System.EventHandler QTYChanged;

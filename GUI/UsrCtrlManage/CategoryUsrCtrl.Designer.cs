@@ -250,7 +250,7 @@
             this.btnCreate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCreate.TextMarginLeft = 0;
             this.btnCreate.UseDefaultRadiusAndThickness = true;
-           // this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // txbSearch
             // 

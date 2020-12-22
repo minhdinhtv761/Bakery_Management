@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using Bunifu.UI.WinForms.BunifuButton;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 using GUI.DTO;
 using GUI.DAL;
 
@@ -17,6 +18,11 @@ namespace GUI.UsrCtrlMenu
 
         public Panel bottomBorderBtn;
         public BunifuButton currButton;
+        private string Username;
+        private int billID = BillDAL.Instance.GetMAXIDBill() + 1;
+
+        public string Username1 { get => Username; set => Username = value; }
+
         public MenuUsrCtrl()
         {
             InitializeComponent();
@@ -76,11 +82,38 @@ namespace GUI.UsrCtrlMenu
             foreach (FoodDTO item in listFood)
             {
 
-                FoodInfoUsrCtrl foodInfo = new FoodInfoUsrCtrl(item.TenMA, item.DonGia);
+                FoodInfoUsrCtrl foodInfo = new FoodInfoUsrCtrl(item.TenMA, item.DonGia, item.Image);
                 if (item.MaLoai == "LOAI02")
                     this.layoutPanel.Controls.Add(foodInfo);
+
+                foodInfo.onChoose += FoodInfo_onChoose;
             }
         }
+
+        private void FoodInfo_onChoose(object sender, EventArgs e)
+        {
+            try
+            {
+                string Manv = EmployeeDAL.Instance.GetStaffIDbyUsername(this.Username).ToString();
+                string MaMa = ((sender as FoodInfoUsrCtrl).Tag as FoodDTO).MaMA.ToString();
+                int count = 1;
+
+                if (!BillDAL.Instance.ExistBillbyIDBill(billID))
+                    BillDAL.Instance.InsertBill(billID, Manv);
+                BillInfoDAL.Instance.InsertBillInfo(billID, Manv, count);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi");
+            }
+            finally
+            {
+                this.layoutPanel.Controls.Clear();
+                FormCashier.Instance.TOTAL = string.Format("{0:n0}", MenuDAL.Instance.GetTotalPrice(billID)).ToString();
+                LoadBill();
+            }
+        }
+
         void LoadBread()
         {
             List<FoodDTO> listFood = FoodDAL.Instance.GetFood();
@@ -88,11 +121,14 @@ namespace GUI.UsrCtrlMenu
             foreach (FoodDTO item in listFood)
             {
 
-                FoodInfoUsrCtrl foodInfo = new FoodInfoUsrCtrl(item.TenMA, item.DonGia);
+                FoodInfoUsrCtrl foodInfo = new FoodInfoUsrCtrl(item.TenMA, item.DonGia, item.Image);
                 if (item.MaLoai == "LOAI01")
                     this.layoutPanel.Controls.Add(foodInfo);
+
+                foodInfo.onChoose += FoodInfo_onChoose;
             }
         }
+
         void LoadFood()
         {
             List<FoodDTO> listFood = FoodDAL.Instance.GetFood();
@@ -100,9 +136,53 @@ namespace GUI.UsrCtrlMenu
             foreach (FoodDTO item in listFood)
             {
 
-                FoodInfoUsrCtrl foodInfo = new FoodInfoUsrCtrl(item.TenMA, item.DonGia);
+                FoodInfoUsrCtrl foodInfo = new FoodInfoUsrCtrl(item.TenMA, item.DonGia, item.Image);
 
                 this.layoutPanel.Controls.Add(foodInfo);
+            }
+        }
+
+        public void LoadBill()
+        {
+            List<MenuDTO> listBill = MenuDAL.Instance.GetListMenu(this.billID);
+
+            foreach (MenuDTO item in listBill)
+            {
+                BillInfoUsrCtrl billItem = new BillInfoUsrCtrl(item.MaHD1, item.TenMA1, item.Price, item.Count);
+
+                billItem.onValueChanged += BillItem_onValueChanged;
+                billItem.onDel += BillItem_onDel;
+
+                billItem.Tag = item;
+
+                this.layoutPanel.Controls.Add(billItem);
+            }
+        }
+
+        private void BillItem_onValueChanged(object sender, EventArgs e)
+        {
+            FormCashier.Instance.TOTAL = string.Format("{0:n0}", MenuDAL.Instance.GetTotalPrice(billID)).ToString();
+        }
+
+        private void BillItem_onDel(object sender, EventArgs e)
+        {
+            try
+            {
+                string drinkID = ((sender as BillInfoUsrCtrl).Tag as MenuDTO).MaMA1;
+
+                BillInfoDAL.Instance.DeleteBillInfobyIDDrink(drinkID, billID);
+
+                FormCashier.Instance.TOTAL = string.Format("{0:n0}", MenuDAL.Instance.GetTotalPrice(billID)).ToString();
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+
+                this.layoutPanel.Controls.Clear();
+                LoadBill();
             }
         }
 
@@ -141,7 +221,7 @@ namespace GUI.UsrCtrlMenu
             {
                 if (food.TenMA.ToLower().Contains(this.txbSearch.Text.ToLower()))
                 {
-                    FoodInfoUsrCtrl item = new FoodInfoUsrCtrl(food.TenMA, food.DonGia);
+                    FoodInfoUsrCtrl item = new FoodInfoUsrCtrl(food.TenMA, food.DonGia, food.Image);
 
                     this.layoutPanel.Controls.Add(item);
                 }

@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace GUI.UsrCtrlMenu
 {
@@ -13,15 +14,32 @@ namespace GUI.UsrCtrlMenu
     {
         private string maMA;
         private int donGia;
+        private byte[] image;
 
         public string MaMA { get => maMA; set => maMA = value; }
         public int DonGia { get => donGia; set => donGia = value; }
+        public byte[] Image { get => image; set => image = value; }
 
-        public FoodInfoUsrCtrl(string maMA, int donGia)
+        public event EventHandler onChoose = null;
+
+        public FoodInfoUsrCtrl(string maMA, int donGia, byte[] image)
         {
             InitializeComponent();
             this.lbName.Text = maMA;
             this.lbPrice.Text = donGia.ToString();
+            this.picFood.Width = this.Width - 2 * (this.picFood.Location.X);
+
+            if (image == null)
+            {
+                picFood.Image = null;
+            }
+            else
+            {
+                MemoryStream mstream = new MemoryStream(image);
+                Bitmap bitmap = new Bitmap(mstream);
+                picFood.Image = bitmap;
+                picFood.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
         }
         public Image PicFood
         {
@@ -38,6 +56,8 @@ namespace GUI.UsrCtrlMenu
             get { return this.lbPrice.Text; }
             set { this.lbPrice.Text = value; }
         }
+
+
         bool selectedItem = false;
         public void Activate()
         {
@@ -71,7 +91,13 @@ namespace GUI.UsrCtrlMenu
             if(!selectedItem)
                 this.Disable();
         }
-      
-      
+
+        private void btnChoose_Click(object sender, EventArgs e)
+        {
+            if (onChoose != null)
+            {
+                onChoose.Invoke(this, new EventArgs());
+            }
+        }
     }
 }

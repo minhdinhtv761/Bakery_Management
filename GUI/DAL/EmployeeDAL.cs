@@ -46,19 +46,38 @@ namespace GUI.DAL
             DataProvider.Instance.ExecuteQuery(query);
         }
 
-        public void AddEmployee(string MaNV,string TenNV,string SoDT,DateTime NgVL,string ChucVu,string DiaChi,string email, string gioitinh)
+        public void AddEmployee(string MaNV,string TenNV,string SoDT,DateTime NgVL,string ChucVu,string DiaChi,string email, string gioitinh, byte[] Image)
         {
-            string query = string.Format("insert into NHANVIEN (MANV,TENNV,SODT,NGVL,CHUCVU,DIACHI,EMAIL,GIOITINH) " +
-                "values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}')", MaNV,TenNV,SoDT,NgVL,ChucVu,DiaChi,email,gioitinh);
+            /*string query = string.Format("insert into NHANVIEN (MANV,TENNV,SODT,NGVL,CHUCVU,DIACHI,EMAIL,GIOITINH,LinkImage ) " +
+                "values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}')", MaNV,TenNV,SoDT,NgVL,ChucVu,DiaChi,email,gioitinh,Image);
 
-            DataProvider.Instance.ExecuteQuery(query);
+            DataProvider.Instance.ExecuteQuery(query);*/
+            DataProvider.Instance.ExecuteQuery("USP_AddEmployee @MANV , @TENNV , @SODT , @NgVL , @ChucVu , @DiaChi , @Email , @GioiTinh , @LinkImage ",
+                new object[] { MaNV, TenNV, SoDT, NgVL, ChucVu, DiaChi, email, gioitinh, Image });
         }
 
-        public void EditEmployee(string MaNV, string TenNV, string SoDT, DateTime NgVL, string ChucVu, string DiaChi, string email, string gioitinh)
+        public void EditEmployee(string MaNV, string TenNV, string SoDT, DateTime NgVL, string ChucVu, string DiaChi, string email, string gioitinh, byte[] Image)
         {
-            string query = string.Format("update NHANVIEN set TENNV = '{0}', SODT = '{1}', NGVL = '{2}', CHUCVU = '{3}', DIACHI = '{4}', " +
-                "EMAIL = '{5}', GIOITINH = '{6}' where MANV = '{7}'", TenNV, SoDT, NgVL, ChucVu, DiaChi, email, gioitinh, MaNV);
-            DataProvider.Instance.ExecuteQuery(query);
+            /*string query = string.Format("update NHANVIEN set TENNV = '{0}', SODT = '{1}', NGVL = '{2}', CHUCVU = '{3}', DIACHI = '{4}', " +
+                "EMAIL = '{5}', GIOITINH = '{6}', LinkImage = '{7}' where MANV = '{8}'", TenNV, SoDT, NgVL, ChucVu, DiaChi, email, gioitinh, Image, MaNV);
+            DataProvider.Instance.ExecuteQuery(query);*/
+            DataProvider.Instance.ExecuteQuery("USP_EditEmployee @MANV , @TENNV , @SODT , @NgVL , @ChucVu , @DiaChi , @Email , @GioiTinh , @LinkImage ",
+                new object[] { MaNV, TenNV, SoDT, NgVL, ChucVu, DiaChi, email, gioitinh, Image });
+        }
+
+        public int GetStaffIDbyUsername(string username)
+        {
+            string query = string.Format("SELECT * FROM NHANVIEN WHERE MANV = '{0}'", username);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            if (data.Rows.Count > 0)
+            {
+                EmployeeDTO staff = new EmployeeDTO(data.Rows[0]);
+
+                return int.Parse(staff.MaNV1);
+            }
+
+            return -1;
         }
     }
 }

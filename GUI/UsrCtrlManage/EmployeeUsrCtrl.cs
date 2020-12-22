@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using GUI.DAL;
 using GUI.DTO;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace GUI.UsrCtrlManage
 {
@@ -19,6 +20,10 @@ namespace GUI.UsrCtrlManage
             InitializeComponent();
             LoadDataGridView();
         }
+
+
+        string imgLocation = "";
+        byte[] images = null;
 
         private void txbPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -38,19 +43,14 @@ namespace GUI.UsrCtrlManage
             this.lbAdding.Visible = false;
         }
 
-
-
         private void radioMale_Click(object sender, EventArgs e)
         {
             lbMale.Enabled = true;
             lbFemale.Enabled = false;
         }
 
-
-
         private void radioFemale_Click(object sender, EventArgs e)
         {
-
             lbMale.Enabled = false;
             lbFemale.Enabled = true;
         }
@@ -68,6 +68,7 @@ namespace GUI.UsrCtrlManage
                 newRow.Cells[2].Value = item.ChucVu1;
                 newRow.Cells[3].Value = item.SoDT1;
                 newRow.Cells[4].Value = item.NgVL1;
+                newRow.Cells[5].Value = item.Image;
                 bunifuDataGridView1.Rows.Add(newRow);
             }
             txbID.Text = bunifuDataGridView1.Rows[0].Cells[0].Value.ToString();
@@ -76,9 +77,18 @@ namespace GUI.UsrCtrlManage
             txbPhone.Text = bunifuDataGridView1.Rows[0].Cells[3].Value.ToString();
             dateworking.Value = (DateTime)bunifuDataGridView1.Rows[0].Cells[4].Value;
 
+            if (bunifuDataGridView1.Rows[0].Cells[5].Value != null)
+            {
+                MemoryStream ms = new MemoryStream((byte[])bunifuDataGridView1.SelectedRows[0].Cells[5].Value);
+                Bitmap a = new Bitmap(Image.FromStream(ms));
+                a.MakeTransparent();
+                picUser.Image = a;
+            }
+            else
+            {
+                picUser.Refresh();
+            }
         }
-
-        //string sex = "";
 
         private void bunifuDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -87,6 +97,21 @@ namespace GUI.UsrCtrlManage
             txbChucVu.Text = bunifuDataGridView1.SelectedRows[0].Cells[2].Value.ToString();
             txbPhone.Text = bunifuDataGridView1.SelectedRows[0].Cells[3].Value.ToString();
             dateworking.Value = (DateTime)bunifuDataGridView1.SelectedRows[0].Cells[4].Value;
+
+            if (bunifuDataGridView1.SelectedRows[0].Cells[5].Value != null)
+            {
+                MemoryStream ms = new MemoryStream((byte[])bunifuDataGridView1.SelectedRows[0].Cells[5].Value);       
+                Bitmap a = new Bitmap(Image.FromStream(ms));
+                a.MakeTransparent();
+                picUser.Image = a;
+                picUser.BringToFront();
+            }
+            else    
+            {
+                picUser.Image = null;
+                picUser.Invalidate();
+               // AddingImage_label.BringToFront();
+            }
 
             SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-UKMBISK7;Initial Catalog=QUANLY_TIEMBANH;Integrated Security=True");
             con.Open();
@@ -111,7 +136,6 @@ namespace GUI.UsrCtrlManage
                     break;
                 }
             }
-
             con.Close();
         }
 
@@ -128,9 +152,9 @@ namespace GUI.UsrCtrlManage
             LoadDataGridView();
         }
 
-        void EditEmployee(string MaNV, string TenNV, string SoDT, DateTime NgVL, string ChucVu, string DiaChi, string email, string gioitinh)
+        void EditEmployee(string MaNV, string TenNV, string SoDT, DateTime NgVL, string ChucVu, string DiaChi, string email, string gioitinh, byte[] image)
         {
-            EmployeeDAL.Instance.EditEmployee(MaNV, TenNV, SoDT, NgVL, ChucVu, DiaChi, email, gioitinh);
+            EmployeeDAL.Instance.EditEmployee(MaNV, TenNV, SoDT, NgVL, ChucVu, DiaChi, email, gioitinh, image);
             bunifuDataGridView1.Rows.Clear();
             LoadDataGridView();
         }
@@ -154,12 +178,17 @@ namespace GUI.UsrCtrlManage
             string diachi = txbAdd.Text;
             string email = txbEmail.Text;
 
-            EditEmployee(Manv, Tennv, Sodt, Ngvl, Chucvu, diachi, email, gioitinh);
+            FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+            BinaryReader brs = new BinaryReader(stream);
+            images = brs.ReadBytes((int)stream.Length);
+
+            EditEmployee(Manv, Tennv, Sodt, Ngvl, Chucvu, diachi, email, gioitinh, images);
+            MessageBox.Show("Update successfully");
         }
 
-        void AddEmployee(string MaNV, string TenNV, string SoDT, DateTime NgVL, string ChucVu, string DiaChi, string email, string gioitinh)
+        void AddEmployee(string MaNV, string TenNV, string SoDT, DateTime NgVL, string ChucVu, string DiaChi, string email, string gioitinh, byte[] image)
         {
-            EmployeeDAL.Instance.AddEmployee(MaNV, TenNV, SoDT, NgVL, ChucVu, DiaChi, email, gioitinh);
+            EmployeeDAL.Instance.AddEmployee(MaNV, TenNV, SoDT, NgVL, ChucVu, DiaChi, email, gioitinh, image);
             bunifuDataGridView1.Rows.Clear();
             LoadDataGridView();
         }
@@ -182,31 +211,23 @@ namespace GUI.UsrCtrlManage
             string Chucvu = txbChucVu.Text;
             string DiaChi = txbAdd.Text;
             string email = txbEmail.Text;
-            AddEmployee(Manv, Tennv, Sodt, Ngvl, Chucvu, DiaChi, email, gioitinh);
+
+            FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+            BinaryReader brs = new BinaryReader(stream);
+            images = brs.ReadBytes((int)stream.Length);
+
+            AddEmployee(Manv, Tennv, Sodt, Ngvl, Chucvu, DiaChi, email, gioitinh, images);
         }
-
-
-        string getLink()
-        {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-            if (open.ShowDialog() == DialogResult.OK)
-            {
-                return open.FileName;
-            }
-            else
-            {
-                return "";
-            }
-        }
-
-        string imgLocation = "";
-
 
         private void btnAddPic_Click(object sender, EventArgs e)
         {
-            string link = this.getLink();
-            picUser.Image = new Bitmap(link);
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "png files(*.png)|*.png|jpg files(*.jpg)|*.jpg|All files(*.*)|*.*";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                imgLocation = dialog.FileName.ToString();
+                picUser.ImageLocation = imgLocation;
+            }
         }
 
         public void searchEmployee(string search)

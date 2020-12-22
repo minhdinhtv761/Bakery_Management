@@ -23,6 +23,10 @@ namespace GUI.UsrCtrlManage
             LoadDataGridView();
         }
 
+        string imgLocation = "";
+        byte[] images = null;
+        SqlCommand cmd;
+
         private void txbPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -49,6 +53,7 @@ namespace GUI.UsrCtrlManage
                 newRow.Cells[2].Value = item.MaLoai;
                 newRow.Cells[3].Value = item.DonGia;
                 newRow.Cells[4].Value = item.DVT;
+                newRow.Cells[5].Value = item.Image;
                 bunifuDataGridView1.Rows.Add(newRow);
             }
             txbID.Text = bunifuDataGridView1.Rows[0].Cells[0].Value.ToString();
@@ -56,6 +61,18 @@ namespace GUI.UsrCtrlManage
             txbCategory.Text = bunifuDataGridView1.Rows[0].Cells[2].Value.ToString();   
             txbPrice.Text = bunifuDataGridView1.Rows[0].Cells[3].Value.ToString();
             txbDVT.Text = bunifuDataGridView1.Rows[0].Cells[4].Value.ToString();
+
+            if (bunifuDataGridView1.Rows[0].Cells[5].Value != null)
+            {
+                MemoryStream ms = new MemoryStream((byte[])bunifuDataGridView1.SelectedRows[0].Cells[5].Value);
+                Bitmap a = new Bitmap(Image.FromStream(ms));
+                a.MakeTransparent();
+                picFood.Image = a;
+            }
+            else
+            {
+                picFood.Refresh();
+            }
         }
 
         private void picFood_MouseLeave(object sender, EventArgs e)
@@ -70,24 +87,28 @@ namespace GUI.UsrCtrlManage
             txbCategory.Text = bunifuDataGridView1.SelectedRows[0].Cells[2].Value.ToString();
             txbPrice.Text = bunifuDataGridView1.SelectedRows[0].Cells[3].Value.ToString();
             txbDVT.Text = bunifuDataGridView1.SelectedRows[0].Cells[4].Value.ToString();
-        }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            string maMA = txbID.Text;
-            string tenMA = txbName.Text;
-            int donGia = int.Parse(txbPrice.Text);
-            string DVT = txbDVT.Text;
-            string maLoai = txbCategory.Text;
-            EditFood(maMA, tenMA, donGia, DVT, maLoai);
+            if (bunifuDataGridView1.SelectedRows[0].Cells[5].Value != null)
+            {
+                MemoryStream ms = new MemoryStream((byte[])bunifuDataGridView1.SelectedRows[0].Cells[5].Value);
+                Bitmap a = new Bitmap(Image.FromStream(ms));
+                a.MakeTransparent();
+                picFood.Image = a;
+                picFood.BringToFront();
+            }
+            else
+            {
+                picFood.Image = null;
+                picFood.Invalidate();
+                AddingImage_label.BringToFront();
+            }
         }
-
 
         private void btnDel_Click(object sender, EventArgs e)
         {
             string id = txbID.Text;
             DeleteFood(id);         
-        }
+        }      //Delete
 
         void DeleteFood(string id)
         {
@@ -103,7 +124,7 @@ namespace GUI.UsrCtrlManage
             LoadDataGridView();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)           //Add
         {
             string maMA = txbID.Text;
             string tenMA = txbName.Text;
@@ -118,41 +139,37 @@ namespace GUI.UsrCtrlManage
             AddFood(maMA, tenMA, donGia, DVT, maLoai, images);    
         }
 
-        void EditFood(string maMa, string tenMa, int donGia, string DVT, string maLoai)
+        void EditFood(string maMa, string tenMa, int donGia, string DVT, string maLoai, byte[] Image)
         {
-            FoodDAL.Instance.EditFood(maMa, tenMa, donGia, DVT, maLoai);
+            FoodDAL.Instance.EditFood(maMa, tenMa, donGia, DVT, maLoai, Image);
             bunifuDataGridView1.Rows.Clear();
             LoadDataGridView();
         }
 
-        string imgLocation = "";
-        byte[] images = null;
-        SqlCommand cmd;
+        private void btnUpdate_Click(object sender, EventArgs e)     //Edit
+        {
+            string maMA = txbID.Text;
+            string tenMA = txbName.Text;
+            int donGia = int.Parse(txbPrice.Text);
+            string DVT = txbDVT.Text;
+            string maLoai = txbCategory.Text;
+
+            FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+            BinaryReader brs = new BinaryReader(stream);
+            images = brs.ReadBytes((int)stream.Length);
+
+            EditFood(maMA, tenMA, donGia, DVT, maLoai, images);
+            MessageBox.Show("Update successfully");
+        }
 
         private void btnAddPic_Click(object sender, EventArgs e)
         {
-            /*string link = this.getLink();
-            picFood.Image = new Bitmap(link);*/
             OpenFileDialog dialog = new OpenFileDialog();
             dialog.Filter = "png files(*.png)|*.png|jpg files(*.jpg)|*.jpg|All files(*.*)|*.*";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 imgLocation = dialog.FileName.ToString();
                 picFood.ImageLocation = imgLocation;
-            }
-        }
-
-        string getLink()
-        {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-            if (open.ShowDialog() == DialogResult.OK)
-            {
-                return open.FileName;
-            }
-            else
-            {
-                return "";
             }
         }
 
@@ -186,5 +203,9 @@ namespace GUI.UsrCtrlManage
             }
         }
 
+        private void picFood_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

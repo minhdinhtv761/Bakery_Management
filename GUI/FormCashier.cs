@@ -15,6 +15,22 @@ namespace GUI
 {
     public partial class FormCashier : Form
     {
+        private int Total;
+
+        public string TOTAL { get => this.lbTotal.Text; set => this.lbTotal.Text = value; }
+        private static FormCashier instance;
+        public static FormCashier Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new FormCashier();
+                }
+                return instance;
+            }
+            private set => instance = value;
+        }
 
         private IconButton currButton;
         public FormCashier()
@@ -76,6 +92,8 @@ namespace GUI
             set
             { lbItems.Text = value.ToString(); }
         }
+
+        
 
         private void minimize_Click(object sender, EventArgs e)
         {
