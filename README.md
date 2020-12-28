@@ -15,14 +15,6 @@ Today, bakerys are opened everywhere. But supervising and ensuring the quality o
 - Easy for users to use.
 - Efficiently control bakery's menu, orders, income and employees.
 
-## Features
-
-Waiting for updates...
-
-## Plan
-
-Waiting for updates...
-
 ## Authors
 
 - Leader/Developer: Đinh Trần Văn Minh - 19520715.
